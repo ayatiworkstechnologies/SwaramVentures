@@ -1,26 +1,294 @@
+/* =================================================
+   Google Fonts
+================================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&family=JetBrains+Mono:wght@100..800&display=swap');
+
+/* Tailwind */
 @import "tailwindcss";
 
+
+
+/* =================================================
+   THEME TOKENS
+================================================= */
 :root {
+
+  /* Brand */
+  --primary: #0F2D5C;
+  --secondary: #FF5A1F;
+  --soft: #F6F8FC;
+
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ================= FONT SYSTEM (SWAPPED) =================
+     PRIMARY   → Headings
+     SECONDARY → UI / Body
+  ================================================= */
+  --font-primary: "JetBrains Mono", monospace; /* HEADINGS */
+  --font-secondary: "DM Sans", sans-serif;     /* UI */
+
+  --radius-md: 18px;
+  --radius-lg: 26px;
+
+  --shadow-soft: 0 6px 20px rgba(0,0,0,.06);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.14);
+
+  --ease: cubic-bezier(.4,0,.2,1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
+
+/* =================================================
+   Dark Mode
+================================================= */
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --soft: #111827;
   }
 }
 
+
+
+/* =================================================
+   Base
+================================================= */
+
+/* UI uses SECONDARY (DM Sans) */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  scroll-behavior: smooth;
+}
+
+/* Headings use PRIMARY (JetBrains Mono) */
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
+
+
+
+/* =================================================
+   Utilities
+================================================= */
+
+.font-primary { font-family: var(--font-primary); }   /* headings */
+.font-secondary { font-family: var(--font-secondary); } /* ui */
+
+/* colors */
+.bg-primary { background: var(--primary); }
+.bg-secondary { background: var(--secondary); }
+.bg-soft { background: var(--soft); }
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+
+/* layout */
+.container-x {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-y {
+  padding: 96px 0;
+}
+
+/* radius */
+.rounded-soft { border-radius: var(--radius-md); }
+.rounded-xl2 { border-radius: var(--radius-lg); }
+
+/* shadows */
+.shadow-soft { box-shadow: var(--shadow-soft); }
+.shadow-lg2 { box-shadow: var(--shadow-lg); }
+
+/* motion */
+.smooth { transition: all .3s var(--ease); }
+.hover-lift:hover { transform: translateY(-6px); }
+
+
+
+/* =================================================
+   Components
+================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+  z-index: 50;
+}
+
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: all .3s var(--ease);
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+
+
+/* =================================================
+   Typography System
+================================================= */
+
+/* tag / label (UI font) */
+.tag {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+/* title (HEADINGS font) */
+.section-title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
+/* centered underline title */
+.section-title-underline {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--primary);
+  padding-bottom: 14px;
+}
+
+.section-title-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 96px;
+  height: 2px;
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+/* subtitle (UI font) */
+.section-subtitle {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  line-height: 1.7;
+  color: var(--primary);
+  max-width: 720px;
+  margin: 14px auto 0;
+}
+
+/* paragraph (UI font) */
+.text-body {
+  font-family: var(--font-secondary);
+  font-size: 22px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+.text-body-card {
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+
+
+/* =================================================
+   Buttons System (UI font)
+================================================= */
+
+.btn {
+  font-family: var(--font-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s var(--ease);
+}
+
+.btn-primary {
+  background: var(--secondary);
+  color: white;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+}
+.btn-ghost:hover {
+  color: var(--secondary);
+}
+
+
+
+/* =================================================
+   Navbar styles
+================================================= */
+
+.nav-link {
+  font-family: var(--font-secondary);
+  transition: .25s;
+}
+.nav-link:hover {
+  color: var(--secondary);
+}
+
+.nav-active::before {
+  content: "/";
+  color: var(--secondary);
+  margin-right: 4px;
+}
+
+
+
+/* =================================================
+   Scrollbar
+================================================= */
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 20px;
 }
