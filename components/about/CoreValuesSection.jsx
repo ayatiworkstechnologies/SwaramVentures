@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -7,91 +8,127 @@ export default function CoreValuesSection() {
   const values = [
     {
       icon: "/assets/core.png",
-      title: "Vision-Driven Innovation",
-      text: "We believe bold ideas create better futures. We seek founders and teams with the curiosity, courage, and clarity to transform industries.",
+      title: "Innovation",
+      text: "Bold ideas create better futures.",
     },
     {
       icon: "/assets/core.png",
-      title: "Vision-Driven Innovation",
-      text: "We believe bold ideas create better futures. We seek founders and teams with the curiosity, courage, and clarity to transform industries.",
+      title: "Strategy",
+      text: "Long-term clarity drives decisions.",
     },
     {
       icon: "/assets/core.png",
-      title: "Vision-Driven Innovation",
-      text: "We believe bold ideas create better futures. We seek founders and teams with the curiosity, courage, and clarity to transform industries.",
+      title: "Partnership",
+      text: "Deep collaboration with founders.",
     },
     {
       icon: "/assets/core.png",
-      title: "Vision-Driven Innovation",
-      text: "We believe bold ideas create better futures. We seek founders and teams with the curiosity, courage, and clarity to transform industries.",
+      title: "Impact",
+      text: "Scalable solutions worldwide.",
     },
     {
       icon: "/assets/core.png",
-      title: "Vision-Driven Innovation",
-      text: "We believe bold ideas create better futures. We seek founders and teams with the curiosity, courage, and clarity to transform industries.",
+      title: "Integrity",
+      text: "Transparency and governance first.",
+    },
+    {
+      icon: "/assets/core.png",
+      title: "Excellence",
+      text: "Consistent operational quality.",
     },
   ];
 
+  const visible = 4;
+  const pages = Math.ceil(values.length / visible);
+  const [index, setIndex] = useState(0);
+
   return (
-    <section className="section-y bg-white">
+    <section className="section-y bg-white overflow-hidden">
       <div className="container">
-        {/* ================= HEADER ================= */}
+        {/* HEADER */}
         <div className="mb-10">
           <h2 className="section-title text-left">Core Values</h2>
-
-          {/* simple underline */}
           <div className="w-16 h-[2px] bg-primary mt-3" />
         </div>
 
-        {/* ================= CARDS ================= */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="
-            flex gap-6 overflow-x-auto
-            md:grid md:grid-cols-5
-          "
-        >
-          {values.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              viewport={{ once: true }}
-              className="
-                min-w-[230px] md:min-w-0
-                bg-white
-                shadow-sm
-                p-6
-                text-center
-                border border-slate-100
-              "
-            >
-              {/* ICON */}
-              <div className="relative w-14 h-14 mx-auto mb-5">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  fill
-                  className="object-contain"
-                />
+        {/* ================= SLIDER ================= */}
+        <div className="relative">
+          {/* TRACK */}
+          <motion.div
+            animate={{ x: `-${index * 100}%` }}
+            transition={{ type: "spring", stiffness: 120, damping: 20 }}
+            className="flex"
+          >
+            {Array.from({ length: pages }).map((_, pageIndex) => (
+              <div
+                key={pageIndex}
+                className="
+                  grid
+                  grid-cols-1
+                  sm:grid-cols-2
+                  md:grid-cols-4
+                  gap-6
+                  shrink-0
+                  w-full
+                "
+              >
+                {values
+                  .slice(pageIndex * visible, pageIndex * visible + visible)
+                  .map((item, i) => (
+                    <div
+                      key={i}
+                      className="
+                        bg-white
+                        border border-slate-100
+                        shadow-sm
+                        hover:shadow-md
+                        smooth hover:-translate-y-1
+                      "
+                    >
+                      {/* IMAGE */}
+                      <div className="relative w-full h-28">
+                        <Image
+                          src={item.icon}
+                          alt={item.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+
+                      {/* CONTENT */}
+                      <div className="p-5 text-center">
+                        <h3 className="font-primary text-primary font-semibold mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-body-card text-xs text-gray-500">
+                          {item.text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
               </div>
+            ))}
+          </motion.div>
 
-              {/* TITLE */}
-              <h3 className="font-primary text-primary font-bold text-base mb-3">
-                {item.title}
-              </h3>
-
-              {/* TEXT */}
-              <p className="text-body-card text-xs leading-relaxed text-gray-500">
-                {item.text}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* ================= BOTTOM TWO LINES ================= */}
+          <div className="mt-8 flex justify-center gap-3">
+            {Array.from({ length: pages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`
+                  h-[3px]
+                  transition-all duration-300
+                  ${
+                    index === i
+                      ? "w-16 bg-primary"
+                      : "w-10 bg-slate-300 hover:bg-slate-400"
+                  }
+                `}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
