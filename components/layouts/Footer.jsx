@@ -1,72 +1,115 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const links = [
-    "Strategy",
-    "Industries",
-    "Services",
-    "Portfolio",
-    "About",
-    "Contact",
+    { name: "Strategy", href: "/strategy" },
+    { name: "Industries", href: "/industries" },
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <footer className="w-full mt-24 bg-white">
-      {/* ================= TOP LINKS ROW ================= */}
-      {/* Using high padding and wide gap to match the spacious design in the image */}
-      <div className="container-x py-12 md:py-16">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6"
-        >
-          {links.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-primary text-[15px] font-medium tracking-wide transition-colors hover:text-secondary font-secondary"
-            >
-              {item}
-            </a>
-          ))}
-        </motion.div>
+    <footer className="w-full mt-24">
+      {/* =================================================
+         TOP LINKS (WHITE AREA)
+      ================================================= */}
+      <div className="bg-white border-t border-gray-100">
+        <div className="container py-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="
+              flex
+              flex-wrap
+              justify-center
+              items-center
+              gap-x-12
+              gap-y-6
+              font-primary
+              text-sm
+              text-primary
+            "
+          >
+            {links.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="
+                  smooth
+                  opacity-80
+                  hover:opacity-100
+                  hover:text-secondary
+                  hover:-translate-y-1
+                "
+              >
+                {item.name}
+              </Link>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
-      {/* ================= BOTTOM BLUE BAR ================= */}
-      {/* Using the specific deep blue color from your reference image */}
-      <div className="bg-primary text-white py-6">
-        <div className="container-x flex flex-col md:flex-row items-center justify-between gap-6">
-
-          {/* LEFT: Legal */}
-          <div className="text-[13px] font-light tracking-tight opacity-90 font-secondary">
-            <a href="#" className="hover:underline transition-all">
+      {/* =================================================
+         BOTTOM BLUE BAR
+      ================================================= */}
+      <div className="bg-primary text-white">
+        <div
+          className="
+            container
+            py-6
+            flex
+            flex-col md:flex-row
+            items-center
+            justify-between
+            gap-6
+            text-sm
+            font-secondary
+          "
+        >
+          {/* LEFT */}
+          <div className="opacity-90 text-center md:text-left">
+            <Link href="/privacy" className="hover:underline">
               Privacy & Terms and conditions
-            </a>
+            </Link>
           </div>
 
-          {/* CENTER: Copyright */}
-          <div className="text-[13px] font-light tracking-tight opacity-90 font-secondary">
-            Copyright @ 2026 Swaram
+          {/* CENTER */}
+          <div className="opacity-90 text-center">
+            Copyright © {new Date().getFullYear()} Swaram
           </div>
 
-          {/* RIGHT: Social Icons */}
-          <div className="flex items-center gap-6">
-            <a href="#" aria-label="Facebook" className="hover:scale-110 transition-transform">
+          {/* RIGHT */}
+          <div className="flex items-center gap-5">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="smooth hover:scale-110"
+            >
               <Facebook size={18} strokeWidth={1.5} />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:scale-110 transition-transform">
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="smooth hover:scale-110"
+            >
               <Instagram size={18} strokeWidth={1.5} />
             </a>
-            <a href="#" aria-label="Linkedin" className="hover:scale-110 transition-transform">
+            <a
+              href="#"
+              aria-label="Linkedin"
+              className="smooth hover:scale-110"
+            >
               <Linkedin size={18} strokeWidth={1.5} />
             </a>
           </div>
-
         </div>
       </div>
     </footer>

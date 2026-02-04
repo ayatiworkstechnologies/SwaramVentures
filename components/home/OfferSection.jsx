@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Play } from "lucide-react";
 
 export default function OfferSection() {
   const slides = [
@@ -11,19 +11,19 @@ export default function OfferSection() {
       tag: "What We Offer",
       title: "Capital",
       desc: "Providing strategic capital to accelerate growth across healthcare, AI, robotics, fintech, and global trade platforms—supporting innovation, scale, and long-term value creation.",
-      img: "/assets/dummy.png",
+      img: "/assets/offer.png",
     },
     {
       tag: "What We Offer",
       title: "Strategy",
       desc: "Hands-on operational expertise and strategic guidance to scale startups into market leaders.",
-      img: "/assets/dummy.png",
+      img: "/assets/offer.png",
     },
     {
       tag: "What We Offer",
       title: "Partnership",
       desc: "Long-term partnerships empowering founders with networks, mentorship, and resources.",
-      img: "/assets/dummy.png",
+      img: "/assets/offer.png",
     },
   ];
 
@@ -31,36 +31,43 @@ export default function OfferSection() {
 
   return (
     <section className="section-y bg-white overflow-hidden">
-
-      <div className="container-x">
-
-        {/* ================= GRID ================= */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-          {/* ================= IMAGE ================= */}
+      <div className="container">
+        {/* =================================================
+           GRID LAYOUT
+        ================================================= */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* =================================================
+             IMAGE (LEFT)
+          ================================================= */}
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 30 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="relative h-[300px] md:h-[420px] rounded-xl2 overflow-hidden shadow-lg2 order-1 lg:order-none"
+              transition={{ duration: 0.5 }}
+              className="
+                relative
+                h-[300px] md:h-[420px]
+                rounded-[22px]
+                overflow-hidden
+                shadow-[0_12px_35px_rgba(0,0,0,0.12)]
+              "
             >
               <Image
                 src={slides[index].img}
                 alt={slides[index].title}
                 fill
-                className="object-cover"
                 priority
+                className="object-cover"
               />
             </motion.div>
           </AnimatePresence>
 
-
-
-          {/* ================= CONTENT ================= */}
-          <div className="order-2 lg:order-none">
+          {/* =================================================
+             CONTENT (RIGHT)
+          ================================================= */}
+          <div className="mt-8 lg:mt-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={"content" + index}
@@ -69,17 +76,22 @@ export default function OfferSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* dots */}
+                {/* =================================================
+                   SMALL NUMBERS (1 2 3)
+                ================================================= */}
                 <div className="flex gap-3 mb-6 font-primary text-xs">
                   {slides.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setIndex(i)}
                       className={`
-                        w-6 h-6 rounded-full border text-center transition-colors duration-300
-                        ${i === index
-                          ? "bg-primary text-white border-primary"
-                          : "border-gray-300 text-gray-400 hover:border-gray-400"}
+                        w-6 h-6 rounded-full text-center
+                        smooth
+                        ${
+                          i === index
+                            ? "bg-primary text-white"
+                            : "text-gray-400 hover:text-primary border border-black/20"
+                        }
                       `}
                     >
                       {i + 1}
@@ -87,30 +99,33 @@ export default function OfferSection() {
                   ))}
                 </div>
 
-                {/* tag */}
-                <p className="tag">
-                  {slides[index].tag}
-                </p>
+                {/* TAG */}
+                <p className="tag mb-3">{slides[index].tag}</p>
 
-                {/* title */}
-                <h2 className="section-title text-3xl md:text-4xl">
+                {/* TITLE */}
+                <h2 className="font-primary font-bold text-3xl md:text-4xl text-primary">
                   {slides[index].title}
                 </h2>
 
-                {/* underline */}
-                <div className="w-20 h-[3px] bg-secondary mt-3 mb-6" />
-
-                {/* description */}
-                <p className="text-body mb-8 text-base md:text-lg">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 120 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="mb-4 h-[2px] bg-secondary"
+                />
+                {/* DESCRIPTION */}
+                <p className="text-body text-base md:text-lg mb-8 max-w-lg">
                   {slides[index].desc}
                 </p>
 
-                {/* button */}
+                {/* =================================================
+                   BUTTON (PLAY ICON ADDED)
+                ================================================= */}
                 <button className="btn btn-primary group">
                   Learn More
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 smooth"
+                  <Play
+                    size={16}
+                    className="fill-current group-hover:scale-110 smooth"
                   />
                 </button>
               </motion.div>

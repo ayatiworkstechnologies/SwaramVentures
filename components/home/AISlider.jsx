@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Play } from "lucide-react";
 
 export default function AIBannerSlider() {
   const slides = [
@@ -23,7 +23,7 @@ export default function AIBannerSlider() {
 
   const [index, setIndex] = useState(0);
 
-  /* ========= AUTO SLIDE ========= */
+  /* ================= AUTO SLIDE ================= */
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
@@ -34,14 +34,16 @@ export default function AIBannerSlider() {
 
   return (
     <section className="relative w-full h-[360px] md:h-[450px] overflow-hidden">
-      {/* ================= SLIDES ================= */}
+      {/* =================================================
+         SLIDE IMAGE
+      ================================================= */}
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={{ opacity: 0, scale: 1.08 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.3, ease: "easeOut" }}
           className="absolute inset-0"
         >
           <Image
@@ -51,40 +53,68 @@ export default function AIBannerSlider() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+
+          {/* left gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      {/* ================= CONTENT ================= */}
-      <div className="container-x relative z-10 h-full flex items-center">
+      {/* =================================================
+         CONTENT
+      ================================================= */}
+      <div className="container relative z-10 h-full flex items-center">
         <motion.div
           key={"text" + index}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="max-w-xl text-white px-4 md:px-0"
+          className="max-w-xl text-white"
         >
-          <p className="font-primary text-lg md:text-2xl leading-relaxed md:leading-relaxed font-light">
+          {/* TEXT */}
+          <p className="font-primary text-base md:text-xl leading-relaxed">
             {slides[index].text}
           </p>
 
-          <button className="mt-6 md:mt-8 text-secondary text-base md:text-lg font-semibold flex items-center gap-2 group">
+          {/* =================================================
+             CTA (PLAY ICON ADDED)
+          ================================================= */}
+          <button
+            className="
+            mt-6
+            text-secondary
+            font-semibold
+            flex items-center gap-2
+            group
+          "
+          >
             Learn More
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 smooth"
+            <Play
+              size={16}
+              className="fill-current group-hover:scale-110 smooth"
             />
           </button>
+
+          {/* SLIDE NUMBER + LINES */}
+          <div className="mt-8 flex items-center gap-4">
+            <span className="font-primary text-white/80 text-xs tracking-widest">
+              0{index + 1}
+            </span>
+
+            <div className="h-[1px] w-16 md:w-24 bg-white/50" />
+            <div className="h-[1px] w-16 md:w-24 bg-white/50" />
+          </div>
         </motion.div>
       </div>
 
-      {/* ================= BOTTOM PROGRESS LINE ================= */}
+      {/* =================================================
+         PROGRESS BAR
+      ================================================= */}
       <motion.div
         key={index}
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
         transition={{ duration: 5, ease: "linear" }}
-        className="absolute bottom-0 left-0 h-[4px] bg-secondary"
+        className="absolute bottom-0 left-0 h-[3px] bg-secondary"
       />
     </section>
   );

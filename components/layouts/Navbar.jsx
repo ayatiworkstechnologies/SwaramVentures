@@ -21,31 +21,34 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  /* ================= Lock body scroll ================= */
+  /* lock body scroll when drawer open */
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
   }, [open]);
 
   return (
-    <header className="navbar z-50">
-      <div className="container-x flex items-center justify-between h-20">
+    <header className="navbar fixed top-0 w-full bg-white shadow-soft z-50">
+
+      {/* ================= CONTAINER ================= */}
+      <div className="container flex items-center justify-between">
 
         {/* ================= LOGO ================= */}
-        <Link href="/" className="flex items-center h-10 shrink-0">
+        <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/logo.png"
             alt="Swaram Ventures"
             width={150}
-            height={35}
+            height={36}
             priority
-            className="h-10 w-auto object-contain"
+            className="h-8 w-auto object-contain"
           />
         </Link>
 
 
 
         {/* ================= DESKTOP MENU ================= */}
-        <nav className="hidden lg:flex items-center gap-8 font-primary text-sm">
+        <nav className="hidden lg:flex items-center gap-8 font-primary text-sm text-primary">
+
           {links.map((item) => {
             const active = pathname === item.href;
 
@@ -54,43 +57,40 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`
-                  smooth
-                  ${active ? "font-bold text-primary" : "hover:text-secondary"}
+                  relative smooth flex items-center
+                  ${active
+                    ? "nav-active font-bold text-primary"
+                    : "text-primary/80 hover:text-primary"}
                 `}
               >
-                {active && (
-                  <span className="text-secondary mr-1 font-bold">/</span>
-                )}
                 {item.name}
               </Link>
             );
           })}
+
         </nav>
 
 
 
-        {/* ================= MOBILE TOGGLE (Hamburger → X) ================= */}
+        {/* ================= MOBILE TOGGLE ================= */}
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden relative w-7 h-7 flex flex-col justify-center items-center"
         >
           <span
-            className={`
-              absolute h-[2px] w-6 bg-black transition-all duration-300
-              ${open ? "rotate-45" : "-translate-y-2"}
-            `}
+            className={`absolute h-[2px] w-6 bg-primary smooth ${
+              open ? "rotate-45" : "-translate-y-2"
+            }`}
           />
           <span
-            className={`
-              absolute h-[2px] w-6 bg-black transition-all duration-300
-              ${open ? "opacity-0" : ""}
-            `}
+            className={`absolute h-[2px] w-6 bg-primary smooth ${
+              open ? "opacity-0" : ""
+            }`}
           />
           <span
-            className={`
-              absolute h-[2px] w-6 bg-black transition-all duration-300
-              ${open ? "-rotate-45" : "translate-y-2"}
-            `}
+            className={`absolute h-[2px] w-6 bg-primary smooth ${
+              open ? "-rotate-45" : "translate-y-2"
+            }`}
           />
         </button>
       </div>
@@ -104,35 +104,28 @@ export default function Navbar() {
             {/* BACKDROP */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.45 }}
+              animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
               className="fixed inset-0 bg-black z-40"
             />
 
-
-
-            {/* LEFT → RIGHT DRAWER */}
+            {/* DRAWER */}
             <motion.div
-              initial={{ x: "-100%" }}     // 👈 from LEFT
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
+              transition={{ duration: 0.3 }}
               className="
-                fixed
-                top-0
-                left-0
-                h-screen
-                w-[80%]
-                max-w-sm
-                bg-white
-                shadow-lg2
+                fixed top-0 left-0
+                h-screen w-[80%] max-w-sm
+                bg-white shadow-lg2
                 z-50
-                px-8
-                py-16
+                px-8 py-16
               "
             >
-              <div className="flex flex-col gap-7 font-primary text-base">
+              <div className="flex flex-col gap-6 font-primary text-lg">
+
                 {links.map((item) => {
                   const active = pathname === item.href;
 
@@ -142,17 +135,17 @@ export default function Navbar() {
                       href={item.href}
                       onClick={() => setOpen(false)}
                       className={`
-                        smooth
-                        ${active ? "font-bold text-primary" : ""}
+                        smooth flex items-center
+                        ${active
+                          ? "nav-active font-bold text-primary"
+                          : "text-gray-600 hover:text-primary"}
                       `}
                     >
-                      {active && (
-                        <span className="text-secondary mr-1">/</span>
-                      )}
                       {item.name}
                     </Link>
                   );
                 })}
+
               </div>
             </motion.div>
           </>

@@ -31,97 +31,108 @@ export default function PortfolioSection() {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariant = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 25 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
   };
 
   return (
     <section className="section-y bg-white">
-      <div className="container-x">
-
-        {/* ================= HEADER ================= */}
-        <div className="grid lg:grid-cols-2 gap-12 items-end mb-12">
-
+      <div className="container">
+        {/* =================================================
+           HEADER
+        ================================================= */}
+        <div className="grid lg:grid-cols-2 gap-12 items-end mb-14">
           {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <p className="tag">
-              Portfolio
-            </p>
+          <div>
+            <p className="tag mb-3">Portfolio</p>
 
-            <h2 className="section-title">
-              What We Build
-            </h2>
+            <h2 className="section-title">What We Build</h2>
 
-            <div className="w-16 h-[2px] bg-primary mt-6" />
-          </motion.div>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 120 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mb-4 h-[2px] bg-secondary"
+            />
+          </div>
 
           {/* RIGHT */}
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-            viewport={{ once: true }}
-            className="text-body max-w-xl"
-          >
+          <p className="text-body max-w-xl">
             A diverse portfolio of companies operating across healthcare, AI,
             robotics, fintech, and global trade—driving innovation, scale, and
             long-term value across industries.
-          </motion.p>
+          </p>
         </div>
 
-
-
-        {/* ================= CARDS ================= */}
+        {/* =================================================
+           CLEAN GRID (NO CARD STYLE)
+        ================================================= */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          viewport={{ once: true }}
+          className="
+            grid
+            gap-8
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-4
+          "
         >
           {items.map((item, i) => (
             <motion.div
               key={item.title}
               variants={itemVariant}
-              className="card group cursor-pointer hover:shadow-lg2 p-4 pb-6 transition-all duration-300 hover:-translate-y-2"
+              className="group cursor-pointer"
             >
-              {/* IMAGE (same clean rectangular style) */}
-              <div className="relative w-full h-[170px] overflow-hidden rounded-soft mb-5">
+              {/* IMAGE */}
+              <div className="relative w-full h-[190px] overflow-hidden mb-4">
                 <Image
                   src={item.img}
                   alt={item.title}
                   fill
-                  sizes="(max-width:768px) 100vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition duration-500"
+                  className="
+                    object-cover
+                    transition
+                    duration-700
+                    group-hover:scale-105
+                  "
                 />
               </div>
 
-              {/* TEXT */}
-              <div>
-                <h3 className="font-primary text-primary text-lg font-bold mb-2">
-                  {item.title}
-                </h3>
+              {/* TITLE */}
+              <h3
+                className="
+                font-primary
+                text-primary
+                text-base
+                font-semibold
+                mb-2
+              "
+              >
+                {item.title}
+              </h3>
 
-                <p className="text-body-card text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+              {/* DESCRIPTION */}
+              <p
+                className="
+                text-body-card
+                text-sm
+                leading-relaxed
+                opacity-80
+              "
+              >
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
