@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Strategy - Swaram Ventures",
+  description:
+    "Operational expertise and strategic guidance to scale startups.",
+};
+
 export default function StrategyPage() {
   return (
     <main className="pt-24 pb-20">

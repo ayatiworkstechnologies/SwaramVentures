@@ -5,6 +5,11 @@ import PortfolioSection from "@/components/home/PortfolioSection";
 import WhyExist from "@/components/home/WhyExist";
 import Hero from "@/components/layouts/Hero";
 
+export const metadata = {
+  title: "Home - Swaram Ventures",
+  description:
+    "Backing bold founders in healthcare, AI, robotics, digital finance, and global trade logistics.",
+};
 
 export default function Home() {
   return (

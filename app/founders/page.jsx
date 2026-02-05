@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "For Founders - Swaram Ventures",
+  description: "Partner with us to build the future.",
+};
+
 export default function FoundersPage() {
   return (
     <main className="pt-24 pb-20">

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Contact - Swaram Ventures",
+  description: "Get in touch for investment inquiries and more.",
+};
+
 export default function ContactPage() {
   return (
     <main className="pt-24 pb-20">

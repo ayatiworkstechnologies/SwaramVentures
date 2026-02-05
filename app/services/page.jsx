@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Services - Swaram Ventures",
+  description:
+    "Strategic consulting, network access, and operational support for portfolio companies.",
+};
+
 export default function ServicesPage() {
   return (
     <main className="pt-24 pb-20">

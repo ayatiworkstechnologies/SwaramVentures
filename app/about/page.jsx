@@ -4,6 +4,11 @@ import FounderSection from "@/components/about/FounderSection";
 import VisionMissionSection from "@/components/about/VisionMissionSection";
 import HeroSlider from "@/components/layouts/HeroSlider";
 
+export const metadata = {
+  title: "About - Swaram Ventures",
+  description: "Backing bold founders",
+};
+
 export default function AboutPage() {
   return (
     <>

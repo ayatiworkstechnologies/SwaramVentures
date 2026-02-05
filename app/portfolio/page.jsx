@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Portfolio - Swaram Ventures",
+  description: "Explore the bold founders and companies we back.",
+};
+
 export default function PortfolioPage() {
   return (
     <main className="pt-24 pb-20">

@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Industries - Swaram Ventures",
+  description:
+    "High-impact sectors: Healthcare, AI, Robotics, Fintech, and Logistics.",
+};
+
 export default function IndustriesPage() {
   return (
     <main className="pt-24 pb-20">
