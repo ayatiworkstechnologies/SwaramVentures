@@ -8,38 +8,38 @@ export default function CoreValuesSection() {
   const values = [
     {
       icon: "/assets/core.png",
-      title: "Innovation",
-      text: "Bold ideas create better futures.",
+      title: "Healthcare",
+      text: "Advanced healthcare systems, medical supply chains and patient-centric solutions.",
     },
     {
       icon: "/assets/core.png",
-      title: "Strategy",
-      text: "Long-term clarity drives decisions.",
+      title: "Infrastructure & Construction",
+      text: "Large-scale construction, industrial projects and engineering development.",
     },
     {
       icon: "/assets/core.png",
-      title: "Partnership",
-      text: "Deep collaboration with founders.",
+      title: "Global Trading",
+      text: "Raw material sourcing, commodities trading and international logistics.",
     },
     {
       icon: "/assets/core.png",
-      title: "Impact",
-      text: "Scalable solutions worldwide.",
+      title: "Logistics & Supply Chain Management",
+      text: "Freight forwarding, warehousing and distribution networks worldwide.",
     },
     {
       icon: "/assets/core.png",
-      title: "Integrity",
-      text: "Transparency and governance first.",
+      title: "Preventive & Supportive Solutions",
+      text: "Preventive healthcare, telemedicine and diagnostics integration.",
     },
     {
       icon: "/assets/core.png",
-      title: "Excellence",
-      text: "Consistent operational quality.",
+      title: "Energy Solutions",
+      text: "Renewable energy, power infrastructure and engineering services.",
     },
   ];
 
   const visible = 4;
-  const pages = Math.ceil(values.length / visible);
+  const maxIndex = values.length - visible;
   const [index, setIndex] = useState(0);
 
   return (
@@ -48,85 +48,112 @@ export default function CoreValuesSection() {
         {/* HEADER */}
         <div className="mb-10">
           <h2 className="section-title text-left">Core Values</h2>
-          <div className="w-16 h-[2px] bg-primary mt-3" />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 120 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className=" mb-4 h-[2px] bg-secondary"
+          />
         </div>
 
         {/* ================= SLIDER ================= */}
         <div className="relative">
-          {/* TRACK */}
-          <motion.div
-            animate={{ x: `-${index * 100}%` }}
-            transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className="flex"
-          >
-            {Array.from({ length: pages }).map((_, pageIndex) => (
-              <div
-                key={pageIndex}
-                className="
-                  grid
-                  grid-cols-1
-                  sm:grid-cols-2
-                  md:grid-cols-4
-                  gap-6
-                  shrink-0
-                  w-full
-                "
-              >
-                {values
-                  .slice(pageIndex * visible, pageIndex * visible + visible)
-                  .map((item, i) => (
-                    <div
-                      key={i}
-                      className="
-                        bg-white
-                        border border-slate-100
-                        shadow-sm
-                        hover:shadow-md
-                        smooth hover:-translate-y-1
-                      "
-                    >
-                      {/* IMAGE */}
-                      <div className="relative w-full h-28">
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-
-                      {/* CONTENT */}
-                      <div className="p-5 text-center">
-                        <h3 className="font-primary text-primary font-semibold mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-body-card text-xs text-gray-500">
-                          {item.text}
-                        </p>
-                      </div>
+          {/* ================= SLIDER ================= */}
+          <div className="relative">
+            {/* ===== MOBILE SCROLL ===== */}
+            {/* ===== MOBILE SCROLL ===== */}
+            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide sm:hidden items-stretch">
+              {values.map((item, i) => (
+                <div key={i} className="min-w-[85%] snap-start flex">
+                  {/* CARD */}
+                  <div
+                    className="
+          bg-white
+          border border-slate-200
+          shadow-sm
+          flex flex-col
+          w-full
+          h-full
+        "
+                  >
+                    {/* IMAGE */}
+                    <div className="relative w-full h-36 shrink-0">
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  ))}
-              </div>
-            ))}
-          </motion.div>
 
-          {/* ================= BOTTOM TWO LINES ================= */}
-          <div className="mt-8 flex justify-center gap-3">
-            {Array.from({ length: pages }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setIndex(i)}
-                className={`
-                  h-[3px]
-                  transition-all duration-300
-                  ${
-                    index === i
-                      ? "w-16 bg-primary"
-                      : "w-10 bg-slate-300 hover:bg-slate-400"
-                  }
-                `}
-              />
-            ))}
+                    {/* CONTENT */}
+                    <div className="p-5 text-center flex flex-col flex-1">
+                      <h3 className="font-primary text-primary font-semibold text-xl mb-2">
+                        {item.title}
+                      </h3>
+
+                      <div className="mx-auto mb-4 h-[2px] bg-secondary w-16" />
+
+                      {/* flex-1 makes all cards equal */}
+                      <p className="text-body-card text-sm leading-relaxed flex-1">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* ===== DESKTOP SLIDER (UNCHANGED) ===== */}
+            <motion.div
+              animate={{ x: `-${index * 25}%` }}
+              transition={{ type: "spring", stiffness: 120, damping: 18 }}
+              className="hidden sm:flex gap-6 items-stretch"
+            >
+              {values.map((item, i) => (
+                <div key={i} className="w-[48%] md:w-[23%] shrink-0 flex">
+                  <div className="bg-white border border-slate-200 shadow-sm hover:shadow-md smooth hover:-translate-y-1 flex flex-col w-full">
+                    <div className="relative w-full h-36 shrink-0">
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="p-5 text-center flex flex-col flex-1">
+                      <h3 className="font-primary text-primary font-semibold text-xl mb-2">
+                        {item.title}
+                      </h3>
+
+                      <div className="mx-auto mb-4 h-[2px] bg-secondary w-16" />
+
+                      <p className="text-body-card leading-relaxed flex-1">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* ===== DESKTOP INDICATORS ONLY ===== */}
+            <div className="hidden sm:flex mt-10 justify-center gap-3">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button key={i} onClick={() => setIndex(i)} className="group">
+                  <motion.div
+                    animate={{ width: index === i ? 40 : 18 }}
+                    transition={{ duration: 0.25 }}
+                    className={`h-[6px] cursor-pointer ${
+                      index === i
+                        ? "bg-secondary"
+                        : "bg-primary group-hover:bg-secondary"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

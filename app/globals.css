@@ -56,13 +56,7 @@
 ================================================= */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-secondary);
-
-  /* fluid body scale */
-  font-size: clamp(14px, 1vw, 16px);
-
   letter-spacing: -0.02em;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -126,7 +120,7 @@ p {
 
 .bg-primary { background: var(--primary); }
 .bg-secondary { background: var(--secondary); }
-.bg-soft { background: var(--soft); }
+
 
 .text-primary { color: var(--primary); }
 .text-secondary { color: var(--secondary); }
@@ -340,4 +334,13 @@ p {
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 20px;
+}
+
+/* hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

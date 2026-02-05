@@ -38,8 +38,18 @@ Expert in hospital transformation, digital health innovation, and patient-centri
   ];
 
   return (
-    <section className="section-y bg-white">
+    <section className="py-6 bg-white">
       <div className="container">
+        {/* HEADER */}
+        <div className="mb-10">
+          <h2 className="section-title text-left">For Founders</h2>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 120 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className=" mb-4 h-[2px] bg-secondary"
+          />
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {team.map((item, i) => (
             <motion.div
@@ -48,10 +58,10 @@ Expert in hospital transformation, digital health innovation, and patient-centri
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-lg p-7 smooth hover:-translate-y-2"
+              className="bg-white rounded-2xl shadow-lg p-4 smooth hover:-translate-y-2"
             >
               {/* ================= TOP ROW ================= */}
-              <div className="flex items-center gap-6 mb-5">
+              <div className="flex items-center mb-5">
                 {/* BIGGER IMAGE */}
                 <div className="relative w-28 h-32 md:w-32 md:h-36 lg:w-36 lg:h-40 rounded-xl overflow-hidden shrink-0">
                   <Image

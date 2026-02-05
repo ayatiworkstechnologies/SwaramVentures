@@ -46,7 +46,7 @@ export default function PortfolioSection() {
         {/* =================================================
            HEADER
         ================================================= */}
-        <div className="grid lg:grid-cols-2 gap-12 items-end mb-14">
+        <div className="grid lg:grid-cols-2 gap-6 items-end mb-6">
           {/* LEFT */}
           <div>
             <p className="tag mb-3">Portfolio</p>

@@ -31,7 +31,7 @@ export default function VisionMissionSection() {
           className="
             relative
             bg-white
-            rounded-[32px]
+            rounded-[20px]
             shadow-[0_20px_60px_rgba(0,0,0,0.08)]
             overflow-hidden
           "
