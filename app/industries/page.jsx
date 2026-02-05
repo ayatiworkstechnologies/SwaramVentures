@@ -1,3 +1,5 @@
+import HeroSlider from "@/components/layouts/HeroSlider";
+
 export const metadata = {
   title: "Industries - Swaram Ventures",
   description:
@@ -6,18 +8,31 @@ export const metadata = {
 
 export default function IndustriesPage() {
   return (
-    <main className="pt-24 pb-20">
-      <section className="container">
-        <div className="py-12 md:py-20 lg:py-24">
-          <p className="tag">Sectors</p>
-          <h1 className="section-title mb-6">Industries</h1>
+    <>
+      <HeroSlider
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Industries" }]}
+        slides={[
+          {
+            image: "/banners/hero-banner.jpg",
+            title: "Transforming High-Impact Sectors",
+            subtitle:
+              "We focus on Healthcare, Artificial Intelligence, Robotics, Digital Finance, and Global Trade Logistics.",
+            primaryBtn: { label: "View Services", href: "/services" },
+            secondaryBtn: { label: "Contact Us", href: "/contact" },
+          },
+        ]}
+      />
+      <section className="section-y bg-white">
+        <div className="container">
+          <h2 className="section-title mb-6">Sectors We Cover</h2>
           <div className="w-20 h-1 bg-secondary mb-8" />
           <p className="text-body max-w-3xl">
-            We focus on high-impact sectors including Healthcare, Artificial
-            Intelligence, Robotics, Digital Finance, and Global Trade Logistics.
+            Our investment thesis is driven by a deep understanding of these
+            core industries, where technology can unlock massive value and
+            efficiency.
           </p>
         </div>
       </section>
-    </main>
+    </>
   );
 }

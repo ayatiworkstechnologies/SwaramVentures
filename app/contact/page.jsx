@@ -1,3 +1,5 @@
+import HeroSlider from "@/components/layouts/HeroSlider";
+
 export const metadata = {
   title: "Contact - Swaram Ventures",
   description: "Get in touch for investment inquiries and more.",
@@ -5,24 +7,40 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="pt-24 pb-20">
-      <section className="container">
-        <div className="py-12 md:py-20 lg:py-24">
-          <p className="tag">Get in Touch</p>
-          <h1 className="section-title mb-6">Contact Us</h1>
+    <>
+      <HeroSlider
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+        slides={[
+          {
+            image: "/banners/hero-banner.jpg",
+            title: "Get in Touch",
+            subtitle:
+              "Reach out to our team for investment inquiries, media, or general questions.",
+            primaryBtn: {
+              label: "Email Us",
+              href: "mailto:hello@swaramventures.com",
+            },
+          },
+        ]}
+      />
+      <section className="section-y bg-white">
+        <div className="container">
+          <h2 className="section-title mb-6">Contact Information</h2>
           <div className="w-20 h-1 bg-secondary mb-8" />
-          <p className="text-body max-w-3xl mb-12">
-            Reach out to our team for investment inquiries, media, or general
-            questions.
-          </p>
 
-          <div className="max-w-xl bg-white p-8 rounded-xl2 shadow-soft border border-gray-100">
-            <p className="text-body font-primary">
-              <strong>Email:</strong> hello@swaramventures.com
+          <div className="max-w-xl bg-white p-8 rounded-2xl shadow-soft border border-gray-100">
+            <p className="text-body font-primary text-lg">
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:hello@swaramventures.com"
+                className="hover:text-secondary transition-colors"
+              >
+                hello@swaramventures.com
+              </a>
             </p>
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

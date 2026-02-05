@@ -1,3 +1,5 @@
+import HeroSlider from "@/components/layouts/HeroSlider";
+
 export const metadata = {
   title: "Services - Swaram Ventures",
   description:
@@ -6,19 +8,29 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="pt-24 pb-20">
-      <section className="container">
-        <div className="py-12 md:py-20 lg:py-24">
-          <p className="tag">What We Do</p>
-          <h1 className="section-title mb-6">Services</h1>
+    <>
+      <HeroSlider
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
+        slides={[
+          {
+            image: "/banners/hero-banner.jpg",
+            title: "Comprehensive Support for Scale",
+            subtitle:
+              "Beyond capital, we offer a full suite of services to support our portfolio companies, including strategic consulting, network access, and operational support.",
+            primaryBtn: { label: "Contact Us", href: "/contact" },
+          },
+        ]}
+      />
+      <section className="section-y bg-white">
+        <div className="container">
+          <h2 className="section-title mb-6">How We Help</h2>
           <div className="w-20 h-1 bg-secondary mb-8" />
           <p className="text-body max-w-3xl">
-            Beyond capital, we offer a full suite of services to support our
-            portfolio companies, including strategic consulting, network access,
-            and operational support.
+            We act as an extension of your team, providing the resources and
+            expertise needed to navigate complex markets and accelerate growth.
           </p>
         </div>
       </section>
-    </main>
+    </>
   );
 }
