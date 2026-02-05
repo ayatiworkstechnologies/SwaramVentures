@@ -1,56 +1,88 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate initial loading or wait for resources
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // 2 seconds minimum load time
-
+    // Adjust timing as needed, currently set to 3 seconds to ensure user sees it
+    const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
+  // Standard pulsing animation variant
+  const pulseVariants = {
+    initial: { opacity: 0.5, scale: 0.95 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {loading && (
         <motion.div
-          key="preloader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] bg-white flex items-center justify-center pointer-events-none"
+          exit={{ opacity: 0, transition: { duration: 0.8 } }}
+          className="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center"
         >
-          <div className="relative">
-            {/* Logo */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative z-10"
+          <motion.div
+            className="relative w-32 h-32 md:w-40 md:h-40"
+            variants={pulseVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <svg
+              viewBox="0 0 1200 1200"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
             >
-              <Image
-                src="/logo.png"
-                alt="Loading..."
-                width={180}
-                height={50}
-                className="object-contain"
-                priority
+              {/* BLUE LEFT "F" */}
+              <path
+                d="M160 940 L160 420 A260 260 0 0 1 420 160 L880 160 L880 300 L440 300 A140 140 0 0 0 300 440 L300 600 L880 600 L880 740 L300 740 L300 940 Z"
+                fill="#144A8B"
               />
-            </motion.div>
 
-            {/* Pulse Ring */}
-            <motion.div
-              animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
-              className="absolute inset-0 -m-8 bg-secondary/10 rounded-full blur-xl z-0"
-            />
-          </div>
+              {/* BLUE RIGHT "T" */}
+              <g fill="#144A8B">
+                <rect x="300" y="560" width="650" height="140" />
+                <rect x="950" y="360" width="140" height="560" />
+              </g>
+
+              {/* GREEN "L" (Middle) */}
+              <path
+                d="M300 620 L780 620 A260 260 0 0 0 1040 360 L1040 260 L900 260 L900 360 A120 120 0 0 1 780 480 L300 480 Z"
+                fill="#14A83B"
+              />
+
+              {/* ORANGE ARROW (Top Right) */}
+              <polygon
+                points="696.8 72.25 755.59 131.05 970.2 131.05 970.25 345.72 1029.06 404.52 1029.06 72.25 696.8 72.25"
+                fill="#F15A29"
+              />
+            </svg>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-8 flex flex-col items-center"
+          >
+            <span className="text-[#144A8B] font-bold text-2xl tracking-[0.3em] uppercase">
+              Swaram
+            </span>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
