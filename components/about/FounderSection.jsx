@@ -9,7 +9,7 @@ export default function LeadershipSection() {
       tag: "The Finance Leader",
       name: "K Swaminathan",
       role: "Founder & Chairman",
-      img: "/assets/team-1.png",
+      img: "/assets/ceo.png",
       desc: `Nearly 40 years of experience across India, Nigeria, Gabon, and Dubai.
 Expertise in financial leadership, strategic planning, and risk management.
 Successful management of multi-billion-dollar investments and large-scale infrastructure projects.
@@ -19,7 +19,7 @@ Implemented advanced financial systems, optimized supply chains, and ensured eff
       tag: "The Power and Energy Leader",
       name: "K Ramasubramanian",
       role: "Founder & CEO",
-      img: "/assets/team-1.png",
+      img: "/assets/cto.png",
       desc: `Over 34 years of experience in power, energy, and infrastructure sectors.
 Worked with Voltas (TATA), Kirloskar, FKI PLC, AADI International, PRANSA International FZC & more.
 Deep expertise in power solutions, EPC, energy systems, and industrial engineering.
@@ -29,7 +29,7 @@ Global experience across India, Middle East, and Africa in market expansion and 
       tag: "The Visionary Healthcare Leader",
       name: "Dr. Gopinath Sabnivise",
       role: "Managing Director",
-      img: "/assets/team-1.png",
+      img: "/assets/manager.png",
       desc: `30+ years of experience in healthcare strategy, operations & digital transformation.
 Leadership roles at Apollo Hospitals, Fortis, Aster DM, VPS, NMC & Canadian Specialist Hospital.
 Recipient of UAE Golden Visa, CEO of the Year (2020-2024), Honorary Doctorate.

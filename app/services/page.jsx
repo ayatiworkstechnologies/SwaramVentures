@@ -1,4 +1,7 @@
 import HeroSlider from "@/components/layouts/HeroSlider";
+import CareServicesSection from "@/components/services/CareServicesSection";
+import HowWeWork from "@/components/services/HowWeWork";
+import ServicePhilosophy from "@/components/services/ServicePhilosophy";
 
 export const metadata = {
   title: "Services - Swaram Ventures",
@@ -21,16 +24,9 @@ export default function ServicesPage() {
           },
         ]}
       />
-      <section className="section-y bg-white">
-        <div className="container">
-          <h2 className="section-title mb-6">How We Help</h2>
-          <div className="w-20 h-1 bg-secondary mb-8" />
-          <p className="text-body max-w-3xl">
-            We act as an extension of your team, providing the resources and
-            expertise needed to navigate complex markets and accelerate growth.
-          </p>
-        </div>
-      </section>
+      <ServicePhilosophy />
+      <CareServicesSection />
+      <HowWeWork />
     </>
   );
 }

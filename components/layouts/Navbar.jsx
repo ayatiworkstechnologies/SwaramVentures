@@ -12,8 +12,8 @@ export default function Navbar() {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Strategy", href: "/strategy" },
-    { name: "Industries", href: "/industries" },
+    // { name: "Strategy", href: "/strategy" },
+    // { name: "Industries", href: "/industries" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "For Founders", href: "/founders" },
@@ -28,10 +28,8 @@ export default function Navbar() {
 
   return (
     <header className="navbar fixed top-0 w-full bg-white shadow-soft z-50">
-
       {/* ================= CONTAINER ================= */}
       <div className="container flex items-center justify-between">
-
         {/* ================= LOGO ================= */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
@@ -44,11 +42,8 @@ export default function Navbar() {
           />
         </Link>
 
-
-
         {/* ================= DESKTOP MENU ================= */}
         <nav className="hidden lg:flex items-center gap-8 font-primary text-sm text-primary">
-
           {links.map((item) => {
             const active = pathname === item.href;
 
@@ -58,19 +53,18 @@ export default function Navbar() {
                 href={item.href}
                 className={`
                   relative smooth flex items-center
-                  ${active
-                    ? "nav-active font-bold text-primary"
-                    : "text-primary/80 hover:text-primary"}
+                  ${
+                    active
+                      ? "nav-active font-bold text-primary"
+                      : "text-primary/80 hover:text-primary"
+                  }
                 `}
               >
                 {item.name}
               </Link>
             );
           })}
-
         </nav>
-
-
 
         {/* ================= MOBILE TOGGLE ================= */}
         <button
@@ -94,8 +88,6 @@ export default function Navbar() {
           />
         </button>
       </div>
-
-
 
       {/* ================= MOBILE DRAWER ================= */}
       <AnimatePresence>
@@ -125,7 +117,6 @@ export default function Navbar() {
               "
             >
               <div className="flex flex-col gap-6 font-primary text-lg">
-
                 {links.map((item) => {
                   const active = pathname === item.href;
 
@@ -136,16 +127,17 @@ export default function Navbar() {
                       onClick={() => setOpen(false)}
                       className={`
                         smooth flex items-center
-                        ${active
-                          ? "nav-active font-bold text-primary"
-                          : "text-gray-600 hover:text-primary"}
+                        ${
+                          active
+                            ? "nav-active font-bold text-primary"
+                            : "text-gray-600 hover:text-primary"
+                        }
                       `}
                     >
                       {item.name}
                     </Link>
                   );
                 })}
-
               </div>
             </motion.div>
           </>

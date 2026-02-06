@@ -1,4 +1,8 @@
 import HeroSlider from "@/components/layouts/HeroSlider";
+import CompaniesSection from "@/components/portfolio/CompaniesSection";
+import PortfolioBanner from "@/components/portfolio/PortfolioBanner";
+import PortfolioLayoutSection from "@/components/portfolio/PortfolioLayoutSection";
+import ValueCreationSection from "@/components/portfolio/ValueCreationSection";
 
 export const metadata = {
   title: "Portfolio - Swaram Ventures",
@@ -20,16 +24,10 @@ export default function PortfolioPage() {
           },
         ]}
       />
-      <section className="section-y bg-white">
-        <div className="container">
-          <h2 className="section-title mb-6">Investments</h2>
-          <div className="w-20 h-1 bg-secondary mb-8" />
-          <p className="text-body max-w-3xl">
-            Our portfolio spans across diverse high-growth sectors, reflecting
-            our commitment to backing innovation that matters.
-          </p>
-        </div>
-      </section>
+      <CompaniesSection />
+      <PortfolioLayoutSection />
+      <ValueCreationSection />
+      <PortfolioBanner />
     </>
   );
 }

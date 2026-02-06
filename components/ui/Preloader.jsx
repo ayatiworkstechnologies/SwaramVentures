@@ -7,23 +7,51 @@ export default function Preloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Adjust timing as needed, currently set to 3 seconds to ensure user sees it
-    const timer = setTimeout(() => setLoading(false), 3000);
+    // 3.5 seconds to allow the full drawing animation to complete
+    const timer = setTimeout(() => setLoading(false), 3500);
     return () => clearTimeout(timer);
   }, []);
 
-  // Standard pulsing animation variant
-  const pulseVariants = {
-    initial: { opacity: 0.5, scale: 0.95 },
-    animate: {
+  const containerVariants = {
+    show: {
+      transition: {
+        staggerChildren: 0.2, // Stagger drawing of each part
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
+  const drawVariants = {
+    hidden: {
+      pathLength: 0,
+      opacity: 0,
+    },
+    show: {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: {
+          type: "spring",
+          duration: 2,
+          bounce: 0,
+        },
+        opacity: {
+          duration: 0.01,
+        },
+      },
+    },
+  };
+
+  const blockVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: {
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 1,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
+      transition: { type: "spring", duration: 0.8 },
     },
   };
 
@@ -31,55 +59,92 @@ export default function Preloader() {
     <AnimatePresence>
       {loading && (
         <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.8 } }}
+          key="preloader"
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          variants={containerVariants}
           className="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center"
         >
-          <motion.div
-            className="relative w-32 h-32 md:w-40 md:h-40"
-            variants={pulseVariants}
-            initial="initial"
-            animate="animate"
-          >
+          <div className="relative w-32 h-32 md:w-48 md:h-48">
             <svg
-              viewBox="0 0 1200 1200"
+              viewBox="0 0 2048 1536"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="w-full h-full"
             >
-              {/* BLUE LEFT "F" */}
-              <path
-                d="M160 940 L160 420 A260 260 0 0 1 420 160 L880 160 L880 300 L440 300 A140 140 0 0 0 300 440 L300 600 L880 600 L880 740 L300 740 L300 940 Z"
-                fill="#144A8B"
+              {/* ================= BLUE SHAPE ================= */}
+              <motion.g fill="#164A8C">
+                {/* Left rounded C frame - Animated Path */}
+                <motion.path
+                  d="M120 600 A360 360 0 0 1 480 240 H1120 V360 H500 A240 240 0 0 0 260 600 V1120 H1120 V1240 H120 Z"
+                  variants={drawVariants}
+                  stroke="#164A8C"
+                  strokeWidth="2"
+                  fill="#164A8C"
+                  initial={{ fillOpacity: 0, strokeOpacity: 1 }}
+                  animate={{ fillOpacity: 1, strokeOpacity: 0 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                />
+
+                {/* Middle bar - Animated Block */}
+                <motion.rect
+                  x="640"
+                  y="720"
+                  width="980"
+                  height="150"
+                  variants={blockVariants}
+                />
+
+                {/* Right vertical - Animated Block */}
+                {/* 
+                    ADJUSTMENT: Shortened Height to prevent overlap with Green L.
+                    Green L top is at Y=860. Blue starts at Y=240.
+                    Height = 860 - 240 = 620.
+                */}
+                <motion.rect
+                  x="1500"
+                  y="240"
+                  width="170"
+                  height="620"
+                  variants={blockVariants}
+                />
+              </motion.g>
+
+              {/* ================= ORANGE TOP CORNER ================= */}
+              <motion.path
+                fill="#F05A28"
+                d="M1180 120 H1980 V560 L1830 420 V260 H1300 Z"
+                variants={drawVariants}
+                stroke="#F05A28"
+                strokeWidth="2"
+                initial={{ fillOpacity: 0, strokeOpacity: 1 }}
+                animate={{ fillOpacity: 1, strokeOpacity: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
               />
 
-              {/* BLUE RIGHT "T" */}
-              <g fill="#144A8B">
-                <rect x="300" y="560" width="650" height="140" />
-                <rect x="950" y="360" width="140" height="560" />
-              </g>
-
-              {/* GREEN "L" (Middle) */}
-              <path
-                d="M300 620 L780 620 A260 260 0 0 0 1040 360 L1040 260 L900 260 L900 360 A120 120 0 0 1 780 480 L300 480 Z"
-                fill="#14A83B"
-              />
-
-              {/* ORANGE ARROW (Top Right) */}
-              <polygon
-                points="696.8 72.25 755.59 131.05 970.2 131.05 970.25 345.72 1029.06 404.52 1029.06 72.25 696.8 72.25"
-                fill="#F15A29"
+              {/* ================= GREEN FULL CURVE (FIXED) ================= */}
+              {/* "green vector only add the bottom" - It is now the sole bottom right element. */}
+              <motion.path
+                fill="#11B04A"
+                d="M640 1280 H1220 A420 420 0 0 0 1640 860 V1040 A600 600 0 0 1 1040 1280 Z"
+                variants={drawVariants}
+                stroke="#11B04A"
+                strokeWidth="2"
+                initial={{ fillOpacity: 0, strokeOpacity: 1 }}
+                animate={{ fillOpacity: 1, strokeOpacity: 0 }}
+                transition={{ delay: 1.0, duration: 0.5 }}
               />
             </svg>
-          </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
             className="mt-8 flex flex-col items-center"
           >
-            <span className="text-[#144A8B] font-bold text-2xl tracking-[0.3em] uppercase">
+            <span className="text-[#164A8C] font-bold text-2xl tracking-[0.3em] uppercase">
               Swaram
             </span>
           </motion.div>
