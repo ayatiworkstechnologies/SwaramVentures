@@ -9,15 +9,15 @@ export default function AIBannerSlider() {
   const slides = [
     {
       text: "Intelligent systems designed to optimize processes, improve accuracy, and drive smarter decisions.",
-      img: "/assets/slider-1.png",
+      img: "/assets/slider-1.jpg",
     },
     {
       text: "Smart robotics enabling precision automation and scalable manufacturing solutions.",
-      img: "/assets/slider-2.png",
+      img: "/assets/slider-2.jpg",
     },
     {
       text: "Digital infrastructure powering innovation across healthcare, fintech and AI platforms.",
-      img: "/assets/slider-3.png",
+      img: "/assets/slider-3.jpg",
     },
   ];
 
