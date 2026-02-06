@@ -7,34 +7,34 @@ import { motion } from "framer-motion";
 export default function CoreValuesSection() {
   const values = [
     {
-      icon: "/assets/core.png",
-      title: "Healthcare",
-      text: "Advanced healthcare systems, medical supply chains and patient-centric solutions.",
+      icon: "/assets/core-1.jpg",
+      title: "Vision-Driven Innovation",
+      text: "We believe bold ideas create better futures. We seek founders and teams with the curiosity, courage, and clarity to transform industries.",
     },
     {
-      icon: "/assets/core.png",
-      title: "Infrastructure & Construction",
-      text: "Large-scale construction, industrial projects and engineering development.",
+      icon: "/assets/core-2.jpg",
+      title: " Long-Term Partnership",
+      text: "We invest with commitment — not just capital. We build enduring relationships rooted in trust, transparency, and shared ambition.",
     },
     {
-      icon: "/assets/core.png",
-      title: "Global Trading",
-      text: "Raw material sourcing, commodities trading and international logistics.",
+      icon: "/assets/core-3.jpg",
+      title: " Impact First",
+      text: "We prioritize solutions that improve how the world builds, moves, and cares — valuing meaningful societal and environmental outcomes alongside financial returns.",
     },
     {
-      icon: "/assets/core.png",
-      title: "Logistics & Supply Chain Management",
-      text: "Freight forwarding, warehousing and distribution networks worldwide.",
+      icon: "/assets/core-4.jpg",
+      title: "Integrity & Respect",
+      text: "Ethical conduct, humility, and respect for diverse perspectives guide how we work with founders, investors, and communities.",
     },
     {
-      icon: "/assets/core.png",
-      title: "Preventive & Supportive Solutions",
-      text: "Preventive healthcare, telemedicine and diagnostics integration.",
+      icon: "/assets/core-5.jpg",
+      title: "Excellence in Execution",
+      text: "We push for operational discipline — helping founders solve real problems, scale sustainably, and deliver results with excellence.",
     },
     {
-      icon: "/assets/core.png",
-      title: "Energy Solutions",
-      text: "Renewable energy, power infrastructure and engineering services.",
+      icon: "/assets/core-6.jpg",
+      title: "Inclusive Growth",
+      text: "We champion diversity in teams, ideas, and opportunities — knowing that inclusive innovation unlocks broader impact and resilience.",
     },
   ];
 

@@ -16,15 +16,11 @@ export default function AboutPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         slides={[
           {
-            image: "/banners/hero-banner.jpg",
-            title: "Swaram Ventures backs bold founders in healthcare and AI.",
-            subtitle: "Investing early. Scaling globally.",
-            primaryBtn: { label: "Explore Portfolio", href: "/portfolio" },
-            secondaryBtn: { label: "Contact Us", href: "/contact" },
-          },
-          {
-            image: "/banners/hero-banner.jpg",
-            title: "Capital, strategy and networks to accelerate growth.",
+            image: "/banners/about-banner.jpg",
+            // title: "Swaram Ventures backs bold founders in healthcare and AI.",
+            // subtitle: "Investing early. Scaling globally.",
+            // primaryBtn: { label: "Explore Portfolio", href: "/portfolio" },
+            // secondaryBtn: { label: "Contact Us", href: "/contact" },
           },
         ]}
       />

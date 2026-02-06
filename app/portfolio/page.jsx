@@ -16,11 +16,11 @@ export default function PortfolioPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]}
         slides={[
           {
-            image: "/banners/hero-banner.jpg",
-            title: "Our Investment Portfolio",
-            subtitle:
-              "Explore the bold founders and companies we back. From early-stage disruptors to growth-stage market leaders.",
-            primaryBtn: { label: "Contact Us", href: "/contact" },
+            image: "/banners/potfolio-banner.jpg",
+            // title: "Our Investment Portfolio",
+            // subtitle:
+            //   "Explore the bold founders and companies we back. From early-stage disruptors to growth-stage market leaders.",
+            // primaryBtn: { label: "Contact Us", href: "/contact" },
           },
         ]}
       />

@@ -7,29 +7,34 @@ import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 const items = [
   {
-    title: "Advanced Manufacturing",
-    desc: "Innovative automation solutions enabling precision, efficiency, and scalable manufacturing.",
-    img: "/assets/industries-1.png",
+    title: "Healthcare & Digital Health",
+    desc: "Technology-driven solutions that enhance patient care, clinical efficiency, and health outcomes.",
+    img: "/assets/industries-1.jpg",
   },
   {
-    title: "Healthcare & Digital Health",
+    title: "Artificial Intelligence & Automation",
     desc: "Innovative digital solutions designed to improve healthcare delivery. Enhancing patient care through smart, connected technologies.",
-    img: "/assets/industries-2.png",
+    img: "/assets/industries-2.jpg",
   },
   {
     title: "Artificial Intelligence",
     desc: "Intelligent systems designed to optimize processes, improve accuracy, and drive smarter decisions.",
-    img: "/assets/industries-3.png",
+    img: "/assets/industries-3.jpg",
   },
   {
-    title: "Fintech Infrastructure",
-    desc: "Secure digital banking and embedded financial ecosystems.",
-    img: "/assets/industries-2.png",
+    title: "Robotics & Advanced Manufacturing",
+    desc: "Innovative automation solutions enabling precision, efficiency, and scalable manufacturing.",
+    img: "/assets/industries-4.jpg",
   },
   {
-    title: "Global Trade Logistics",
-    desc: "Smart supply chain and intelligent logistics platforms.",
-    img: "/assets/industries-1.png",
+    title: "Digital Banking & Fintech Infrastructure",
+    desc: "Secure, scalable platforms powering digital payments, embedded finance, and modern banking services.",
+    img: "/assets/industries-5.jpg",
+  },
+  {
+    title: "Global Trading, Supply Chain & Logistics",
+    desc: "Connected digital platforms streamlining global trade, logistics, and supply chain operations.",
+    img: "/assets/industries-6.jpg",
   },
 ];
 

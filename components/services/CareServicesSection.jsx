@@ -19,7 +19,7 @@ const services = [
       "Long-term value creation focus",
       "Structured capital deployment",
     ],
-    image: "/assets/service.png",
+    image: "/assets/industries-1.jpg",
     icon: <TrendingUp className="text-white w-5 h-5" />,
   },
   {
@@ -31,7 +31,7 @@ const services = [
       "Regulatory and compliance guidance",
       "Local partnerships and ecosystem access",
     ],
-    image: "/assets/service.png",
+    image: "/assets/industries-2.jpg",
     icon: <LayoutDashboard className="text-white w-5 h-5" />,
   },
   {
@@ -43,7 +43,7 @@ const services = [
       "Technology integration",
       "Talent and leadership development",
     ],
-    image: "/assets/service.png",
+    image: "/assets/industries-3.jpg",
     icon: <Zap className="text-white w-5 h-5" />,
   },
   {
@@ -55,7 +55,7 @@ const services = [
       "Risk mitigation strategies",
       "ESG and sustainability focus",
     ],
-    image: "/assets/service.png",
+    image: "/assets/industries-4.jpg",
     icon: <ShieldCheck className="text-white w-5 h-5" />,
   },
   {
@@ -67,7 +67,7 @@ const services = [
       "Technology integration",
       "Talent and leadership development",
     ],
-    image: "/assets/service.png",
+    image: "/assets/industries-5.jpg",
     icon: <Zap className="text-white w-5 h-5" />,
   },
   {
@@ -79,7 +79,7 @@ const services = [
       "Risk mitigation strategies",
       "ESG and sustainability focus",
     ],
-    image: "/assets/service.png",
+    image: "/assets/industries-6.png",
     icon: <ShieldCheck className="text-white w-5 h-5" />,
   },
 ];

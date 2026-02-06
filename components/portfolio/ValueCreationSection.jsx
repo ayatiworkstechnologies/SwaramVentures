@@ -7,17 +7,17 @@ const valueData = [
   {
     title: "Capital",
     desc: "Strategic capital to accelerate growth and scale responsibly.",
-    image: "/assets/industries-1.png",
+    image: "/assets/how-1.jpg",
   },
   {
     title: "Operational Support",
     desc: "Hands-on guidance across technology, growth, and governance.",
-    image: "/assets/industries-2.png",
+    image: "/assets/how-2.jpg",
   },
   {
     title: "Global Access",
     desc: "Cross-border market access connecting MENA, India, and global markets.",
-    image: "/assets/industries-3.png",
+    image: "/assets/how-3.jpg",
   },
 ];
 

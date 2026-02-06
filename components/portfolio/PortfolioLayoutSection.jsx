@@ -4,39 +4,57 @@ import { motion } from "framer-motion";
 const portfolioData = [
   {
     id: 1,
-    name: "Grazen AI",
-    country: "USA",
-    category: "Robotics in Retail & Warehousing",
-    description:
-      "A robotics company developing automation for retail and warehouse operations.",
-    logo: "/assets/icon.png",
+    name: "Plenome",
+    country: "India",
+    category: "Healthcare",
+    description: `A healthcare technology company focused on improving access and care delivery.
+Builds digital solutions that support efficient clinical operations.`,
+    logo: "/assets/logo-1.png",
   },
   {
     id: 2,
-    name: "Grazen AI",
-    country: "USA",
-    category: "Robotics in Retail & Warehousing",
-    description:
-      "A robotics company developing automation for retail and warehouse operations.",
-    logo: "/assets/icon.png",
+    name: "Royal Dutch Clinics",
+    country: "UAE",
+    category: "Healthcare",
+    description: `A multi-specialty healthcare provider delivering patient-centric medical services.
+Focused on quality treatment, modern facilities, and clinical excellence.`,
+    logo: "/assets/logo-2.png",
   },
   {
     id: 3,
-    name: "Grazen AI",
-    country: "USA",
-    category: "Robotics in Retail & Warehousing",
-    description:
-      "A robotics company developing automation for retail and warehouse operations.",
-    logo: "/assets/icon.png",
+    name: "Rento",
+    country: "Peru",
+    category: "Robotics / Industry",
+    description: `An industrial robotics company enabling automation across manufacturing sectors.
+Supports operational efficiency through advanced robotic solutions.`,
+    logo: "/assets/logo-3.png",
   },
   {
     id: 4,
     name: "Grazen AI",
     country: "USA",
-    category: "Robotics in Retail & Warehousing",
-    description:
-      "A robotics company developing automation for retail and warehouse operations.",
-    logo: "/assets/icon.png",
+    category: "Retail & Warehouse Robotics",
+    description: `A robotics company developing automation for retail and warehouse operations.
+Improves efficiency, accuracy, and scalability in logistics environments.`,
+    logo: "/assets/logo-4.png",
+  },
+  {
+    id: 5,
+    name: "Inkle",
+    country: "USA",
+    category: "FinTech",
+    description: `A fintech platform offering digital tools for modern financial operations.
+Simplifies compliance, payments, and business financial workflows.`,
+    logo: "/assets/logo-5.png",
+  },
+  {
+    id: 6,
+    name: "Acumulus",
+    country: "USA",
+    category: "FinTech",
+    description: `A financial technology company building scalable digital finance infrastructure.
+Supports secure, efficient, and data-driven financial services.`,
+    logo: "/assets/logo-6.png",
   },
 ];
 
@@ -69,7 +87,7 @@ function PortfolioCard({ item, index }) {
 
       {/* Top row */}
       <div className="flex justify-between items-start mb-6 relative z-20">
-        <img src={item.logo} alt={item.name} className="h-6 object-contain" />
+        <img src={item.logo} alt={item.name} className="h-10 object-contain" />
 
         <span
           className="text-xl font-primary font-bold 
@@ -122,7 +140,7 @@ export default function PortfolioLayoutSection() {
         {/* Banner */}
         <div className="relative w-full h-[170px] lg:h-[210px] mb-10 overflow-hidden">
           <img
-            src="/assets/companies-1.png"
+            src="/assets/Portfolio.jpg"
             alt="Portfolio"
             className="w-full h-full object-cover"
           />

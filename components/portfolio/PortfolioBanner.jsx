@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const bannerImages = [
-  "/assets/slider-1.png",
-  "/assets/slider-2.png",
-  "/assets/slider-3.png",
+  "/assets/slider-1.jpg",
+  "/assets/slider-2.jpg",
+  "/assets/slider-3.jpg",
 ];
 
 export default function PortfolioBanner() {

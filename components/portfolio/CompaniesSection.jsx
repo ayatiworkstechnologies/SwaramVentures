@@ -37,7 +37,7 @@ export default function CompaniesSection() {
           >
             <div className="w-full h-[180px] sm:h-[220px] lg:h-[260px] overflow-hidden shadow-soft">
               <img
-                src="/assets/companies.png"
+                src="/assets/companies.jpg"
                 alt="Companies"
                 className="w-full h-full object-cover"
               />
