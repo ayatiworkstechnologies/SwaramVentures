@@ -34,7 +34,7 @@ const items = [
   {
     title: "Global Trading, Supply Chain & Logistics",
     desc: "Connected digital platforms streamlining global trade, logistics, and supply chain operations.",
-    img: "/assets/industries-6.jpg",
+    img: "/assets/industries-6.png",
   },
 ];
 

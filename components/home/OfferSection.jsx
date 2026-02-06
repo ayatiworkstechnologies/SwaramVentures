@@ -11,19 +11,19 @@ export default function OfferSection() {
       tag: "What We Offer",
       title: "Capital",
       desc: "Providing strategic capital to accelerate growth across healthcare, AI, robotics, fintech, and global trade platforms—supporting innovation, scale, and long-term value creation.",
-      img: "/assets/offer.png",
+      img: "/assets/portfolio-1.png",
     },
     {
       tag: "What We Offer",
       title: "Strategy",
       desc: "Hands-on operational expertise and strategic guidance to scale startups into market leaders.",
-      img: "/assets/offer.png",
+      img: "/assets/portfolio-2.png",
     },
     {
       tag: "What We Offer",
       title: "Partnership",
       desc: "Long-term partnerships empowering founders with networks, mentorship, and resources.",
-      img: "/assets/offer.png",
+      img: "/assets/portfolio-3.png",
     },
   ];
 
