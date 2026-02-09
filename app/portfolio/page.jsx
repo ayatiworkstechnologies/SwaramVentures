@@ -2,6 +2,7 @@ import HeroSlider from "@/components/layouts/HeroSlider";
 import CompaniesSection from "@/components/portfolio/CompaniesSection";
 import PortfolioBanner from "@/components/portfolio/PortfolioBanner";
 import PortfolioLayoutSection from "@/components/portfolio/PortfolioLayoutSection";
+import TestimonialsSection from "@/components/portfolio/TestimonialsSection";
 import ValueCreationSection from "@/components/portfolio/ValueCreationSection";
 
 export const metadata = {
@@ -25,7 +26,8 @@ export default function PortfolioPage() {
         ]}
       />
       <CompaniesSection />
-      <PortfolioLayoutSection />
+      <TestimonialsSection />
+      {/* <PortfolioLayoutSection /> */}
       <ValueCreationSection />
       <PortfolioBanner />
     </>

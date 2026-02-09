@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <WhyExist />
       <IndustriesSlider />
-      <AISlider />
+      {/* <AISlider /> */}
       <OfferSection />
       <PortfolioSection />
     </>

@@ -45,7 +45,6 @@ export default function IndustriesSlider() {
   const next = () => setIndex((i) => (i + 1) % items.length);
   const prev = () => setIndex((i) => (i - 1 + items.length) % items.length);
 
-  /* ================= AUTOPLAY ================= */
   useEffect(() => {
     if (paused) return;
     const t = setInterval(next, 4500);
@@ -59,7 +58,6 @@ export default function IndustriesSlider() {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="container text-center">
-        {/* ================= HEADER ================= */}
         <h2 className="section-title mb-6">
           Industries
           <motion.div
@@ -76,10 +74,7 @@ export default function IndustriesSlider() {
           transformation, and scalable growth across industries.
         </p>
 
-        {/* =================================================
-           CENTER FOCUS SLIDER
-        ================================================= */}
-        <div className="relative h-[560px] md:h-[680px] flex items-center justify-center">
+        <div className="relative h-[500px] md:h-[640px] flex items-center justify-center">
           {items.map((item, i) => {
             const diff = (i - index + items.length) % items.length;
 
@@ -88,27 +83,20 @@ export default function IndustriesSlider() {
             let opacity = 0;
             let zIndex = 0;
 
-            /* ===== POSITION LOGIC ===== */
-
-            // CENTER (big)
             if (diff === 0) {
               x = 0;
               scale = 1;
               opacity = 1;
               zIndex = 20;
-            }
-            // RIGHT (small)
-            else if (diff === 1) {
+            } else if (diff === 1) {
               x = "75%";
               scale = 0.85;
-              opacity = 0.55;
+              opacity = 0.8;
               zIndex = 10;
-            }
-            // LEFT (small)
-            else if (diff === items.length - 1) {
+            } else if (diff === items.length - 1) {
               x = "-75%";
               scale = 0.85;
-              opacity = 0.55;
+              opacity = 0.8;
               zIndex = 10;
             }
 
@@ -121,17 +109,9 @@ export default function IndustriesSlider() {
                   stiffness: 180,
                   damping: 22,
                 }}
-                className="
-                  absolute
-                  w-[94%]
-                  md:w-[68%]
-                  lg:w-[52%]
-                  xl:w-[48%]
-                "
+                className="absolute w-[94%] md:w-[68%] lg:w-[52%] xl:w-[48%]"
               >
-                {/* =================================================
-                   PREMIUM CARD
-                ================================================= */}
+                {/* CARD */}
                 <div
                   className="
                     group
@@ -151,29 +131,26 @@ export default function IndustriesSlider() {
                       fill
                       className="object-cover smooth group-hover:scale-105"
                     />
-
-                    {/* soft fade */}
                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
                   </div>
 
                   {/* CONTENT */}
                   <div className="px-8 py-10 text-center">
-                    {/* Title */}
                     <h3 className="font-primary text-primary font-bold text-xl md:text-2xl">
                       {item.title}
                     </h3>
+
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: 120 }}
                       transition={{ duration: 0.7, delay: 0.2 }}
                       className="mx-auto mb-4 mt-2 h-[2px] bg-secondary"
                     />
-                    {/* Description */}
+
                     <p className="text-body-card mb-8 max-w-sm mx-auto">
                       {item.desc}
                     </p>
 
-                    {/* Button */}
                     <button className="btn btn-primary px-7 py-3 rounded-full shadow-soft">
                       Learn More
                       <Play size={16} />
@@ -184,7 +161,7 @@ export default function IndustriesSlider() {
             );
           })}
 
-          {/* ================= ARROWS ================= */}
+          {/* ARROWS */}
           <button
             onClick={prev}
             className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-4 hover:bg-secondary hover:text-secondary smooth z-30"
