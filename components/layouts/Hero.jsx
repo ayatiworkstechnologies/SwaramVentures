@@ -187,7 +187,7 @@ export default function Hero() {
         transition={{ duration: 4, repeat: Infinity }}
         className="absolute right-10 bottom-28 hidden md:block"
       >
-        <div className="w-[1px] h-32 bg-gradient-to-b from-transparent via-white/60 to-transparent" />
+        {/* <div className="w-[1px] h-32 bg-gradient-to-b from-transparent via-white/60 to-transparent" /> */}
       </motion.div>
     </section>
   );
