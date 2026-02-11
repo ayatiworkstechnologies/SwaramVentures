@@ -1,3 +1,7 @@
+import FocusSectors from "@/components/industries/FocusSectors";
+import IndustriesQuote from "@/components/industries/IndustriesQuote";
+import IndustrisesSlider from "@/components/industries/IndustrisesSlider";
+import MetricsSection from "@/components/industries/MetricsSection";
 import HeroSlider from "@/components/layouts/HeroSlider";
 
 export const metadata = {
@@ -14,25 +18,18 @@ export default function IndustriesPage() {
         slides={[
           {
             image: "/banners/hero-banner.jpg",
-            title: "Transforming High-Impact Sectors",
-            subtitle:
-              "We focus on Healthcare, Artificial Intelligence, Robotics, Digital Finance, and Global Trade Logistics.",
-            primaryBtn: { label: "View Services", href: "/services" },
-            secondaryBtn: { label: "Contact Us", href: "/contact" },
+            // title: "Transforming High-Impact Sectors",
+            // subtitle:
+            //   "We focus on Healthcare, Artificial Intelligence, Robotics, Digital Finance, and Global Trade Logistics.",
+            // primaryBtn: { label: "View Services", href: "/services" },
+            // secondaryBtn: { label: "Contact Us", href: "/contact" },
           },
         ]}
       />
-      <section className="section-y bg-white">
-        <div className="container">
-          <h2 className="section-title mb-6">Sectors We Cover</h2>
-          <div className="w-20 h-1 bg-secondary mb-8" />
-          <p className="text-body max-w-3xl">
-            Our investment thesis is driven by a deep understanding of these
-            core industries, where technology can unlock massive value and
-            efficiency.
-          </p>
-        </div>
-      </section>
+      <IndustriesQuote />
+      <FocusSectors />
+      <MetricsSection />
+      <IndustrisesSlider />
     </>
   );
 }
