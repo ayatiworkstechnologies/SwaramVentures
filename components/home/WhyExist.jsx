@@ -1,16 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function WhyExist() {
   const icons = [
-    "/assets/1.png",
-    "/assets/2.png",
-    "/assets/3.png",
-    "/assets/4.png",
-    "/assets/5.png",
-    "/assets/6.png",
+    "/assets/why-1.png",
+    "/assets/why-2.png",
+    "/assets/why-3.png",
+    "/assets/why-4.png",
+    "/assets/why-5.png",
+    "/assets/why-6.png",
   ];
 
   /* Desktop positions */
@@ -19,8 +18,8 @@ export default function WhyExist() {
     { top: "6%", left: "30%" },
     { top: "10%", right: "30%" },
 
-    { bottom: "-4%", left: "30%" },
-    { bottom: "-4%", right: "30%" },
+    { bottom: "2%", left: "30%" },
+    { bottom: "4%", right: "30%" },
     { bottom: "16%", right: "18%" },
   ];
 
@@ -96,19 +95,9 @@ export default function WhyExist() {
                 duration: 4 + i * 0.4,
                 repeat: Infinity,
               }}
-              className="
-                relative
-                w-[100px] h-[100px]
-                lg:w-[120px] lg:h-[120px]
-                xl:w-[140px] xl:h-[140px]
-              "
+              className="relative"
             >
-              <Image
-                src={src}
-                alt="sector icon"
-                fill
-                className="object-contain"
-              />
+              <img src={src} alt="sector icon" className="object-contain" />
             </motion.div>
           </motion.div>
         ))}

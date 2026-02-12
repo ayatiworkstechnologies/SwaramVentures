@@ -14,11 +14,11 @@ export default function StrategyPage() {
         slides={[
           {
             image: "/banners/hero-banner.jpg",
-            title: "Strategic Growth & Operational Excellence",
-            subtitle:
-              "We provide hands-on operational expertise and strategic guidance to scale startups into market leaders.",
-            primaryBtn: { label: "Our Portfolio", href: "/portfolio" },
-            secondaryBtn: { label: "Contact Us", href: "/contact" },
+            // title: "Strategic Growth & Operational Excellence",
+            // subtitle:
+            //   "We provide hands-on operational expertise and strategic guidance to scale startups into market leaders.",
+            // primaryBtn: { label: "Our Portfolio", href: "/portfolio" },
+            // secondaryBtn: { label: "Contact Us", href: "/contact" },
           },
         ]}
       />

@@ -4,37 +4,39 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const items = [
   {
     title: "Healthcare & Digital Health",
-    desc: "Technology-driven solutions that enhance patient care, clinical efficiency, and health outcomes.",
+    desc: "We back healthcare platforms improving care delivery through technology. Our focus includes digital health, clinics, data, and systems.",
     img: "/assets/industries-1.jpg",
+    link: "/industries",
   },
   {
     title: "Artificial Intelligence & Automation",
-    desc: "Innovative digital solutions designed to improve healthcare delivery. Enhancing patient care through smart, connected technologies.",
+    desc: "We invest in AI systems driving efficiency, automation, scale. These platforms enable smarter decisions across enterprise use globally.",
     img: "/assets/industries-2.jpg",
+    link: "/industries",
   },
-  {
-    title: "Artificial Intelligence",
-    desc: "Intelligent systems designed to optimize processes, improve accuracy, and drive smarter decisions.",
-    img: "/assets/industries-3.jpg",
-  },
+
   {
     title: "Robotics & Advanced Manufacturing",
-    desc: "Innovative automation solutions enabling precision, efficiency, and scalable manufacturing.",
+    desc: "We support robotics ventures modernizing production, precision, and throughout. Our investments target scalable manufacturing, automation, and hardware-led innovation.",
+    img: "/assets/industries-3.jpg",
+    link: "/industries",
+  },
+  {
+    title: "Digital Banking & Fintech Infrastructure ",
+    desc: "We invest in fintech infrastructure enabling compliant digital systems. These platforms power payments, embedded finance, and next-generation banking.",
     img: "/assets/industries-4.jpg",
+    link: "/industries",
   },
   {
-    title: "Digital Banking & Fintech Infrastructure",
-    desc: "Secure, scalable platforms powering digital payments, embedded finance, and modern banking services.",
+    title: "Global Trade & Logistics Platforms ",
+    desc: "We back platforms optimizing trade, logistics, and supply chain. Our focus spans cross-border commerce, infrastructure, and data-driven coordination. ",
     img: "/assets/industries-5.jpg",
-  },
-  {
-    title: "Global Trading, Supply Chain & Logistics",
-    desc: "Connected digital platforms streamlining global trade, logistics, and supply chain operations.",
-    img: "/assets/industries-6.png",
+    link: "/industries",
   },
 ];
 
@@ -69,9 +71,10 @@ export default function IndustriesSlider() {
         </h2>
 
         <p className="text-body max-w-2xl mx-auto mb-8">
-          We build technology-driven solutions across healthcare, AI, robotics,
-          fintech, and global trade, enabling smarter operations, digital
-          transformation, and scalable growth across industries.
+          We partner with technology-led businesses across core sectors,
+          deploying aligned capital and strategic support to help founders build
+          resilient, scalable platforms with long-term relevance and
+          cross-border impact globally across markets. 
         </p>
 
         <div className="relative h-[500px] md:h-[640px] flex items-center justify-center">
@@ -151,10 +154,13 @@ export default function IndustriesSlider() {
                       {item.desc}
                     </p>
 
-                    <button className="btn btn-primary px-7 py-3 rounded-full shadow-soft">
+                    <Link
+                      href={item.link}
+                      className="btn btn-primary px-7 py-3 rounded-full shadow-soft inline-flex items-center gap-2"
+                    >
                       Learn More
                       <Play size={16} />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play } from "lucide-react";
 
@@ -9,21 +10,31 @@ export default function OfferSection() {
   const slides = [
     {
       tag: "What We Offer",
-      title: "Capital",
-      desc: "Providing strategic capital to accelerate growth across healthcare, AI, robotics, fintech, and global trade platforms—supporting innovation, scale, and long-term value creation.",
-      img: "/assets/portfolio-1.png",
+      title: "Long-Term Capital",
+      desc: "Flexible, long-horizon capital supporting resilient companies through growth cycles, complexity, and scale, aligned with founders building durable platforms for sustained market leadership. ",
+      img: "/assets/service-1.jpg",
+      link: "/services/capital",
     },
     {
       tag: "What We Offer",
       title: "Strategy",
-      desc: "Hands-on operational expertise and strategic guidance to scale startups into market leaders.",
-      img: "/assets/portfolio-2.png",
+      desc: "Disciplined investment framework guiding capital deployment, governance alignment, and sector focus, designed to strengthen strategic clarity and long-term value creation. ",
+      img: "/assets/service-2.jpg",
+      link: "/services/strategy",
     },
     {
       tag: "What We Offer",
       title: "Partnership",
-      desc: "Long-term partnerships empowering founders with networks, mentorship, and resources.",
-      img: "/assets/portfolio-3.png",
+      desc: "Active engagement with founders through key inflection points, offering governance insight, strategic perspective, and trusted collaboration across every stage of growth. ",
+      img: "/assets/service-3.jpg",
+      link: "/services/partnership",
+    },
+    {
+      tag: "What We Offer",
+      title: "Cross-Border Market ",
+      desc: "Structured market access across MENA, India, and global regions, enabling disciplined expansion, strategic connectivity, and sustainable international growth pathways. ",
+      img: "/assets/service-4.jpg",
+      link: "/services/cross-border",
     },
   ];
 
@@ -32,13 +43,8 @@ export default function OfferSection() {
   return (
     <section className="section-y bg-white overflow-hidden">
       <div className="container">
-        {/* =================================================
-           GRID LAYOUT
-        ================================================= */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* =================================================
-             IMAGE (LEFT)
-          ================================================= */}
+          {/* IMAGE */}
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -46,13 +52,7 @@ export default function OfferSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 30 }}
               transition={{ duration: 0.5 }}
-              className="
-                relative
-                h-[300px] md:h-[420px]
-                rounded-[22px]
-                overflow-hidden
-                shadow-[0_12px_35px_rgba(0,0,0,0.12)]
-              "
+              className="relative h-[300px] md:h-[420px] rounded-[22px] overflow-hidden shadow-[0_12px_35px_rgba(0,0,0,0.12)]"
             >
               <Image
                 src={slides[index].img}
@@ -64,9 +64,7 @@ export default function OfferSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* =================================================
-             CONTENT (RIGHT)
-          ================================================= */}
+          {/* CONTENT */}
           <div className="mt-8 lg:mt-0">
             <AnimatePresence mode="wait">
               <motion.div
@@ -76,9 +74,7 @@ export default function OfferSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* =================================================
-                   SMALL NUMBERS (1 2 3)
-                ================================================= */}
+                {/* SLIDE NUMBERS */}
                 <div className="flex gap-3 mb-6 font-primary text-xs">
                   {slides.map((_, i) => (
                     <button
@@ -111,23 +107,25 @@ export default function OfferSection() {
                   initial={{ width: 0 }}
                   whileInView={{ width: 120 }}
                   transition={{ duration: 0.7, delay: 0.2 }}
-                  className="mb-4 h-[2px] bg-secondary"
+                  className="mb-4 h-[2px] mt-2 bg-secondary"
                 />
+
                 {/* DESCRIPTION */}
                 <p className="text-body text-base md:text-lg mb-8 max-w-lg">
                   {slides[index].desc}
                 </p>
 
-                {/* =================================================
-                   BUTTON (PLAY ICON ADDED)
-                ================================================= */}
-                <button className="btn btn-primary group">
+                {/* BUTTON WITH LINK */}
+                <Link
+                  href={slides[index].link}
+                  className="btn btn-primary group inline-flex items-center gap-2"
+                >
                   Learn More
                   <Play
                     size={16}
                     className="fill-current group-hover:scale-110 smooth"
                   />
-                </button>
+                </Link>
               </motion.div>
             </AnimatePresence>
           </div>

@@ -1,7 +1,9 @@
 "use client";
 
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Play } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+import HeroSlider from "@/components/layouts/HeroSlider";
 
 export default function ContactPage() {
   const {
@@ -32,6 +34,14 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white">
+      <HeroSlider
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+        slides={[
+          {
+            image: "/banners/hero-banner.jpg",
+          },
+        ]}
+      />
       {/* Main Contact Section */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,9 +200,13 @@ export default function ContactPage() {
                 <div>
                   <button
                     type="submit"
-                    className="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+                    className="btn btn-primary w-full justify-center group shadow-lg shadow-primary/20"
                   >
                     Leave us a Message
+                    <Play
+                      size={16}
+                      className="fill-current group-hover:scale-110 smooth"
+                    />
                   </button>
                 </div>
               </form>
@@ -256,9 +270,13 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+                  className="btn btn-primary w-full justify-center group shadow-lg shadow-primary/20"
                 >
                   Subscribe
+                  <Play
+                    size={16}
+                    className="fill-current group-hover:scale-110 smooth"
+                  />
                 </button>
               </form>
             </div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function IndustriesQuote() {
   return (
-    <section className="bg-soft section-y overflow-hidden">
+    <section className="bg-soft py-10 overflow-hidden">
       <div className="container text-center">
         {/* Top vertical line */}
         <motion.div
@@ -45,32 +45,13 @@ export default function IndustriesQuote() {
             mx-auto
           "
         >
-          “We believe the most significant breakthroughs happen at the
-          intersection of{" "}
-          <span className="font-semibold text-primary">
-            deep engineering
-          </span>{" "}
-          and{" "}
+          “We believe enduring value is created where disciplined capital meets
+          visionary founders building meaningful,{" "}
           <span className="font-semibold text-secondary">
-            unstoppable ambition.
+            resilient enterprises 
           </span>
           ”
         </motion.h2>
-
-        {/* Author */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-10 flex items-center justify-center gap-6"
-        >
-          <div className="w-16 h-[1px] bg-primary/30" />
-          <p className="text-xs uppercase tracking-widest text-primary/60">
-            The Swaram Mandate
-          </p>
-          <div className="w-16 h-[1px] bg-primary/30" />
-        </motion.div>
       </div>
     </section>
   );

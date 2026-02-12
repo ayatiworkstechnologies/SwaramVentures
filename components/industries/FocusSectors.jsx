@@ -8,33 +8,33 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function FocusSectors() {
   const sectors = [
     {
-      title: "Neural Autonomy",
-      desc: "Cognitive architectures that enhance industrial robotics and operational systems.",
-      img: "/assets/core-1.jpg",
-      tag: "Robotics",
-    },
-    {
-      title: "Bio-Synthesis",
-      desc: "Reprogramming the biological substrate of the industrial complex.",
-      img: "/assets/core-2.jpg",
+      title: "Healthcare & Digital Health",
+      desc: "Technology-enabled platforms transforming care delivery systems.",
+      img: "/assets/industries-1.jpg",
       tag: "Healthcare",
     },
     {
-      title: "Kinetic Systems",
-      desc: "Infrastructure for physical labor in the automated economy.",
-      img: "/assets/core-3.jpg",
-      tag: "Infrastructure",
+      title: "Artificial Intelligence & Automation",
+      desc: "Intelligent systems driving efficiency and enterprise scale.",
+      img: "/assets/industries-2.jpg",
+      tag: "AI",
     },
     {
-      title: "AI Infrastructure",
-      desc: "Scalable compute and intelligent automation platforms.",
-      img: "/assets/core-4.jpg",
-      tag: "Artificial Intelligence",
+      title: "Robotics & Advanced Manufacturing",
+      desc: "Automation technologies modernizing industrial production ecosystems.",
+      img: "/assets/industries-3.jpg",
+      tag: "Robotics",
+    },
+    {
+      title: "Digital Banking & Fintech Infrastructure",
+      desc: "Secure financial infrastructure powering digital economies.",
+      img: "/assets/industries-4.jpg",
+      tag: "Fintech",
     },
   ];
 
   const visible = 3;
-  const maxIndex = sectors.length - visible;
+  const maxIndex = sectors.length - visible > 0 ? sectors.length - visible : 0;
   const [index, setIndex] = useState(0);
 
   const next = () => {
@@ -51,10 +51,10 @@ export default function FocusSectors() {
   useEffect(() => {
     const t = setInterval(next, 4500);
     return () => clearInterval(t);
-  }, [index]);
+  }, [index, maxIndex]);
 
   return (
-    <section className="bg-soft section-y overflow-hidden">
+    <section className="bg-soft py-16 overflow-hidden">
       <div className="container">
         {/* HEADER */}
         <div className="flex items-end justify-between mb-12">
@@ -100,37 +100,27 @@ export default function FocusSectors() {
                   px-4
                 "
               >
-                <div className="group relative overflow-hidden rounded-xl shadow-md bg-white">
+                <div className="group relative overflow-hidden rounded-xl shadow-md h-[420px]">
                   {/* IMAGE */}
-                  <div className="relative h-[260px]">
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition duration-700"
-                    />
-                  </div>
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-700"
+                  />
 
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent opacity-90" />
-
-                  {/* CONTENT */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="text-[11px] uppercase tracking-widest text-secondary">
+                  {/* CONTENT (Blur Overlay) */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-xl border-t border-white/20 transition-all duration-300">
+                    <span className="text-[11px] uppercase tracking-widest text-white/80 mb-1 block">
                       {item.tag}
                     </span>
-
-                    <h3 className="text-xl font-primary font-semibold text-primary mt-2 mb-2">
+                    <h3 className="text-xl font-primary font-semibold text-white mb-2 shadow-sm">
                       {item.title}
                     </h3>
-
-                    <p className="text-body-card text-sm">
+                    <p className="text-white/90 text-sm shadow-sm">
                       {item.desc}
                     </p>
                   </div>
-
-                  {/* HOVER LINE */}
-                  <div className="absolute top-0 left-0 h-[3px] w-0 bg-secondary group-hover:w-full transition-all duration-500" />
                 </div>
               </div>
             ))}

@@ -11,7 +11,7 @@ export default function ServicesPage() {
   return (
     <>
       <HeroSlider
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Strategy" }]}
         slides={[
           {
             image: "/banners/service-banner.jpg",

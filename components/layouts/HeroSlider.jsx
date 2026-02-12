@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Play } from "lucide-react";
 
 export default function HeroSlider({ slides = [], breadcrumbs = [] }) {
   const [index, setIndex] = useState(0);
@@ -94,17 +95,28 @@ export default function HeroSlider({ slides = [], breadcrumbs = [] }) {
           {(slide.primaryBtn || slide.secondaryBtn) && (
             <div className="mt-10 flex flex-wrap gap-4">
               {slide.primaryBtn && (
-                <Link href={slide.primaryBtn.href} className="btn btn-primary">
+                <Link
+                  href={slide.primaryBtn.href}
+                  className="btn btn-primary group inline-flex items-center gap-2"
+                >
                   {slide.primaryBtn.label}
+                  <Play
+                    size={16}
+                    className="fill-current group-hover:scale-110 smooth"
+                  />
                 </Link>
               )}
 
               {slide.secondaryBtn && (
                 <Link
                   href={slide.secondaryBtn.href}
-                  className="btn btn-outline border-white text-white hover:bg-white hover:text-primary"
+                  className="btn btn-outline border-white text-white hover:bg-white hover:text-primary group inline-flex items-center gap-2"
                 >
                   {slide.secondaryBtn.label}
+                  <Play
+                    size={16}
+                    className="fill-current group-hover:scale-110 smooth"
+                  />
                 </Link>
               )}
             </div>

@@ -8,25 +8,34 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function IndustrisesSlider() {
   const projects = [
     {
-      title: "Nexus Dynamics",
-      desc: "Precision humanoid robotics for next-gen manufacturing lines.",
+      title: "Plenome",
+      desc: "A healthcare platform supported through strategic capital and governance alignment, strengthening operational scale and cross-border growth initiatives.",
       img: "/assets/core-1.jpg",
-      category: "Robotics",
-      tag: "Humanoid Robotics",
     },
     {
-      title: "Ether Health",
-      desc: "AI-driven diagnostic platform reducing error rates by 40%.",
+      title: "Royal Dutch Clinics (UAE)",
+      desc: "An integrated healthcare network backed with long-horizon investment and structured expansion support across regional markets.",
       img: "/assets/core-2.jpg",
-      category: "Healthcare",
-      tag: "AI Diagnostics",
     },
     {
-      title: "Nova Energy",
-      desc: "Next-gen sustainable energy infrastructure systems.",
+      title: "Grazen AI (USA)",
+      desc: "A robotics automation platform strengthened through active portfolio engagement, strategic oversight, and disciplined scaling frameworks.",
       img: "/assets/core-3.jpg",
-      category: "Energy",
-      tag: "Green Infrastructure",
+    },
+    {
+      title: "Inkle (USA)",
+      desc: "A fintech infrastructure company supported with aligned capital, governance discipline, and international market access guidance.",
+      img: "/assets/core-4.jpg",
+    },
+    {
+      title: "Acumulus (USA)",
+      desc: "Fintech infrastructure enabling scalable, compliant financial products.",
+      img: "/assets/core-5.jpg",
+    },
+    {
+      title: "Rento (Peru)",
+      desc: "Robotics-led industrial solutions modernizing equipment access and utilization.",
+      img: "/assets/core-6.jpg",
     },
   ];
 
@@ -43,13 +52,21 @@ export default function IndustrisesSlider() {
   };
 
   return (
-    <section className="bg-white section-y overflow-hidden">
+    <section className="bg-white py-16 overflow-hidden">
       <div className="container">
         {/* HEADER */}
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <h2 className="section-title">Industries</h2>
-            <div className="w-16 h-[3px] bg-secondary mt-3" />
+        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+          <div className="max-w-2xl">
+            <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-2 block">
+              What We Build
+            </span>
+            <h2 className="section-title mb-4">Portfolio</h2>
+            <div className="w-16 h-[3px] bg-secondary mb-6" />
+            <p className="text-body text-lg">
+              A focused portfolio of companies across healthcare, robotics,
+              fintech, and AI, backed through disciplined capital, strategic
+              guidance, and long-term alignment.
+            </p>
           </div>
 
           {/* ARROWS */}
@@ -88,42 +105,24 @@ export default function IndustrisesSlider() {
                   px-4
                 "
               >
-                <div className="group relative overflow-hidden rounded-xl shadow-md">
+                <div className="group relative overflow-hidden rounded-xl shadow-md h-[350px] md:h-[420px]">
                   {/* IMAGE */}
-                  <div className="relative h-[260px] md:h-[300px]">
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition duration-700"
-                    />
-                  </div>
-
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent opacity-90" />
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-700"
+                  />
 
                   {/* CONTENT */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="text-[11px] uppercase tracking-widest text-secondary">
-                      {item.category}
-                    </span>
-
-                    <h3 className="text-xl font-primary font-semibold text-primary mt-2 mb-2">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-xl border-t border-white/20 transition-all duration-300">
+                    <h3 className="text-xl font-primary font-semibold text-white mb-2 shadow-sm">
                       {item.title}
                     </h3>
-
-                    <p className="text-body-card text-sm mb-4">
+                    <p className="text-white/90 text-sm shadow-sm">
                       {item.desc}
                     </p>
-
-                    <div className="flex gap-4 text-xs text-secondary font-semibold">
-                      <span>View Project</span>
-                      <span>{item.tag}</span>
-                    </div>
                   </div>
-
-                  {/* HOVER LINE */}
-                  <div className="absolute top-0 left-0 h-[3px] w-0 bg-secondary group-hover:w-full transition-all duration-500" />
                 </div>
               </div>
             ))}
