@@ -34,7 +34,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white">
-      <HeroSlider
+      {/* <HeroSlider
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         slides={[
           {
@@ -42,7 +42,7 @@ export default function ContactPage() {
             mobileImage: "/banners/hero-banner.jpg",
           },
         ]}
-      />
+      /> */}
       {/* Main Contact Section */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

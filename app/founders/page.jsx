@@ -9,7 +9,7 @@ export const metadata = {
 export default function FoundersPage() {
   return (
     <>
-      <HeroSlider
+      {/* <HeroSlider
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "For Founders" }]}
         slides={[
           {
@@ -21,7 +21,7 @@ export default function FoundersPage() {
             // primaryBtn: { label: "Contact Us", href: "/contact" },
           },
         ]}
-      />
+      /> */}
 
       <FoundersSection />
     </>
