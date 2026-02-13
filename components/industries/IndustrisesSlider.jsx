@@ -10,36 +10,36 @@ export default function IndustrisesSlider() {
     {
       title: "Plenome",
       desc: "A healthcare platform supported through strategic capital and governance alignment, strengthening operational scale and cross-border growth initiatives.",
-      img: "/assets/core-1.jpg",
+      img: "/assets/portfolio-5.png",
     },
     {
       title: "Royal Dutch Clinics (UAE)",
       desc: "An integrated healthcare network backed with long-horizon investment and structured expansion support across regional markets.",
-      img: "/assets/core-2.jpg",
+      img: "/assets/portfolio-2.png",
     },
     {
       title: "Grazen AI (USA)",
       desc: "A robotics automation platform strengthened through active portfolio engagement, strategic oversight, and disciplined scaling frameworks.",
-      img: "/assets/core-3.jpg",
+      img: "/assets/portfolio-3.png",
     },
     {
       title: "Inkle (USA)",
       desc: "A fintech infrastructure company supported with aligned capital, governance discipline, and international market access guidance.",
-      img: "/assets/core-4.jpg",
+      img: "/assets/portfolio-4.png",
     },
     {
       title: "Acumulus (USA)",
       desc: "Fintech infrastructure enabling scalable, compliant financial products.",
-      img: "/assets/core-5.jpg",
+      img: "/assets/portfolio-1.png",
     },
     {
       title: "Rento (Peru)",
       desc: "Robotics-led industrial solutions modernizing equipment access and utilization.",
-      img: "/assets/core-6.jpg",
+      img: "/assets/portfolio-6.png",
     },
   ];
 
-  const visible = 2; // show 2 cards
+  const visible = 3; // show 3 cards
   const maxIndex = projects.length - visible;
   const [index, setIndex] = useState(0);
 
@@ -91,19 +91,14 @@ export default function IndustrisesSlider() {
         {/* SLIDER */}
         <div className="overflow-hidden">
           <motion.div
-            animate={{ x: `-${index * 50}%` }}
+            animate={{ x: `-${index * (100 / visible)}%` }}
             transition={{ type: "spring", stiffness: 90, damping: 20 }}
             className="flex"
           >
             {projects.map((item, i) => (
               <div
                 key={i}
-                className="
-                  w-full
-                  md:w-1/2
-                  shrink-0
-                  px-4
-                "
+                className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4"
               >
                 <div className="group relative overflow-hidden rounded-xl shadow-md h-[350px] md:h-[420px]">
                   {/* IMAGE */}
@@ -116,10 +111,10 @@ export default function IndustrisesSlider() {
 
                   {/* CONTENT */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-xl border-t border-white/20 transition-all duration-300">
-                    <h3 className="text-xl font-primary font-semibold text-white mb-2 shadow-sm">
+                    <h3 className="text-xl font-primary font-semibold text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-white/90 text-sm shadow-sm">
+                    <p className="text-white/90 text-sm">
                       {item.desc}
                     </p>
                   </div>
