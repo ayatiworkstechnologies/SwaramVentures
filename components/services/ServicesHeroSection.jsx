@@ -11,7 +11,7 @@ const slides = [
     cardTitle: "Family Fund Mindset",
     cardDesc:
       "Our capital is structured to support founders through growth, complexity, and market cycles, without pressure for premature outcomes.",
-    image: "/assets/cap-1.png",
+    image: "/assets/cap-3.png",
   },
   {
     title: "Selective Investment",
@@ -19,7 +19,7 @@ const slides = [
     cardTitle: "Long-Term Relevance",
     cardDesc:
       "Each investment reflects deep belief in the founder, the market, and the company’s long-term relevance.",
-    image: "/assets/cap-2.png",
+    image: "/assets/cap-4.png",
   },
 ];
 
