@@ -6,12 +6,12 @@ import Image from "next/image";
 export default function VisionMissionSection() {
   const items = [
     {
-      icon: "/assets/icons/Vision.png",
+      icon: "/assets/icons/vision.png",
       title: "Our Vision",
       text: "To be a global catalyst for transformative innovation — empowering visionary founders and scaling breakthroughs that redefine how the world builds infrastructure, moves people and goods, and elevates human well-being.",
     },
     {
-      icon: "/assets/icons/Mission.png",
+      icon: "/assets/icons/mission.png",
       title: "Our Mission",
       text: "We invest in and partner with early growth-stage companies that are reshaping industries and improving lives. Through strategic capital and long-term collaboration, we support sustainable growth and meaningful impact.",
     },
