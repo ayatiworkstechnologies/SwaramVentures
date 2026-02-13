@@ -6,12 +6,12 @@ import Image from "next/image";
 export default function VisionMissionSection() {
   const items = [
     {
-      icon: "/assets/icons/vision.png", // 👈 your line image
+      icon: "/assets/icons/Vision.png",
       title: "Our Vision",
       text: "To be a global catalyst for transformative innovation — empowering visionary founders and scaling breakthroughs that redefine how the world builds infrastructure, moves people and goods, and elevates human well-being.",
     },
     {
-      icon: "/assets/icons/mission.png", // 👈 your line image
+      icon: "/assets/icons/Mission.png",
       title: "Our Mission",
       text: "We invest in and partner with early growth-stage companies that are reshaping industries and improving lives. Through strategic capital and long-term collaboration, we support sustainable growth and meaningful impact.",
     },
@@ -20,9 +20,6 @@ export default function VisionMissionSection() {
   return (
     <section className="section-y bg-soft">
       <div className="container">
-        {/* =================================================
-           MAIN CARD
-        ================================================= */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +33,6 @@ export default function VisionMissionSection() {
             overflow-hidden
           "
         >
-          {/* GRID */}
           <div className="grid md:grid-cols-2">
             {items.map((item, i) => (
               <motion.div
@@ -49,26 +45,24 @@ export default function VisionMissionSection() {
                   relative
                   px-8 py-14 md:px-16 md:py-16
                   text-center md:text-left
-                  smooth hover:-translate-y-2
                 "
               >
-                {/* Vertical divider */}
+                {/* Divider */}
                 {i === 0 && (
                   <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-[65%] w-[1px] bg-slate-200" />
                 )}
 
-                {/* =================================================
-                   ICON IMAGE (line style)
-                ================================================= */}
+                {/* ICON (actual size, sharp) */}
                 <div className="flex justify-center md:justify-start mb-6">
-                  <div className="relative w-14 h-14 md:w-18 md:h-18">
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={64}
+                    height={64}
+                    quality={100}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
 
                 {/* TITLE */}

@@ -59,7 +59,7 @@ Simplifies compliance, payments, and business financial workflows.`,
       category: "FinTech",
       description: `A financial technology company building scalable digital finance infrastructure.
 Supports secure, efficient, and data-driven financial services.`,
-      logo: "/assets/portfolio-2.png",
+      logo: "/assets/portfolio-6.png",
     },
   ];
 

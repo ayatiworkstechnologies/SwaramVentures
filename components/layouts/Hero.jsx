@@ -15,14 +15,9 @@ export default function Hero() {
         "Swaram Ventures backs bold founders in healthcare, AI, robotics, digital finance, and global trade logistics.",
     },
     {
-      image: "/banners/hero-banner.jpg",
+      image: "/banners/hero-banner-1.jpg",
       title:
         "Building the future with AI, automation, and next-gen technologies that scale globally.",
-    },
-    {
-      image: "/banners/hero-banner.jpg",
-      title:
-        "Empowering startups with capital, strategy, and networks to accelerate growth worldwide.",
     },
   ];
 
