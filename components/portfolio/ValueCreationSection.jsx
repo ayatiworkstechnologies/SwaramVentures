@@ -4,29 +4,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const valueData = [
-  {
-    number: "01",
-    title: "Capital",
-    desc: "Strategic capital to accelerate growth and scale responsibly.",
-    image: "/assets/how-1.jpg",
-  },
-  {
-    number: "02",
-    title: "Operational Support",
-    desc: "Hands-on guidance across technology, growth, and governance.",
-    image: "/assets/how-2.jpg",
-  },
-  {
-    number: "03",
-    title: "Global Access",
-    desc: "Cross-border market access connecting MENA, India, and global markets.",
-    image: "/assets/how-3.jpg",
-  },
-];
-
 export default function ValueCreationSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const valueData = [
+    {
+      number: "01",
+      title: "Long-term alignment of incentives",
+      desc: "",
+      image: "/assets/we-1.png",
+    },
+    {
+      number: "02",
+      title: "Thoughtful board participation",
+      desc: "",
+      image: "/assets/we-2.png",
+    },
+    {
+      number: "03",
+      title: "Strategic decision support during scale",
+      desc: "",
+      image: "/assets/we-3.png",
+    },
+    {
+      number: "04",
+      title: "Access to cross-border networks and partnerships",
+      desc: "",
+      image: "/assets/we-1.png", // Reusing the first image
+    },
+  ];
 
   // Auto slide
   useEffect(() => {
@@ -35,12 +41,11 @@ export default function ValueCreationSection() {
     }, 3500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [valueData.length]);
 
   return (
     <section className="bg-[#f5f6f7] py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        
         {/* LEFT CONTENT */}
         <div>
           <p className="text-secondary uppercase tracking-widest text-xs mb-3">
@@ -48,14 +53,19 @@ export default function ValueCreationSection() {
           </p>
 
           <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-6">
-            How We <br /> Create Value
+            Value Creation <br /> Framework
           </h2>
 
-          <p className="text-gray-600 max-w-md mb-10">
-            Providing strategic capital to accelerate growth across healthcare,
-            AI, robotics, fintech, and global trade platforms—supporting
-            innovation, scale, and long-term value creation.
-          </p>
+          <div className="text-gray-600 max-w-md mb-10 space-y-4">
+            <p>
+              Our role extends beyond capital deployment. We work alongside
+              founders to strengthen governance, strategic clarity, and
+              operational resilience.
+            </p>
+            <p className="font-medium text-primary">
+              Value creation at Swaram Ventures is anchored in:
+            </p>
+          </div>
 
           {/* VALUE LIST */}
           <div className="space-y-6">
@@ -90,14 +100,21 @@ export default function ValueCreationSection() {
                     >
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 text-sm max-w-md">
-                      {item.desc}
-                    </p>
+                    {item.desc && (
+                      <p className="text-gray-500 text-sm max-w-md">
+                        {item.desc}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               );
             })}
           </div>
+
+          <p className="mt-10 text-gray-600 italic border-l-4 border-secondary pl-4">
+            "We believe sustainable growth is built through structured
+            execution, not acceleration alone."
+          </p>
         </div>
 
         {/* RIGHT IMAGE CARD */}

@@ -43,8 +43,21 @@ export default function HeroSlider({ slides = [], breadcrumbs = [] }) {
             alt={slide.title || "hero"}
             fill
             priority
-            className="object-cover"
+            className={`object-cover ${
+              slide.mobileImage ? "hidden md:block" : ""
+            }`}
+            sizes="100vw"
           />
+          {slide.mobileImage && (
+            <Image
+              src={slide.mobileImage}
+              alt={slide.title || "hero mobile"}
+              fill
+              priority
+              className="object-cover md:hidden"
+              sizes="100vw"
+            />
+          )}
           {/* <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/25" /> */}
         </motion.div>
       </AnimatePresence>

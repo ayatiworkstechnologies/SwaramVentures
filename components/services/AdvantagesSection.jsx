@@ -1,125 +1,128 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
 export default function AdvantagesSection() {
   const advantages = [
     {
-      tag: "STRATEGY",
-      title: "Zero Pressure",
-      text: "Structure capital solutions driven by long cycles. Built at the speed of reality.",
+      id: "01",
+      title: "Strategy as a Long-Term Advantage",
+      text: "Our strategy is grounded in focus. We back businesses operating in essential, technology-driven sectors where long-term value creation matters more than rapid momentum. A clear strategy creates consistency across decisions, governance, and growth.",
     },
     {
-      tag: "ALIGNMENT",
-      title: "Absolute Terms",
-      text: "Liquidity events are defined by business maturity, not general partner timing.",
+      id: "02",
+      title: "Investment Thesis",
+      text: "We invest in companies solving meaningful problems in large, evolving markets. Our focus is on platforms that combine technology, execution discipline, and defensibility.",
     },
     {
-      tag: "STRUCTURE",
-      title: "Durability",
-      text: "Strategic backing focused on long-term resilience and compounding returns.",
+      id: "03",
+      title: "Stage & Check Size",
+      text: "We partner with early and growth-stage companies where capital, guidance, and alignment can materially influence outcomes. Our check sizes are flexible and structured to support long-term plans.",
     },
     {
-      tag: "STRENGTH",
-      title: "Deep Reserve",
-      text: "Substantial compounding capital by a permanent capital base and global network.",
+      id: "04",
+      title: "Geographic Focus",
+      text: "We invest globally, with particular emphasis on regions where innovation, talent, and market opportunity intersect.",
+    },
+    {
+      id: "05",
+      title: "Capital Approach",
+      text: "Our capital is patient in structure and deliberate in deployment. We prioritize governance, alignment, and sustainability over speed.",
     },
   ];
 
-  const [index, setIndex] = useState(0);
-  const total = advantages.length;
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const next = () =>
-    setIndex((i) => (i + 1 > total - 1 ? 0 : i + 1));
-  const prev = () =>
-    setIndex((i) => (i - 1 < 0 ? total - 1 : i - 1));
-
-  /* auto slide */
+  // Auto-rotate every 5 seconds if user hasn't interacted recently?
+  // User asked for "contents as button give to move like", implying manual control mostly.
+  // Let's keep it manual or auto-rotating.
   useEffect(() => {
-    const t = setInterval(next, 4000);
-    return () => clearInterval(t);
-  }, []);
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % advantages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [advantages.length]);
 
   return (
-    <section className="bg-soft section-y overflow-hidden">
+    <section className="bg-white section-y">
       <div className="container">
-        {/* HEADER */}
-        <div className="mb-12 flex items-end justify-between">
-          <div>
-            <h2 className="section-title">Advantages.</h2>
-            <div className="w-16 h-[3px] bg-secondary mt-3"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* LEFT: STATIC NAV (The 5 Buttons) */}
+          <div className="lg:col-span-5 relative">
+            <span className="text-secondary uppercase tracking-widest text-xs font-bold mb-6 block">
+              Strategic Framework
+            </span>
+            <div className="space-y-2 relative">
+              {/* Vertical Line for progress/timeline feel */}
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gray-100 hidden md:block" />
+
+              {advantages.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-full text-left py-4 px-6 md:pl-8 rounded-lg transition-all duration-300 group flex items-center justify-between relative border-l-2 md:border-l-0 ${
+                    activeIndex === index
+                      ? "bg-secondary/5 border-secondary md:border-l-0"
+                      : "hover:bg-gray-50 border-transparent"
+                  }`}
+                >
+                  {/* Active Indicator Line (Mobile/Desktop dynamic) */}
+                  {activeIndex === index && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute left-[-2px] top-0 bottom-0 w-[4px] bg-secondary hidden md:block rounded-r-sm"
+                    />
+                  )}
+
+                  <span
+                    className={`text-lg md:text-xl font-bold font-primary transition-colors ${
+                      activeIndex === index
+                        ? "text-primary"
+                        : "text-gray-400 group-hover:text-gray-600"
+                    }`}
+                  >
+                    {item.title}
+                  </span>
+
+                  {activeIndex === index && (
+                    <ChevronRight className="text-secondary w-5 h-5 ml-4" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* ARROWS */}
-          <div className="flex gap-3">
-            <button
-              onClick={prev}
-              className="p-3 rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white smooth"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={next}
-              className="p-3 rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white smooth"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
-
-        {/* SLIDER */}
-        <div className="overflow-hidden">
-          <motion.div
-            animate={{ x: `-${index * 25}%` }}   // move one card
-            transition={{ type: "spring", stiffness: 90, damping: 20 }}
-            className="flex gap-6"
-          >
-            {advantages.map((item, i) => (
-              <div
-                key={i}
-                className="
-                  min-w-full
-                  md:min-w-[48%]
-                  lg:min-w-[23%]
-                  bg-white
-                  border border-gray-200
-                  rounded-xl
-                  p-10
-                  shadow-sm
-                "
+          {/* RIGHT: SLIDING CONTENT */}
+          <div className="lg:col-span-7 relative min-h-[300px] flex items-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-soft/50 p-8 md:p-12 rounded-3xl border border-gray-100 w-full shadow-sm"
               >
-                <p className="text-[11px] uppercase tracking-widest text-secondary mb-5">
-                  {item.tag}
-                </p>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-6xl font-bold text-gray-200/50 select-none">
+                    {advantages[activeIndex].id}
+                  </span>
+                  <div className="h-[2px] flex-1 bg-gradient-to-r from-secondary/50 to-transparent" />
+                </div>
 
-                <h3 className="text-lg font-primary font-semibold text-primary mb-3">
-                  {item.title}
+                <h3 className="text-2xl md:text-3xl font-bold font-primary text-primary mb-6">
+                  {advantages[activeIndex].title}
                 </h3>
 
-                <p className="text-body-card text-sm leading-relaxed">
-                  {item.text}
+                <p className="text-gray-600 text-lg leading-relaxed show-line-breaks">
+                  {advantages[activeIndex].text}
                 </p>
-              </div>
-            ))}
-          </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
-
-        {/* INDICATORS */}
-        {/* <div className="flex gap-3 mt-10">
-          {advantages.map((_, i) => (
-            <button key={i} onClick={() => setIndex(i)} className="flex-1">
-              <motion.div
-                animate={{ width: index === i ? "100%" : "40%" }}
-                transition={{ duration: 0.3 }}
-                className={`h-[3px] ${
-                  index === i ? "bg-secondary" : "bg-gray-300"
-                }`}
-              />
-            </button>
-          ))}
-        </div> */}
       </div>
     </section>
   );

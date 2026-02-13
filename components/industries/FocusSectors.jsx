@@ -10,25 +10,25 @@ export default function FocusSectors() {
     {
       title: "Healthcare & Digital Health",
       desc: "Technology-enabled platforms transforming care delivery systems.",
-      img: "/assets/industries-1.jpg",
+      img: "/assets/ind-1.png",
       tag: "Healthcare",
     },
     {
       title: "Artificial Intelligence & Automation",
       desc: "Intelligent systems driving efficiency and enterprise scale.",
-      img: "/assets/industries-2.jpg",
+      img: "/assets/ind-2.png",
       tag: "AI",
     },
     {
       title: "Robotics & Advanced Manufacturing",
       desc: "Automation technologies modernizing industrial production ecosystems.",
-      img: "/assets/industries-3.jpg",
+      img: "/assets/ind-3.png",
       tag: "Robotics",
     },
     {
       title: "Digital Banking & Fintech Infrastructure",
       desc: "Secure financial infrastructure powering digital economies.",
-      img: "/assets/industries-4.jpg",
+      img: "/assets/ind-4.png",
       tag: "Fintech",
     },
   ];

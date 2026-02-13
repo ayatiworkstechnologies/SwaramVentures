@@ -7,20 +7,18 @@ export default function ServicesFounderSection() {
   const cards = [
     {
       title: "What This Means for Founders",
-      image: "/assets/core-1.jpg",
+      image: "/assets/cap-1.png",
       points: [
-        "Capital that stays aligned through scale",
-        "Time to build without quarterly pressure",
-        "Support designed around durability, not acceleration alone",
+        `Founder Alignment in Practice
+Capital that stays aligned through scale Time to build without quarterly pressure Support designed around durability, not acceleration alone 
+`,
       ],
     },
     {
-      title: "What This Means for Founders",
-      image: "/assets/core-2.jpg",
+      title: "Founder Alignment in Practice",
+      image: "/assets/cap-2.png",
       points: [
-        "Capital that stays aligned through scale",
-        "Time to build without quarterly pressure",
-        "Support designed around durability, not acceleration alone",
+        `Our capital is designed to remain aligned as companies scale, markets evolve, and priorities shift. We invest with the intent to support durable progress, not accelerate outcomes at the expense of long-term value. `,
       ],
     },
   ];

@@ -6,20 +6,20 @@ import Image from "next/image";
 
 const slides = [
   {
-    title: "Long-Term Capital. Aligned Partnerships.",
-    desc: "We deploy flexible, long-horizon capital into businesses built for endurance, not short-term exits.",
-    cardTitle: "Capital Philosophy",
+    title: "Capital Philosophy",
+    desc: "How We Deploy Capital: Swaram Ventures invests as a family fund with a multi-generational mindset.",
+    cardTitle: "Family Fund Mindset",
     cardDesc:
-      "Swaram Ventures invests as a family fund with a multi-generational mindset. Our capital is structured to support founders through growth, complexity, and market cycles, without pressure for premature outcomes.",
-    image: "/assets/core-1.jpg",
+      "Our capital is structured to support founders through growth, complexity, and market cycles, without pressure for premature outcomes.",
+    image: "/assets/cap-1.png",
   },
   {
-    title: "Strategic Guidance. Scalable Growth.",
-    desc: "We work alongside founders to unlock operational excellence and market expansion.",
-    cardTitle: "Growth Strategy",
+    title: "Selective Investment",
+    desc: "Guided by conviction rather than volume.",
+    cardTitle: "Long-Term Relevance",
     cardDesc:
-      "Our approach combines operational insight with long-term planning, enabling companies to scale responsibly across markets.",
-    image: "/assets/core-2.jpg",
+      "Each investment reflects deep belief in the founder, the market, and the company’s long-term relevance.",
+    image: "/assets/cap-2.png",
   },
 ];
 
@@ -41,7 +41,6 @@ export default function ServicesHeroSection() {
     <section className="bg-[#f5f5f5] py-16 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
           {/* LEFT CONTENT */}
           <AnimatePresence mode="wait">
             <motion.div
@@ -61,9 +60,7 @@ export default function ServicesHeroSection() {
 
               <div className="w-16 h-[2px] bg-gray-300 mb-6"></div>
 
-              <p className="text-gray-500 max-w-md">
-                {active.desc}
-              </p>
+              <p className="text-gray-500 max-w-md">{active.desc}</p>
             </motion.div>
           </AnimatePresence>
 
@@ -104,18 +101,12 @@ export default function ServicesHeroSection() {
         {/* BOTTOM PROGRESS BARS */}
         <div className="flex gap-6 mt-12 max-w-xl">
           {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              className="flex-1"
-            >
+            <button key={i} onClick={() => setIndex(i)} className="flex-1">
               <motion.div
                 animate={{ width: index === i ? "100%" : "40%" }}
                 transition={{ duration: 0.4 }}
                 className={`h-[4px] ${
-                  index === i
-                    ? "bg-orange-500"
-                    : "bg-gray-300"
+                  index === i ? "bg-orange-500" : "bg-gray-300"
                 }`}
               />
             </button>

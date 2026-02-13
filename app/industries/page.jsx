@@ -17,12 +17,8 @@ export default function IndustriesPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Industries" }]}
         slides={[
           {
-            image: "/banners/hero-banner.jpg",
-            // title: "Transforming High-Impact Sectors",
-            // subtitle:
-            //   "We focus on Healthcare, Artificial Intelligence, Robotics, Digital Finance, and Global Trade Logistics.",
-            // primaryBtn: { label: "View Services", href: "/services" },
-            // secondaryBtn: { label: "Contact Us", href: "/contact" },
+            image: "/banners/industries-banner.png",
+            mobileImage: "/banners/industries-banner-mob.png",
           },
         ]}
       />

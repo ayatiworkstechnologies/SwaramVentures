@@ -17,6 +17,7 @@ export default function ServicesPage() {
         slides={[
           {
             image: "/banners/service-banner.jpg",
+            mobileImage: "/banners/service-banner.jpg",
             // title: "Comprehensive Support for Scale",
             // subtitle:
             //   "Beyond capital, we offer a full suite of services to support our portfolio companies, including strategic consulting, network access, and operational support.",

@@ -17,6 +17,7 @@ export default function AboutPage() {
         slides={[
           {
             image: "/banners/about-banner.jpg",
+            mobileImage: "/banners/about-banner.jpg",
             // title: "Swaram Ventures backs bold founders in healthcare and AI.",
             // subtitle: "Investing early. Scaling globally.",
             // primaryBtn: { label: "Explore Portfolio", href: "/portfolio" },

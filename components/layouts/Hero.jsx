@@ -76,8 +76,20 @@ export default function Hero() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className={`object-cover ${
+              slides[index].mobileImage ? "hidden md:block" : ""
+            }`}
           />
+          {slides[index].mobileImage && (
+            <Image
+              src={slides[index].mobileImage}
+              alt="banner mobile"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover md:hidden"
+            />
+          )}
 
           {/* overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/25" />

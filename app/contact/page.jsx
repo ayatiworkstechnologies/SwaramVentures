@@ -39,6 +39,7 @@ export default function ContactPage() {
         slides={[
           {
             image: "/banners/hero-banner.jpg",
+            mobileImage: "/banners/hero-banner.jpg",
           },
         ]}
       />

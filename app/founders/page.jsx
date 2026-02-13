@@ -14,6 +14,7 @@ export default function FoundersPage() {
         slides={[
           {
             image: "/banners/hero-banner.jpg",
+            mobileImage: "/banners/hero-banner.jpg",
             // title: "Partnering with Visionary Founders",
             // subtitle:
             //   "We are looking for visionary founders building the future. Learn more about our investment criteria and how we can work together.",

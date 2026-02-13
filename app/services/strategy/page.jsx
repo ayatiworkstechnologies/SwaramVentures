@@ -14,7 +14,8 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Strategy" }]}
         slides={[
           {
-            image: "/banners/service-banner.jpg",
+            image: "/banners/strategy-banner.png",
+            mobileImage: "/banners/strategy-banner-mob.png",
             // title: "Comprehensive Support for Scale",
             // subtitle:
             //   "Beyond capital, we offer a full suite of services to support our portfolio companies, including strategic consulting, network access, and operational support.",
@@ -22,7 +23,7 @@ export default function ServicesPage() {
           },
         ]}
       />
-     <AdvantagesSection />
+      <AdvantagesSection />
     </>
   );
 }

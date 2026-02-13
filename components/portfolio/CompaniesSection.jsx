@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const companies = [
-  { id: 1, logo: "/assets/logo-5.png", name: "Inkle" },
-  { id: 2, logo: "/assets/logo-2.png", name: "Royal Dutch" },
-  { id: 3, logo: "/assets/logo-4.png", name: "Grazen AI" },
-  { id: 4, logo: "/assets/logo-3.png", name: "Rento" },
-  { id: 5, logo: "/assets/logo-1.png", name: "Plenome" },
-  { id: 6, logo: "/assets/logo-6.png", name: "Acumulus" },
+  { id: 1, logo: "/assets/logos-5.png", name: "Inkle" },
+  { id: 2, logo: "/assets/logos-1.png", name: "Royal Dutch" },
+  { id: 3, logo: "/assets/logos-4.png", name: "Grazen AI" },
+  { id: 4, logo: "/assets/logos-3.png", name: "Rento" },
+  { id: 5, logo: "/assets/logos-6.png", name: "Plenome" },
+  { id: 6, logo: "/assets/logos-2.png", name: "Acumulus" },
 ];
 
 export default function CompaniesSection() {
@@ -17,7 +17,6 @@ export default function CompaniesSection() {
     <section className="bg-[#071a3a] py-20 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -28,18 +27,23 @@ export default function CompaniesSection() {
             <p className="text-orange-500 uppercase tracking-widest text-sm mb-3">
               Portfolio
             </p>
-
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Companies We Support
+              Portfolio Overview
             </h2>
-
             <div className="w-20 h-[2px] bg-gray-400 mb-6"></div>
-
             <p className="text-gray-300 max-w-xl leading-relaxed">
-              Our investments span multiple sectors and geographies, partnering
-              with founders to build strong, sustainable businesses. Each
-              company addresses real-world challenges through innovation and
-              technology.
+              We invest selectively, prioritizing depth of conviction over
+              volume. Each portfolio company represents alignment with our
+              long-term thesis and commitment to durable value creation. 
+            </p>{" "}
+            <p className="text-gray-300 max-w-xl leading-relaxed">
+              Our investments are concentrated in sectors where innovation
+              intersects with essential infrastructure, businesses that shape
+              how the world builds, moves, finances, and cares. 
+            </p>{" "}
+            <p className="text-gray-300 max-w-xl leading-relaxed">
+              This is not a broad allocation strategy. It is a focused portfolio
+              constructed with intention, discipline, and long-term alignment. 
             </p>
           </motion.div>
 
@@ -55,10 +59,7 @@ export default function CompaniesSection() {
             <LogoCard company={companies[0]} />
 
             {/* div2 */}
-            <LogoCard
-              company={companies[1]}
-              className="col-span-2"
-            />
+            <LogoCard company={companies[1]} className="col-span-2" />
 
             {/* div3 */}
             <LogoCard
@@ -73,10 +74,7 @@ export default function CompaniesSection() {
             />
 
             {/* div5 */}
-            <LogoCard
-              company={companies[4]}
-              className="row-start-3"
-            />
+            <LogoCard company={companies[4]} className="row-start-3" />
 
             {/* div6 */}
             <LogoCard
@@ -99,7 +97,7 @@ function LogoCard({ company, className = "" }) {
       transition={{ duration: 0.4 }}
       viewport={{ once: true }}
       className={`
-        bg-gray-100 rounded-2xl
+        bg-white rounded-2xl
         flex items-center justify-center
         shadow-md
         h-20 md:h-25

@@ -1,6 +1,8 @@
 import HeroSlider from "@/components/layouts/HeroSlider";
-import ServicesFounderSection from "@/components/services/ServicesFounderSection";
-import ServicesHeroSection from "@/components/services/ServicesHeroSection";
+import CrossBorderCTA from "@/components/services/CrossBorderCTA";
+import CrossBorderIntro from "@/components/services/CrossBorderIntro";
+import CrossBorderRegions from "@/components/services/CrossBorderRegions";
+import CrossBorderSection from "@/components/services/CrossBorderSection";
 
 export const metadata = {
   title: "Services - Swaram Ventures",
@@ -15,7 +17,8 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Cross Border" }]}
         slides={[
           {
-            image: "/banners/service-banner.jpg",
+            image: "/banners/cross-banner.png",
+            mobileImage: "/banners/cross-banner-mob.png",
             // title: "Comprehensive Support for Scale",
             // subtitle:
             //   "Beyond capital, we offer a full suite of services to support our portfolio companies, including strategic consulting, network access, and operational support.",
@@ -23,8 +26,10 @@ export default function ServicesPage() {
           },
         ]}
       />
-     <ServicesHeroSection />
-     <ServicesFounderSection />
+      {/* <CrossBorderSection /> */}
+      <CrossBorderIntro />
+      <CrossBorderRegions />
+      <CrossBorderCTA />
     </>
   );
 }
