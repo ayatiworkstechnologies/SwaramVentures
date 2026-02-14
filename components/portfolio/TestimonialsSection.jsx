@@ -22,6 +22,7 @@ Builds digital solutions that support efficient clinical operations.`,
     description: `A multi-specialty healthcare provider delivering patient-centric medical services.
 Focused on quality treatment, modern facilities, and clinical excellence.`,
     logo: "/assets/logos-2.png",
+    link: "https://royaldutchclinic.ae/",
   },
   {
     id: 3,
@@ -65,21 +66,19 @@ export default function PortfolioTestimonialsSection() {
   const [index, setIndex] = useState(0);
   const total = portfolioData.length;
 
-  // Auto-rotate every 5 seconds
+  /* Auto-rotate */
   useEffect(() => {
     const t = setInterval(() => {
       setIndex((prev) => (prev + 1) % total);
     }, 5000);
     return () => clearInterval(t);
-  }, []);
+  }, [total]);
 
   const featured = portfolioData[index];
 
-  // Calculate indices for the stack
   const prevIndex = (index - 1 + total) % total;
   const nextIndex = (index + 1) % total;
 
-  // The stack items: [Previous, Current, Next]
   const stack = [
     { ...portfolioData[prevIndex], type: "prev" },
     { ...featured, type: "current" },
@@ -89,49 +88,11 @@ export default function PortfolioTestimonialsSection() {
   return (
     <section className="bg-[#f4f4f4] py-16">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header Section */}
-        <div className="relative w-full rounded-2xl overflow-hidden mb-12 shadow-xl hover:shadow-2xl transition-shadow duration-300 group">
-          <div className="relative h-[250px] md:h-[300px] w-full">
-            <img
-              src="/assets/Portfolio.jpg"
-              alt="Current Investments"
-              className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 max-w-3xl">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-3xl md:text-5xl font-bold text-white mb-4 font-primary"
-              >
-                Current Investments
-              </motion.h2>
-              <motion.div
-                initial={{ opacity: 0, width: 0 }}
-                whileInView={{ opacity: 1, width: "5rem" }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="h-1 bg-secondary mb-6"
-              />
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-white/90 text-lg md:text-xl leading-relaxed"
-              >
-                A curated portfolio of companies operating across high-impact,
-                technology-enabled sectors.
-              </motion.p>
-            </div>
-          </div>
-        </div>
 
         {/* Layout */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Left Vertical Logo Stack */}
+
+          {/* Left Logo Stack */}
           <div className="flex flex-col gap-6 items-center flex-shrink-0 min-w-[140px] h-[400px] justify-center">
             <AnimatePresence mode="popLayout">
               {stack.map((item) => {
@@ -145,7 +106,9 @@ export default function PortfolioTestimonialsSection() {
                       opacity: isCurrent ? 1 : 0.5,
                       x: 0,
                       scale: isCurrent ? 1 : 0.9,
-                      filter: isCurrent ? "grayscale(0%)" : "grayscale(100%)",
+                      filter: isCurrent
+                        ? "grayscale(0%)"
+                        : "grayscale(100%)",
                     }}
                     exit={{ opacity: 0, x: 20, scale: 0.8 }}
                     transition={{
@@ -154,21 +117,17 @@ export default function PortfolioTestimonialsSection() {
                       damping: 25,
                     }}
                     onClick={() =>
-                      setIndex(portfolioData.findIndex((p) => p.id === item.id))
+                      setIndex(
+                        portfolioData.findIndex((p) => p.id === item.id)
+                      )
                     }
-                    className={`
-                      relative flex items-center justify-center
-                      rounded-2xl bg-white
-                      ${
-                        isCurrent
-                          ? "w-40 h-36 shadow-xl border border-transparent z-10"
-                          : "w-24 h-24 shadow-sm border border-transparent z-0"
-                      }
-                    `}
+                    className={`relative flex items-center justify-center rounded-2xl bg-white ${
+                      isCurrent
+                        ? "w-40 h-36 shadow-xl"
+                        : "w-24 h-24 shadow-sm"
+                    }`}
                   >
-                    <div
-                      className={`relative w-full h-full p-4 ${isCurrent ? "p-6" : "p-4"}`}
-                    >
+                    <div className="relative w-full h-full p-5">
                       <Image
                         src={item.logo}
                         alt={item.name}
@@ -182,19 +141,20 @@ export default function PortfolioTestimonialsSection() {
             </AnimatePresence>
           </div>
 
-          {/* Main Content Card - Updates based on 'index' */}
-          <div className="relative w-full flex-grow h-full">
+          {/* Main Card */}
+          <div className="relative w-full flex-grow">
             <AnimatePresence mode="wait">
               <motion.div
                 key={featured.id}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.4 }}
                 className="relative bg-white rounded-3xl shadow-lg border border-gray-100 p-8 md:p-12 min-h-[400px] flex flex-col justify-center"
               >
+                {/* BG Logo */}
                 <div className="absolute right-8 top-8 opacity-10">
-                  <div className="w-24 h-24 md:w-32 md:h-32 relative">
+                  <div className="w-24 h-24 relative">
                     <Image
                       src={featured.logo}
                       alt="BG Logo"
@@ -204,23 +164,35 @@ export default function PortfolioTestimonialsSection() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-secondary font-bold uppercase tracking-widest text-xs">
-                    {featured.category}
-                  </span>
-                </div>
+                <span className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">
+                  {featured.category}
+                </span>
 
                 <h3 className="text-4xl md:text-5xl font-bold font-primary text-primary mb-6">
                   {featured.name}
                 </h3>
 
-                <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line max-w-2xl relative z-10 mb-8">
+                <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line max-w-2xl mb-8">
                   {featured.description}
                 </p>
 
                 <div className="mt-auto">
-                  <p className="font-bold text-primary">{featured.country}</p>
+                  <p className="font-bold text-primary">
+                    {featured.country}
+                  </p>
                   <p className="text-sm text-gray-400">Global Client</p>
+
+                  {/* Link only if exists */}
+                  {featured.link && (
+                    <a
+                      href={featured.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-secondary hover:text-primary/80 transition-colors font-semibold"
+                    >
+                      View Company →
+                    </a>
+                  )}
 
                   <div className="w-full border-t border-dashed border-gray-200 mt-6 pt-6" />
                 </div>

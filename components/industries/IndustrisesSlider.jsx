@@ -10,12 +10,12 @@ export default function IndustrisesSlider() {
     {
       title: "Plenome",
       desc: "A healthcare platform supported through strategic capital and governance alignment, strengthening operational scale and cross-border growth initiatives.",
-      img: "/assets/portfolio-5.png",
+      img: "/assets/portfolio-2.png",
     },
     {
       title: "Royal Dutch Clinics (UAE)",
       desc: "An integrated healthcare network backed with long-horizon investment and structured expansion support across regional markets.",
-      img: "/assets/portfolio-2.png",
+      img: "/assets/portfolio-5.png",
     },
     {
       title: "Grazen AI (USA)",
