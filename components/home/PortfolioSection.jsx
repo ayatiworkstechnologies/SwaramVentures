@@ -14,7 +14,7 @@ export default function PortfolioSection() {
       category: "Healthcare",
       description: `A healthcare technology company focused on improving access and care delivery.
 Builds digital solutions that support efficient clinical operations.`,
-      logo: "/assets/portfolio-1.png",
+      logo: "/assets/portfolio-2.png",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ Builds digital solutions that support efficient clinical operations.`,
       category: "Healthcare",
       description: `A multi-specialty healthcare provider delivering patient-centric medical services.
 Focused on quality treatment, modern facilities, and clinical excellence.`,
-      logo: "/assets/portfolio-2.png",
+      logo: "/assets/portfolio-5.png",
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ Improves efficiency, accuracy, and scalability in logistics environments.`,
       category: "FinTech",
       description: `A fintech platform offering digital tools for modern financial operations.
 Simplifies compliance, payments, and business financial workflows.`,
-      logo: "/assets/portfolio-5.png",
+      logo: "/assets/portfolio-1.png",
     },
     {
       id: 6,
