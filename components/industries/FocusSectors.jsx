@@ -8,50 +8,78 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function FocusSectors() {
   const sectors = [
     {
-      title: "Healthcare & Digital Health",
-      desc: "Technology-enabled platforms transforming care delivery systems.",
-      img: "/assets/ind-1.png",
       tag: "Healthcare",
+      title: "Healthcare & Digital Health",
+      desc: "Technology-driven platforms improving care delivery, data systems, and clinical operations.",
+      img: "/assets/industries-1.jpg",
     },
     {
-      title: "Artificial Intelligence & Automation",
-      desc: "Intelligent systems driving efficiency and enterprise scale.",
-      img: "/assets/ind-2.png",
-      tag: "AI",
-    },
-    {
+      tag: "Manufacturing",
       title: "Robotics & Advanced Manufacturing",
-      desc: "Automation technologies modernizing industrial production ecosystems.",
-      img: "/assets/ind-3.png",
-      tag: "Robotics",
+      desc: "Automation, robotics, and scalable production technologies for modern industry.",
+      img: "/assets/industries-3.jpg",
     },
     {
-      title: "Digital Banking & Fintech Infrastructure",
-      desc: "Secure financial infrastructure powering digital economies.",
-      img: "/assets/ind-4.png",
+      tag: "Sustainability",
+      title: "Sustainable Clean Water Technology",
+      desc: "Innovations ensuring access to safe, efficient, and scalable water solutions.",
+      img: "/assets/industries-3.jpg",
+    },
+    {
+      tag: "Logistics",
+      title: "Global Trade & Logistics Platforms",
+      desc: "Data-driven platforms optimizing cross-border trade and supply chains.",
+      img: "/assets/industries-5.jpg",
+    },
+    {
+      tag: "Mobility",
+      title: "Mobility",
+      desc: "Smart mobility systems transforming transportation and movement.",
+      img: "/assets/industries-5.jpg",
+    },
+    {
       tag: "Fintech",
+      title: "Digital Banking & Fintech Infrastructure",
+      desc: "Core fintech infrastructure powering payments, compliance, and digital banking.",
+      img: "/assets/industries-4.jpg",
+    },
+    {
+      tag: "AI",
+      title: "Artificial Intelligence & Automation",
+      desc: "AI-driven systems enabling smarter decisions and scalable automation.",
+      img: "/assets/industries-2.jpg",
     },
   ];
 
-  const visible = 3;
-  const maxIndex = sectors.length - visible > 0 ? sectors.length - visible : 0;
   const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(3);
+
+  useEffect(() => {
+    const updateVisible = () => {
+      if (window.innerWidth < 768) setVisible(1);
+      else if (window.innerWidth < 1024) setVisible(2);
+      else setVisible(3);
+    };
+
+    updateVisible();
+    window.addEventListener("resize", updateVisible);
+    return () => window.removeEventListener("resize", updateVisible);
+  }, []);
+
+  const maxIndex = sectors.length - visible;
 
   const next = () => {
-    if (index < maxIndex) setIndex(index + 1);
-    else setIndex(0);
+    setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const prev = () => {
-    if (index > 0) setIndex(index - 1);
-    else setIndex(maxIndex);
+    setIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
-  /* auto slide */
   useEffect(() => {
     const t = setInterval(next, 4500);
     return () => clearInterval(t);
-  }, [index, maxIndex]);
+  }, [maxIndex]);
 
   return (
     <section className="bg-soft py-16 overflow-hidden">
@@ -65,17 +93,16 @@ export default function FocusSectors() {
             </p>
           </div>
 
-          {/* ARROWS */}
           <div className="flex gap-3">
             <button
               onClick={prev}
-              className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white smooth"
+              className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={next}
-              className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white smooth"
+              className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition"
             >
               <ChevronRight size={20} />
             </button>
@@ -86,29 +113,33 @@ export default function FocusSectors() {
         <div className="overflow-hidden">
           <motion.div
             animate={{ x: `-${index * (100 / visible)}%` }}
-            transition={{ type: "spring", stiffness: 80, damping: 18 }}
+            transition={{ type: "spring", stiffness: 70, damping: 20 }}
             className="flex"
           >
             {sectors.map((item, i) => (
               <div key={i} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4">
-                <div className="group relative overflow-hidden rounded-xl shadow-md h-[420px]">
-                  {/* IMAGE */}
+                <div className="group relative overflow-hidden rounded-2xl shadow-md h-[420px]">
                   <Image
                     src={item.img}
                     alt={item.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition duration-700"
+                    className="object-cover group-hover:scale-110 transition duration-700"
                   />
 
-                  {/* CONTENT OVERLAY */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/50 transition-all duration-300">
-                    <span className="text-[11px] uppercase tracking-widest text-primary mb-1 block">
+                  {/* GRADIENT */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                  {/* CONTENT */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <span className="text-xs uppercase tracking-widest text-white/70 mb-2 block">
                       {item.tag}
                     </span>
-                    <h3 className="text-xl font-primary text-secondary font-semibold text-white mb-2">
+                    <h3 className="text-xl font-semibold text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-black/90  text-sm">{item.desc}</p>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               </div>

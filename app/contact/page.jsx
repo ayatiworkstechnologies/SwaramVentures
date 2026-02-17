@@ -93,7 +93,9 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-secondary" />
                   </div>
                   <div>
-                    <p className="text-primary font-semibold">India Office</p>
+                    <p className="text-primary font-semibold">
+                      SwaRam Gendral Address
+                    </p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
                       4th Floor, Tech Park,
                       <br />

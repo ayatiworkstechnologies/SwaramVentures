@@ -15,6 +15,7 @@ export default function PortfolioSection() {
       description: `A healthcare technology company focused on improving access and care delivery.
 Builds digital solutions that support efficient clinical operations.`,
       logo: "/assets/portfolio-2.png",
+      link: "https://plenome.com/",
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ Builds digital solutions that support efficient clinical operations.`,
       description: `A multi-specialty healthcare provider delivering patient-centric medical services.
 Focused on quality treatment, modern facilities, and clinical excellence.`,
       logo: "/assets/portfolio-5.png",
+      link: "https://royal-dutch-clinics.com/",
     },
     {
       id: 3,
@@ -33,6 +35,7 @@ Focused on quality treatment, modern facilities, and clinical excellence.`,
       description: `An industrial robotics company enabling automation across manufacturing sectors.
 Supports operational efficiency through advanced robotic solutions.`,
       logo: "/assets/portfolio-3.png",
+      link: "https://rento.com/",
     },
     {
       id: 4,
@@ -42,6 +45,7 @@ Supports operational efficiency through advanced robotic solutions.`,
       description: `A robotics company developing automation for retail and warehouse operations.
 Improves efficiency, accuracy, and scalability in logistics environments.`,
       logo: "/assets/portfolio-4.png",
+      link: "https://grazen.ai/",
     },
     {
       id: 5,
@@ -51,6 +55,7 @@ Improves efficiency, accuracy, and scalability in logistics environments.`,
       description: `A fintech platform offering digital tools for modern financial operations.
 Simplifies compliance, payments, and business financial workflows.`,
       logo: "/assets/portfolio-1.png",
+      link: "https://inkle.ai/",
     },
     {
       id: 6,
@@ -60,15 +65,17 @@ Simplifies compliance, payments, and business financial workflows.`,
       description: `A financial technology company building scalable digital finance infrastructure.
 Supports secure, efficient, and data-driven financial services.`,
       logo: "/assets/portfolio-6.png",
+      link: "https://acumulus.ai/",
     },
     {
       id: 7,
-      name: "Environmental Technology / Clean Technology (CleanTech)",
+      name: "Environmental Technology",
       country: "USA",
       category: "DripDropUSA",
       description: `A DripDropUSA company building scalable digital finance infrastructure.
 Supports secure, efficient, and data-driven financial services.`,
       logo: "/assets/portfolio-6.png",
+      link: "https://dripdropusa.com/",
     },
     {
       id: 8,
@@ -78,6 +85,7 @@ Supports secure, efficient, and data-driven financial services.`,
       description: `Logistics & Supply Chain – Managing efficiency in transportation and delivery systems
 Global Trading – Facilitating international trade with customized solutions`,
       logo: "/assets/portfolio-6.png",
+      link: "https://swaramtrading.com/",
     },
   ];
 
@@ -201,9 +209,17 @@ Global Trading – Facilitating international trade with customized solutions`,
                   </p>
 
                   {/* FULL DESC (Optional, kept mostly hidden or truncated) */}
-                  <p className="text-body-card text-sm line-clamp-3">
-                    {item.description}
-                  </p>
+                  <p className="text-body-card text-sm">{item.description}</p>
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-secondary hover:text-primary/80 transition-colors font-semibold"
+                    >
+                      View Company →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

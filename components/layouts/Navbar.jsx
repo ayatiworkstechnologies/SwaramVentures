@@ -28,7 +28,7 @@ export default function Navbar() {
     },
 
     { name: "Portfolio", href: "/portfolio" },
-    { name: "For Founders", href: "/founders" },
+    { name: "Founders", href: "/founders" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
