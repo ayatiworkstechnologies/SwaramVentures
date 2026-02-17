@@ -96,10 +96,7 @@ export default function IndustrisesSlider() {
             className="flex"
           >
             {projects.map((item, i) => (
-              <div
-                key={i}
-                className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4"
-              >
+              <div key={i} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4">
                 <div className="group relative overflow-hidden rounded-xl shadow-md h-[350px] md:h-[420px]">
                   {/* IMAGE */}
                   <Image
@@ -110,13 +107,11 @@ export default function IndustrisesSlider() {
                   />
 
                   {/* CONTENT */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-xl border-t border-white/20 transition-all duration-300">
-                    <h3 className="text-xl font-primary font-semibold text-white mb-2">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/50 border-t border-white/20 transition-all duration-300">
+                    <h3 className="text-xl font-primary font-semibold text-secondary mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-white/90 text-sm">
-                      {item.desc}
-                    </p>
+                    <p className="text-black/90 text-sm">{item.desc}</p>
                   </div>
                 </div>
               </div>

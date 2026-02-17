@@ -60,6 +60,33 @@ Simplifies compliance, payments, and business financial workflows.`,
 Supports secure, efficient, and data-driven financial services.`,
     logo: "/assets/logos-6.png",
   },
+  {
+    id: 7,
+    name: "MiTrans Innovation Systems",
+    country: "USA",
+    category: "Edutech",
+    description: `A financial technology company building scalable digital finance infrastructure.
+Supports secure, efficient, and data-driven financial services.`,
+    logo: "/assets/logos-6.png",
+  },
+  {
+    id: 8,
+    name: "Passelz",
+    country: "USA",
+    category: "Passelz",
+    description: `Passelz is a new way to connect with others by controlling the content you share and deciding who it is shared with. It enables users to represent themselves authentically through multiple personas — personal, work, volunteering, or hobbies. Users can safely share personal moments with friends and family while keeping them separate from business profiles. It also allows business updates without spamming professional contacts.`,
+    logo: "/assets/logos-6.png",
+    link: "https://www.passelz.com/",
+  },
+  {
+    id: 9,
+    name: "Swaram General Trade",
+    country: "UAE",
+    category: "SwaRam",
+    description: `A financial technology company building scalable digital finance infrastructure.
+Supports secure, efficient, and data-driven financial services.`,
+    logo: "/assets/logos-6.png",
+  },
 ];
 
 export default function PortfolioTestimonialsSection() {
@@ -88,10 +115,8 @@ export default function PortfolioTestimonialsSection() {
   return (
     <section className="bg-[#f4f4f4] py-16">
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Layout */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-
           {/* Left Logo Stack */}
           <div className="flex flex-col gap-6 items-center flex-shrink-0 min-w-[140px] h-[400px] justify-center">
             <AnimatePresence mode="popLayout">
@@ -106,9 +131,7 @@ export default function PortfolioTestimonialsSection() {
                       opacity: isCurrent ? 1 : 0.5,
                       x: 0,
                       scale: isCurrent ? 1 : 0.9,
-                      filter: isCurrent
-                        ? "grayscale(0%)"
-                        : "grayscale(100%)",
+                      filter: isCurrent ? "grayscale(0%)" : "grayscale(100%)",
                     }}
                     exit={{ opacity: 0, x: 20, scale: 0.8 }}
                     transition={{
@@ -117,14 +140,10 @@ export default function PortfolioTestimonialsSection() {
                       damping: 25,
                     }}
                     onClick={() =>
-                      setIndex(
-                        portfolioData.findIndex((p) => p.id === item.id)
-                      )
+                      setIndex(portfolioData.findIndex((p) => p.id === item.id))
                     }
                     className={`relative flex items-center justify-center rounded-2xl bg-white ${
-                      isCurrent
-                        ? "w-40 h-36 shadow-xl"
-                        : "w-24 h-24 shadow-sm"
+                      isCurrent ? "w-40 h-36 shadow-xl" : "w-24 h-24 shadow-sm"
                     }`}
                   >
                     <div className="relative w-full h-full p-5">
@@ -177,9 +196,7 @@ export default function PortfolioTestimonialsSection() {
                 </p>
 
                 <div className="mt-auto">
-                  <p className="font-bold text-primary">
-                    {featured.country}
-                  </p>
+                  <p className="font-bold text-primary">{featured.country}</p>
                   <p className="text-sm text-gray-400">Global Client</p>
 
                   {/* Link only if exists */}

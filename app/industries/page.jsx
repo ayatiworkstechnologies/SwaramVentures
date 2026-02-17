@@ -24,7 +24,7 @@ export default function IndustriesPage() {
       />
       <IndustriesQuote />
       <FocusSectors />
-      <MetricsSection />
+      {/* <MetricsSection /> */}
       <IndustrisesSlider />
     </>
   );

@@ -14,17 +14,28 @@ const items = [
     link: "/industries",
   },
   {
-    title: "Artificial Intelligence & Automation",
-    desc: "We invest in AI systems driving efficiency, automation, scale. These platforms enable smarter decisions across enterprise use globally.",
-    img: "/assets/industries-2.jpg",
-    link: "/industries",
-  },
-
-  {
     title: "Robotics & Advanced Manufacturing",
     desc: "We support robotics ventures modernizing production, precision, and throughout. Our investments target scalable manufacturing, automation, and hardware-led innovation.",
     img: "/assets/industries-3.jpg",
     link: "/industries",
+  },
+  {
+    title: "Sustainable Clean Water Technology",
+    desc: "",
+    img: "/assets/industries-3.jpg",
+    link: "/industries",
+  },
+  {
+    title: "Global Trade & Logistics Platforms ",
+    desc: "We back platforms optimizing trade, logistics, and supply chain. Our focus spans cross-border commerce, infrastructure, and data-driven coordination. ",
+    img: "/assets/industries-5.jpg",
+    link: "/industries",
+  },
+  {
+    title: "Mobility",
+    desc: " ",
+    img: "/assets/industries-5.jpg",
+    link: "https://rento.pe/",
   },
   {
     title: "Digital Banking & Fintech Infrastructure ",
@@ -33,9 +44,9 @@ const items = [
     link: "/industries",
   },
   {
-    title: "Global Trade & Logistics Platforms ",
-    desc: "We back platforms optimizing trade, logistics, and supply chain. Our focus spans cross-border commerce, infrastructure, and data-driven coordination. ",
-    img: "/assets/industries-5.jpg",
+    title: "Artificial Intelligence & Automation",
+    desc: "We invest in AI systems driving efficiency, automation, scale. These platforms enable smarter decisions across enterprise use globally.",
+    img: "/assets/industries-2.jpg",
     link: "/industries",
   },
 ];

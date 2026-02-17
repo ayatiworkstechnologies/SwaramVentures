@@ -3,13 +3,11 @@
 import { Mail, MapPin, Play } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-import HeroSlider from "@/components/layouts/HeroSlider";
-
 export default function ContactPage() {
   const {
     register: registerContact,
     handleSubmit: handleSubmitContact,
-    formState: { errors: errorsContact },
+    formState: { errors: errorsContact, isSubmitting },
     reset: resetContact,
   } = useForm();
 
@@ -20,35 +18,37 @@ export default function ContactPage() {
     reset: resetNewsletter,
   } = useForm();
 
-  const onContactSubmit = (data) => {
-    console.log("Contact Form Data:", data);
-    alert("Message sent! (Check console for data)");
-    resetContact();
-  };
+  // CONTACT FORM SUBMIT (API POST)
+  const onContactSubmit = async (data) => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-  const onNewsletterSubmit = (data) => {
-    console.log("Newsletter Data:", data);
-    alert("Subscribed! (Check console for data)");
-    resetNewsletter();
+      if (!res.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      alert("Message sent successfully!");
+      resetContact();
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
     <main className="bg-white">
-      {/* <HeroSlider
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-        slides={[
-          {
-            image: "/banners/hero-banner.jpg",
-            mobileImage: "/banners/hero-banner.jpg",
-          },
-        ]}
-      /> */}
       {/* Main Contact Section */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left Column: Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
                 <span className="text-secondary font-medium tracking-wide uppercase text-sm">
                   Contact Info
@@ -58,7 +58,7 @@ export default function ContactPage() {
                 </h1>
               </div>
 
-              <div className="space-y-6 pt-4">
+              <div className="space-y-8 pt-4">
                 {/* Email */}
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-secondary" />
@@ -70,18 +70,38 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                {/* Address */}
+                {/* Address 1 */}
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0">
                     <MapPin className="w-5 h-5 text-secondary" />
                   </div>
-                  <p className="text-lg text-primary font-medium leading-relaxed max-w-sm">
-                    Medyan Grandstand, 6th floor,
-                    <br />
-                    Meydan Road, Nad Al Sheba,
-                    <br />
-                    Dubai, U.A.E
-                  </p>
+                  <div>
+                    <p className="text-primary font-semibold">Dubai Office</p>
+                    <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
+                      Medyan Grandstand, 6th floor,
+                      <br />
+                      Meydan Road, Nad Al Sheba,
+                      <br />
+                      Dubai, U.A.E
+                    </p>
+                  </div>
+                </div>
+
+                {/* Address 2 */}
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="text-primary font-semibold">India Office</p>
+                    <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
+                      4th Floor, Tech Park,
+                      <br />
+                      Anna Salai,
+                      <br />
+                      Chennai, Tamil Nadu, India
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,20 +113,17 @@ export default function ContactPage() {
                 onSubmit={handleSubmitContact(onContactSubmit)}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Name */}
                   <div className="space-y-2">
-                    <label
-                      htmlFor="name"
-                      className="text-primary font-semibold text-sm"
-                    >
+                    <label className="text-primary font-semibold text-sm">
                       Name *
                     </label>
                     <input
                       type="text"
-                      id="name"
                       placeholder="Enter Your Name"
                       className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${
                         errorsContact.name
-                          ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                          ? "border-red-500"
                           : "border-gray-200 focus:border-primary focus:ring-primary"
                       }`}
                       {...registerContact("name", {
@@ -114,25 +131,23 @@ export default function ContactPage() {
                       })}
                     />
                     {errorsContact.name && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p className="text-red-500 text-xs">
                         {errorsContact.name.message}
                       </p>
                     )}
                   </div>
+
+                  {/* Email */}
                   <div className="space-y-2">
-                    <label
-                      htmlFor="email"
-                      className="text-primary font-semibold text-sm"
-                    >
+                    <label className="text-primary font-semibold text-sm">
                       Email Address *
                     </label>
                     <input
                       type="email"
-                      id="email"
                       placeholder="Enter Your Email Address"
                       className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${
                         errorsContact.email
-                          ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                          ? "border-red-500"
                           : "border-gray-200 focus:border-primary focus:ring-primary"
                       }`}
                       {...registerContact("email", {
@@ -144,53 +159,43 @@ export default function ContactPage() {
                       })}
                     />
                     {errorsContact.email && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p className="text-red-500 text-xs">
                         {errorsContact.email.message}
                       </p>
                     )}
                   </div>
                 </div>
 
+                {/* Phone */}
                 <div className="space-y-2">
-                  <label
-                    htmlFor="phone"
-                    className="text-primary font-semibold text-sm"
-                  >
+                  <label className="text-primary font-semibold text-sm">
                     Phone Number *
                   </label>
                   <input
                     type="tel"
-                    id="phone"
                     placeholder="Enter Your Phone Number"
                     className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${
                       errorsContact.phone
-                        ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                        ? "border-red-500"
                         : "border-gray-200 focus:border-primary focus:ring-primary"
                     }`}
                     {...registerContact("phone", {
                       required: "Phone number is required",
-                      pattern: {
-                        value: /^[0-9+\-\s()]*$/,
-                        message: "Invalid phone number format",
-                      },
                     })}
                   />
                   {errorsContact.phone && (
-                    <p className="text-red-500 text-xs mt-1">
+                    <p className="text-red-500 text-xs">
                       {errorsContact.phone.message}
                     </p>
                   )}
                 </div>
 
+                {/* Message */}
                 <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="text-primary font-semibold text-sm"
-                  >
+                  <label className="text-primary font-semibold text-sm">
                     Message
                   </label>
                   <textarea
-                    id="message"
                     rows={4}
                     placeholder="Tell About Your Project"
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 text-primary resize-none"
@@ -198,12 +203,14 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Submit */}
                 <div>
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="btn btn-primary w-full justify-center group shadow-lg shadow-primary/20"
                   >
-                    Leave us a Message
+                    {isSubmitting ? "Sending..." : "Leave us a Message"}
                     <Play
                       size={16}
                       className="fill-current group-hover:scale-110 smooth"
@@ -215,75 +222,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Newsletter Section */}
-      {/* <section className="py-16 md:py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-            <div className="space-y-4">
-              <span className="text-secondary font-medium tracking-wide uppercase text-sm">
-                SUBSCRIBE
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary">
-                Subscribe to our Newsletter
-              </h2>
-              <p className="text-gray-600 max-w-lg leading-relaxed">
-                Stay informed about the latest investor updates, financial
-                results, and announcements by subscribing to our newsletter.
-              </p>
-            </div>
-
-            <div className="w-full">
-              <form
-                className="max-w-md ml-auto"
-                onSubmit={handleSubmitNewsletter(onNewsletterSubmit)}
-              >
-                <div className="space-y-2">
-                  <label
-                    htmlFor="newsletter-email"
-                    className="text-primary font-semibold text-sm"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="newsletter-email"
-                    placeholder="Enter Your Email"
-                    className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary mb-1 ${
-                      errorsNewsletter.email
-                        ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                        : "border-gray-200 focus:border-primary focus:ring-primary"
-                    }`}
-                    {...registerNewsletter("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address",
-                      },
-                    })}
-                  />
-                  {errorsNewsletter.email && (
-                    <p className="text-red-500 text-xs mb-4">
-                      {errorsNewsletter.email.message}
-                    </p>
-                  )}
-                  {!errorsNewsletter.email && <div className="mb-4" />}
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary w-full justify-center group shadow-lg shadow-primary/20"
-                >
-                  Subscribe
-                  <Play
-                    size={16}
-                    className="fill-current group-hover:scale-110 smooth"
-                  />
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 }

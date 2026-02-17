@@ -47,13 +47,13 @@ function CountUp({ value, suffix = "" }) {
 export default function AboutStatsSection() {
   const stats = [
     { value: 70, suffix: "+", label: "Years of combined experience" },
-    {
-      value: 25,
-      suffix: "+",
-      label: "Winning award and best shipping company",
-    },
-    { value: 50, suffix: "+", label: "Global clients served across the world" },
-    { value: 100, suffix: "%", label: "Commitment to quality and compliance" },
+    // {
+    //   value: 25,
+    //   suffix: "+",
+    //   label: "Winning award and best shipping company",
+    // },
+    { value: 10, suffix: "+", label: "Global clients served across the world" },
+    // { value: 100, suffix: "%", label: "Commitment to quality and compliance" },
   ];
 
   return (

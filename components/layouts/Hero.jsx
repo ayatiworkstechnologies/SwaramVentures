@@ -12,7 +12,7 @@ export default function Hero() {
     {
       image: "/banners/hero-banner.jpg",
       title:
-        "Swaram Ventures backs bold founders in healthcare, AI, robotics, digital finance, and global trade logistics.",
+        "Swaram Ventures backs bold founders in healthcare, AI, robotics, digital finance, mobility, sustainable clean water technology, edutech, and global trade & logistics.",
     },
     {
       image: "/banners/hero-banner-1.jpg",

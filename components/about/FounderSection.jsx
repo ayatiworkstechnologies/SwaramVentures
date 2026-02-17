@@ -8,45 +8,45 @@ export default function LeadershipSection() {
       tag: "The Finance Leader",
       name: "K Swaminathan",
       role: "Founder & Chairman",
-      desc: `Nearly 40 years of experience across India, Nigeria, Gabon, and Dubai.
-Expertise in financial leadership, strategic planning, and risk management.
-Successful management of multi-billion-dollar investments and large-scale infrastructure projects.
-Implemented advanced financial systems, optimized supply chains, and ensured effective governance.`,
+      desc: `• Nearly 40 years of experience across various regions (India, Nigeria, Gabon, and Dubai).
+• Expertise in financial leadership, strategic planning, and risk management.
+• Successful management of multi-billion-dollar investments and large-scale infrastructure projects.
+• Known for implementing financial systems, optimizing supply chains, and ensuring effective governance.`,
       accent: "bg-blue-600",
     },
     {
       tag: "The Power and Energy Leader",
       name: "K Ramasubramanian",
       role: "Founder & CEO",
-      desc: `Over 34 years of experience in power, energy, and infrastructure sectors.
-Worked with Voltas (TATA), Kirloskar, FKI PLC, AADI International, PRANSA International FZC & more.
-Deep expertise in power solutions, EPC, energy systems, and industrial engineering.
-Global experience across India, Middle East, and Africa in market expansion and major projects.`,
+      desc: `• Over 34 years of experience in power, energy, and infrastructure sectors.
+• Experience with Voltas Limited (TATA), Kirloskar Power Equipment, Al Hamad International Trading,  
+FKI plc, Technical Solutions, AADI International Trading FZE, and PRANSA International FZC.
+• Extensive experience in energy solutions, infrastructure development, and global market expansion, particularly in the MEA region.`,
       accent: "bg-green-500",
     },
     {
       tag: "The Visionary Healthcare Leader",
       name: "Dr. Gopinath Sabnivise",
       role: "Managing Director",
-      desc: `30+ years of experience in healthcare strategy, operations & digital transformation.
-Leadership roles at Apollo Hospitals, Fortis, Aster DM, VPS, NMC & Canadian Specialist Hospital.
-Recipient of UAE Golden Visa, CEO of the Year (2020–2024), Honorary Doctorate.
-Expert in hospital transformation, digital health innovation, and patient-centric excellence.`,
+      desc: `• 30+ years in healthcare strategy, hospital operations & digital transformation  
+• Leads Swaram Ventures across Middle East, Asia, and emerging markets  
+• Expertise in launching & scaling primary to quaternary care facilities  
+• Specialist in sustainable operations, brand leadership & business expansion.`,
       accent: "bg-orange-500",
     },
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="container">
         {/* HEADER */}
-        <div className="mb-12">
+        <div className="mb-14">
           <h2 className="section-title text-left">Founders</h2>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 120 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mb-4 h-[2px] bg-secondary"
+            className="mt-3 h-[2px] bg-secondary"
           />
         </div>
 
@@ -59,12 +59,12 @@ Expert in hospital transformation, digital health innovation, and patient-centri
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative bg-white rounded-2xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition"
+              className="group relative rounded-2xl border border-slate-100 bg-white/90 backdrop-blur-md p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300"
             >
-              {/* Accent top bar */}
-              {/* <div
-                className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl ${item.accent}`}
-              ></div> */}
+              {/* Accent vertical bar */}
+              <div
+                className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl ${item.accent}`}
+              />
 
               {/* Tag */}
               <p className="text-secondary text-[11px] font-semibold tracking-widest mb-3 uppercase">
@@ -77,11 +77,10 @@ Expert in hospital transformation, digital health innovation, and patient-centri
               </h3>
 
               {/* Role */}
-              <p className="text-primary/70 text-base mb-5">
-                {item.role}
-              </p>
+              <p className="text-primary/70 text-base mb-6">{item.role}</p>
 
-              <div className="w-10 h-[2px] bg-gray-200 mb-6"></div>
+              {/* Divider */}
+              <div className="w-12 h-[2px] bg-secondary/40 mb-6"></div>
 
               {/* Description */}
               <p className="text-body-card text-sm leading-relaxed whitespace-pre-line">

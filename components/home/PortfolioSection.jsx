@@ -61,6 +61,24 @@ Simplifies compliance, payments, and business financial workflows.`,
 Supports secure, efficient, and data-driven financial services.`,
       logo: "/assets/portfolio-6.png",
     },
+    {
+      id: 7,
+      name: "Environmental Technology / Clean Technology (CleanTech)",
+      country: "USA",
+      category: "DripDropUSA",
+      description: `A DripDropUSA company building scalable digital finance infrastructure.
+Supports secure, efficient, and data-driven financial services.`,
+      logo: "/assets/portfolio-6.png",
+    },
+    {
+      id: 8,
+      name: "Swaram Trading",
+      country: "UAE",
+      category: "Swaram",
+      description: `Logistics & Supply Chain – Managing efficiency in transportation and delivery systems
+Global Trading – Facilitating international trade with customized solutions`,
+      logo: "/assets/portfolio-6.png",
+    },
   ];
 
   // Slider Logic

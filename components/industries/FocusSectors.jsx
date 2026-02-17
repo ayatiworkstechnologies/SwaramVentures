@@ -59,7 +59,7 @@ export default function FocusSectors() {
         {/* HEADER */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <h2 className="section-title">Focus Sectors</h2>
+            <h2 className="section-title text-primary">Focus Sectors</h2>
             <p className="text-body mt-3 max-w-lg">
               Deploying capital into the rising points of planetary evolution.
             </p>
@@ -69,13 +69,13 @@ export default function FocusSectors() {
           <div className="flex gap-3">
             <button
               onClick={prev}
-              className="p-3 rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white smooth"
+              className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white smooth"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={next}
-              className="p-3 rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white smooth"
+              className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white smooth"
             >
               <ChevronRight size={20} />
             </button>
@@ -90,16 +90,7 @@ export default function FocusSectors() {
             className="flex"
           >
             {sectors.map((item, i) => (
-              <div
-                key={i}
-                className="
-                  w-full
-                  md:w-1/2
-                  lg:w-1/3
-                  shrink-0
-                  px-4
-                "
-              >
+              <div key={i} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4">
                 <div className="group relative overflow-hidden rounded-xl shadow-md h-[420px]">
                   {/* IMAGE */}
                   <Image
@@ -109,17 +100,15 @@ export default function FocusSectors() {
                     className="object-cover group-hover:scale-105 transition duration-700"
                   />
 
-                  {/* CONTENT (Blur Overlay) */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-xl border-t border-white/20 transition-all duration-300">
-                    <span className="text-[11px] uppercase tracking-widest text-white/80 mb-1 block">
+                  {/* CONTENT OVERLAY */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/50 transition-all duration-300">
+                    <span className="text-[11px] uppercase tracking-widest text-primary mb-1 block">
                       {item.tag}
                     </span>
-                    <h3 className="text-xl font-primary font-semibold text-white mb-2 shadow-sm">
+                    <h3 className="text-xl font-primary text-secondary font-semibold text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-white/90 text-sm shadow-sm">
-                      {item.desc}
-                    </p>
+                    <p className="text-black/90  text-sm">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -135,7 +124,7 @@ export default function FocusSectors() {
                 animate={{ width: index === i ? "100%" : "40%" }}
                 transition={{ duration: 0.3 }}
                 className={`h-[3px] ${
-                  index === i ? "bg-secondary" : "bg-primary/20"
+                  index === i ? "bg-secondary" : "bg-primary/30"
                 }`}
               />
             </button>
