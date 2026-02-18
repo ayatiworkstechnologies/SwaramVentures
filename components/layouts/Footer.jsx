@@ -6,9 +6,9 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const links = [
-    { name: "Strategy", href: "/strategy" },
+    // { name: "Strategy", href: "/strategy" },
     { name: "Industries", href: "/industries" },
-    { name: "Services", href: "/services" },
+    // { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },

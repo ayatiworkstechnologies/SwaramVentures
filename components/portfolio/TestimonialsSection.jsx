@@ -10,8 +10,9 @@ const portfolioData = [
     name: "Plenome",
     country: "India",
     category: "Healthcare",
-    description: `A healthcare technology company focused on improving access and care delivery.
-Builds digital solutions that support efficient clinical operations.`,
+    description: `Investor, Plenome is developing secure, scalable, and interoperable digital infrastructure for sensitive data applications. Its “Blockchain OrganEase” solution is already in trial with a state transplant authority, while its remote voting platform “BlockVote” has been successfully deployed at IIT Madras and is now being pitched for large-scale enterprise elections.
+
+Plenome is also testing its AI-powered health-tech suite “Ashwin” for structured, multilingual data capture in dental clinics, with plans to expand into eye care, cosmetic, and fertility domains. With its DLT-powered backend and AI-driven front end, Plenome aims to unify data creation, management, and diagnostics while ensuring data privacy and user control.`,
     logo: "/assets/logos-1.png",
     link: "https://plenome.com/",
   },
@@ -20,8 +21,9 @@ Builds digital solutions that support efficient clinical operations.`,
     name: "Royal Dutch Clinics",
     country: "UAE",
     category: "Healthcare",
-    description: `A multi-specialty healthcare provider delivering patient-centric medical services.
-Focused on quality treatment, modern facilities, and clinical excellence.`,
+    description: `A multi-specialty healthcare provider delivering patient-centric medical services. Focused on quality treatment, modern facilities, and clinical excellence.
+
+Co-founder, providing strategic guidance and capital investment to support growth across the UAE and MENA regions.`,
     logo: "/assets/logos-2.png",
     link: "https://royaldutchclinic.ae/",
   },
@@ -30,8 +32,9 @@ Focused on quality treatment, modern facilities, and clinical excellence.`,
     name: "Rento",
     country: "Peru",
     category: "Robotics / Industry",
-    description: `An industrial robotics company enabling automation across manufacturing sectors.
-Supports operational efficiency through advanced robotic solutions.`,
+    description: `Investor, RENTO is a P2P car-rental platform that turns idle cars into accessible, affordable, and sustainable mobility solutions.
+
+Powered by an asset-light model, GenAI-driven sales, and over 2,700 happy business partners, Rento is transforming the future of shared mobility.`,
     logo: "/assets/logos-3.png",
     link: "https://rento.pe/",
   },
@@ -40,8 +43,9 @@ Supports operational efficiency through advanced robotic solutions.`,
     name: "Grazen AI",
     country: "USA",
     category: "Retail & Warehouse Robotics",
-    description: `A robotics company developing automation for retail and warehouse operations.
-Improves efficiency, accuracy, and scalability in logistics environments.`,
+    description: `Investor, Grazen is redefining autonomous automation in retail and warehousing. It is an adaptive, fully agentic system built to navigate the dynamic chaos of real-world environments and deliver value from day one.
+
+Grazen’s autonomous platform leverages reinforcement learning to adapt dynamically, offering more versatile, affordable, and agentic robotics that power the next era of operational efficiency and growth.`,
     logo: "/assets/logos-4.png",
     link: "https://graze.ai/",
   },
@@ -50,8 +54,9 @@ Improves efficiency, accuracy, and scalability in logistics environments.`,
     name: "Inkle",
     country: "USA",
     category: "FinTech",
-    description: `A fintech platform offering digital tools for modern financial operations.
-Simplifies compliance, payments, and business financial workflows.`,
+    description: `Investor, INKLE helps early-stage startups maintain accounts, file taxes, and stay compliant through intuitive software.
+
+INKLE simplifies complex financial processes, giving founders the clarity and control needed to make informed decisions and accelerate growth.`,
     logo: "/assets/logos-5.png",
     link: "https://www.inkle.ai/",
   },
@@ -60,17 +65,20 @@ Simplifies compliance, payments, and business financial workflows.`,
     name: "Acumulus",
     country: "USA",
     category: "FinTech",
-    description: `A financial technology company building scalable digital finance infrastructure.
-Supports secure, efficient, and data-driven financial services.`,
+    description: `Investor, ACUMULUS is building a new movement in value-driven loyalty—reinventing the future of connected fintech and consumer services.
+
+With seamless APIs and intelligent AI agents, it creates a new era of value for consumers, brands, and platforms.`,
     logo: "/assets/logos-6.png",
-    link: "https://acumulus.in/",
+    link: "https://acumulus.net/",
   },
   {
     id: 7,
     name: "MiTrans Innovation Systems",
     country: "USA",
     category: "Edutech",
-    description: `An education technology platform enabling digital learning transformation through scalable systems, institutional partnerships, and structured implementation across academic environments.`,
+    description: `Investor, MiTrans provides online and hybrid educational services using advanced technologies to evaluate students’ emotional intelligence, self-esteem, and happiness quotient.
+
+Its LIVE Positive Mind Mastery Workshop has empowered thousands of parents and students to achieve greater confidence, well-being, and improved academic performance.`,
     logo: "/assets/logos-10.png",
     link: "https://www.edutech.com/",
   },
@@ -78,8 +86,10 @@ Supports secure, efficient, and data-driven financial services.`,
     id: 8,
     name: "Passelz",
     country: "USA",
-    category: "Passelz",
-    description: `A digital identity platform enabling users to manage multiple personas and control content visibility. Supports authentic self-representation across personal, professional, and social environments.`,
+    category: "Digital Identity",
+    description: `A digital identity platform that enables users to manage multiple personas and control content visibility across contexts.
+
+It supports authentic self-representation across personal, professional, and social environments.`,
     logo: "/assets/logos-8.png",
     link: "https://www.passelz.com/",
   },
@@ -87,7 +97,7 @@ Supports secure, efficient, and data-driven financial services.`,
     id: 9,
     name: "Swaram General Trade",
     country: "UAE",
-    category: "SwaRam",
+    category: "Trading & Infrastructure",
     description: `A diversified trading and infrastructure platform delivering import-export services, sourcing, logistics coordination, and integrated solutions across healthcare, energy, and construction sectors.`,
     logo: "/assets/logos-9.png",
   },
