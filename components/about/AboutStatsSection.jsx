@@ -118,11 +118,12 @@ export default function AboutStatsSection() {
             },
           }}
           className="
-            grid
-            grid-cols-2
-            md:grid-cols-4
-            gap-10
+            flex
+            justify-center
+            gap-12
+            md:gap-24
             text-center
+            flex-wrap
           "
         >
           {stats.map((item, i) => (

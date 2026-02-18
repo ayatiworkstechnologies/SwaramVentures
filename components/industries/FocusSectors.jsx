@@ -23,7 +23,7 @@ export default function FocusSectors() {
       tag: "Sustainability",
       title: "Sustainable Clean Water Technology",
       desc: "Innovations ensuring access to safe, efficient, and scalable water solutions.",
-      img: "/assets/industries-3.jpg",
+      img: "/assets/industries-8.jpg",
     },
     {
       tag: "Logistics",
@@ -35,7 +35,7 @@ export default function FocusSectors() {
       tag: "Mobility",
       title: "Mobility",
       desc: "Smart mobility systems transforming transportation and movement.",
-      img: "/assets/industries-5.jpg",
+      img: "/assets/industries-7.jpg",
     },
     {
       tag: "Fintech",

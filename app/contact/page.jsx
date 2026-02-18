@@ -2,6 +2,7 @@
 
 import { Mail, MapPin, Play } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 export default function ContactPage() {
   const {
@@ -21,23 +22,28 @@ export default function ContactPage() {
   // CONTACT FORM SUBMIT (API POST)
   const onContactSubmit = async (data) => {
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://api.ayatiworks.com/api/v1/public/swaram/contact/records",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-API-Key":
+              "78c45633bc2b3e5cd005b347e3e5c5580079b27bc344ee66868ae03219a6698e",
+          },
+          body: JSON.stringify({ data: data }),
         },
-        body: JSON.stringify(data),
-      });
+      );
 
       if (!res.ok) {
         throw new Error("Failed to submit form");
       }
 
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
       resetContact();
     } catch (error) {
       console.error(error);
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     }
   };
 

@@ -41,7 +41,7 @@ FKI plc, Technical Solutions, AADI International Trading FZE, and PRANSA Interna
       <div className="container">
         {/* HEADER */}
         <div className="mb-14">
-          <h2 className="section-title text-left">Founders</h2>
+          <h2 className="section-title text-left">Executive Leadership</h2>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 120 }}

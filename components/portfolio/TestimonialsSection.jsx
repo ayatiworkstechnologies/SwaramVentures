@@ -13,6 +13,7 @@ const portfolioData = [
     description: `A healthcare technology company focused on improving access and care delivery.
 Builds digital solutions that support efficient clinical operations.`,
     logo: "/assets/logos-1.png",
+    link: "https://plenome.com/",
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ Focused on quality treatment, modern facilities, and clinical excellence.`,
     description: `An industrial robotics company enabling automation across manufacturing sectors.
 Supports operational efficiency through advanced robotic solutions.`,
     logo: "/assets/logos-3.png",
+    link: "https://rento.pe/",
   },
   {
     id: 4,
@@ -41,6 +43,7 @@ Supports operational efficiency through advanced robotic solutions.`,
     description: `A robotics company developing automation for retail and warehouse operations.
 Improves efficiency, accuracy, and scalability in logistics environments.`,
     logo: "/assets/logos-4.png",
+    link: "https://graze.ai/",
   },
   {
     id: 5,
@@ -50,6 +53,7 @@ Improves efficiency, accuracy, and scalability in logistics environments.`,
     description: `A fintech platform offering digital tools for modern financial operations.
 Simplifies compliance, payments, and business financial workflows.`,
     logo: "/assets/logos-5.png",
+    link: "https://www.inkle.ai/",
   },
   {
     id: 6,
@@ -59,23 +63,24 @@ Simplifies compliance, payments, and business financial workflows.`,
     description: `A financial technology company building scalable digital finance infrastructure.
 Supports secure, efficient, and data-driven financial services.`,
     logo: "/assets/logos-6.png",
+    link: "https://acumulus.in/",
   },
   {
     id: 7,
     name: "MiTrans Innovation Systems",
     country: "USA",
     category: "Edutech",
-    description: `A financial technology company building scalable digital finance infrastructure.
-Supports secure, efficient, and data-driven financial services.`,
-    logo: "/assets/logos-6.png",
+    description: `An education technology platform enabling digital learning transformation through scalable systems, institutional partnerships, and structured implementation across academic environments.`,
+    logo: "/assets/logos-10.png",
+    link: "https://www.edutech.com/",
   },
   {
     id: 8,
     name: "Passelz",
     country: "USA",
     category: "Passelz",
-    description: `Passelz is a new way to connect with others by controlling the content you share and deciding who it is shared with. It enables users to represent themselves authentically through multiple personas — personal, work, volunteering, or hobbies. Users can safely share personal moments with friends and family while keeping them separate from business profiles. It also allows business updates without spamming professional contacts.`,
-    logo: "/assets/logos-6.png",
+    description: `A digital identity platform enabling users to manage multiple personas and control content visibility. Supports authentic self-representation across personal, professional, and social environments.`,
+    logo: "/assets/logos-8.png",
     link: "https://www.passelz.com/",
   },
   {
@@ -83,9 +88,8 @@ Supports secure, efficient, and data-driven financial services.`,
     name: "Swaram General Trade",
     country: "UAE",
     category: "SwaRam",
-    description: `A financial technology company building scalable digital finance infrastructure.
-Supports secure, efficient, and data-driven financial services.`,
-    logo: "/assets/logos-6.png",
+    description: `A diversified trading and infrastructure platform delivering import-export services, sourcing, logistics coordination, and integrated solutions across healthcare, energy, and construction sectors.`,
+    logo: "/assets/logos-9.png",
   },
 ];
 

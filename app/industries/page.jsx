@@ -1,3 +1,4 @@
+import PortfolioSection from "@/components/home/PortfolioSection";
 import FocusSectors from "@/components/industries/FocusSectors";
 import IndustriesQuote from "@/components/industries/IndustriesQuote";
 import IndustrisesSlider from "@/components/industries/IndustrisesSlider";
@@ -25,7 +26,8 @@ export default function IndustriesPage() {
       <IndustriesQuote />
       <FocusSectors />
       {/* <MetricsSection /> */}
-      <IndustrisesSlider />
+      {/* <IndustrisesSlider /> */}
+      <PortfolioSection />
     </>
   );
 }

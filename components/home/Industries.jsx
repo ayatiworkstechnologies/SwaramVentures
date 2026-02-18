@@ -21,8 +21,8 @@ const items = [
   },
   {
     title: "Sustainable Clean Water Technology",
-    desc: "",
-    img: "/assets/industries-3.jpg",
+    desc: "We invest in technologies improving water access and sustainability. These platforms enable purification, monitoring, and efficient distribution systems.",
+    img: "/assets/industries-8.jpg",
     link: "/industries",
   },
   {
@@ -33,8 +33,8 @@ const items = [
   },
   {
     title: "Mobility",
-    desc: " ",
-    img: "/assets/industries-5.jpg",
+    desc: " We support mobility platforms modernizing transportation access and utilization. Our focus includes asset optimization, automation, and scalable infrastructure.",
+    img: "/assets/industries-7.jpg",
     link: "https://rento.pe/",
   },
   {

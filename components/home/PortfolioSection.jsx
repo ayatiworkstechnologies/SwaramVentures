@@ -25,7 +25,7 @@ Builds digital solutions that support efficient clinical operations.`,
       description: `A multi-specialty healthcare provider delivering patient-centric medical services.
 Focused on quality treatment, modern facilities, and clinical excellence.`,
       logo: "/assets/portfolio-5.png",
-      link: "https://royal-dutch-clinics.com/",
+      link: "https://royaldutchclinic.ae/",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ Focused on quality treatment, modern facilities, and clinical excellence.`,
       description: `An industrial robotics company enabling automation across manufacturing sectors.
 Supports operational efficiency through advanced robotic solutions.`,
       logo: "/assets/portfolio-3.png",
-      link: "https://rento.com/",
+      link: "https://rento.pe/",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ Supports operational efficiency through advanced robotic solutions.`,
       description: `A robotics company developing automation for retail and warehouse operations.
 Improves efficiency, accuracy, and scalability in logistics environments.`,
       logo: "/assets/portfolio-4.png",
-      link: "https://grazen.ai/",
+      link: "https://graze.ai/",
     },
     {
       id: 5,
@@ -55,7 +55,7 @@ Improves efficiency, accuracy, and scalability in logistics environments.`,
       description: `A fintech platform offering digital tools for modern financial operations.
 Simplifies compliance, payments, and business financial workflows.`,
       logo: "/assets/portfolio-1.png",
-      link: "https://inkle.ai/",
+      link: "https://www.inkle.ai/",
     },
     {
       id: 6,
@@ -65,27 +65,25 @@ Simplifies compliance, payments, and business financial workflows.`,
       description: `A financial technology company building scalable digital finance infrastructure.
 Supports secure, efficient, and data-driven financial services.`,
       logo: "/assets/portfolio-6.png",
-      link: "https://acumulus.ai/",
+      link: "https://acumulus.in/",
     },
     {
       id: 7,
-      name: "Environmental Technology",
+      name: "DripDropUSA",
       country: "USA",
-      category: "DripDropUSA",
-      description: `A DripDropUSA company building scalable digital finance infrastructure.
-Supports secure, efficient, and data-driven financial services.`,
-      logo: "/assets/portfolio-6.png",
-      link: "https://dripdropusa.com/",
+      category: " Environmental Technology",
+      description: `A clean technology platform focused on sustainable water and environmental solutions. Improves access, efficiency, and long-term resource resilience through innovation.`,
+      logo: "/assets/portfolio-7.jpg",
+      link: "https://www.dripdropusa.com/",
     },
     {
       id: 8,
       name: "Swaram Trading",
       country: "UAE",
-      category: "Swaram",
-      description: `Logistics & Supply Chain – Managing efficiency in transportation and delivery systems
-Global Trading – Facilitating international trade with customized solutions`,
-      logo: "/assets/portfolio-6.png",
-      link: "https://swaramtrading.com/",
+      category: "Global Trading & Logistics ",
+      description: `An international trading platform integrating cross-border commerce with logistics and supply chain operations. Enhances transportation efficiency through structured sourcing, coordination, and customized delivery solutions.`,
+      logo: "/assets/portfolio-8.jpg",
+      // link: "https://swaramtrading.com/",
     },
   ];
 
