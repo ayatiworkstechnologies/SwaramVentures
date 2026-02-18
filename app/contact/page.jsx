@@ -100,7 +100,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-primary font-semibold">
-                      SwaRam Gendral Address
+                      SwaRam General Trade
                     </p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
                       4th Floor, Tech Park,
