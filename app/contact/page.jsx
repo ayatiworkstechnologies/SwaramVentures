@@ -23,13 +23,13 @@ export default function ContactPage() {
   const onContactSubmit = async (data) => {
     try {
       const res = await fetch(
-        "https://api.ayatiworks.com/api/v1/public/swaram/contact/records",
+        "https://api.ayatiworks.com/api/v1/public/swaram/contact_us/records",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             "X-API-Key":
-              "78c45633bc2b3e5cd005b347e3e5c5580079b27bc344ee66868ae03219a6698e",
+              "e28d00e9de783e67396f9deaea21c64ad06d151ec9e0c5893dc7d9528dcaabb3",
           },
           body: JSON.stringify({ data: data }),
         },
