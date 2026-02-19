@@ -18,7 +18,7 @@ Plenome is also testing its AI-powered health-tech suite “Ashwin” for struct
   },
   {
     id: 2,
-    name: "Royal Dutch Clinics",
+    name: "Royal Dutch Medical Center",
     country: "UAE",
     category: "Healthcare",
     description: `A multi-specialty healthcare provider delivering patient-centric medical services. Focused on quality treatment, modern facilities, and clinical excellence.
@@ -95,7 +95,7 @@ It supports authentic self-representation across personal, professional, and soc
   },
   {
     id: 9,
-    name: "Swaram General Trade",
+    name: "Swaram Global Trading",
     country: "UAE",
     category: "Trading & Infrastructure",
     description: `A diversified trading and infrastructure platform delivering import-export services, sourcing, logistics coordination, and integrated solutions across healthcare, energy, and construction sectors.`,

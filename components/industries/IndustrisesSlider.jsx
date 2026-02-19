@@ -13,7 +13,7 @@ export default function IndustrisesSlider() {
       img: "/assets/portfolio-2.png",
     },
     {
-      title: "Royal Dutch Clinics (UAE)",
+      title: "Royal Dutch Medical Center (UAE)",
       desc: "An integrated healthcare network backed with long-horizon investment and structured expansion support across regional markets.",
       img: "/assets/portfolio-5.png",
     },

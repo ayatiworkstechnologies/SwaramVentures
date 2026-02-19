@@ -16,7 +16,7 @@ Builds digital solutions that support efficient clinical operations.`,
   },
   {
     id: 2,
-    name: "Royal Dutch Clinics",
+    name: "Royal Dutch Medical Center",
     country: "UAE",
     category: "Healthcare",
     description: `A multi-specialty healthcare provider delivering patient-centric medical services.

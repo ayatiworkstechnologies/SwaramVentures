@@ -60,7 +60,7 @@ export default function ContactPage() {
                   Contact Info
                 </span>
                 <h1 className="text-4xl lg:text-5xl font-bold text-primary mt-4 leading-tight">
-                  We are always happy to assist you
+                  Explore Strategic Opportunities
                 </h1>
               </div>
 
@@ -86,7 +86,7 @@ export default function ContactPage() {
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
                       Medyan Grandstand, 6th floor,
                       <br />
-                      Meydan Road, Nad Al Sheba,
+                      Meydan Free Zone, Nad Al Sheba,
                       <br />
                       Dubai, U.A.E
                     </p>
@@ -100,14 +100,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-primary font-semibold">
-                      SwaRam General Trade
+                      Swaram Global Trading
                     </p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
-                      4th Floor, Tech Park,
+                      Swaram General Trading LLC ,
                       <br />
-                      Anna Salai,
+                      1503, Sobha Sapphire, Business Bay,
                       <br />
-                      Chennai, Tamil Nadu, India
+                      Dubai, United Arab Emirates
                     </p>
                   </div>
                 </div>

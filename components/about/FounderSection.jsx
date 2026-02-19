@@ -27,7 +27,7 @@ FKI plc, Technical Solutions, AADI International Trading FZE, and PRANSA Interna
     {
       tag: "The Visionary Healthcare Leader",
       name: "Dr. Gopinath Sabnivise",
-      role: "Managing Director",
+      role: "Managing Director ( Health Care)",
       desc: `• 30+ years in healthcare strategy, hospital operations & digital transformation  
 • Leads Swaram Ventures across Middle East, Asia, and emerging markets  
 • Expertise in launching & scaling primary to quaternary care facilities  

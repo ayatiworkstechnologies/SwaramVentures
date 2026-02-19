@@ -52,7 +52,12 @@ export default function AboutStatsSection() {
     //   suffix: "+",
     //   label: "Winning award and best shipping company",
     // },
-    { value: 10, suffix: "+", label: "Global clients served across the world" },
+    {
+      value: 10,
+      suffix: "+",
+      label:
+        "Strategic Investments in High-Growth Technology Companies Worldwide.",
+    },
     // { value: 100, suffix: "%", label: "Commitment to quality and compliance" },
   ];
 

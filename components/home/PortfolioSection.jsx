@@ -19,7 +19,7 @@ Builds digital solutions that support efficient clinical operations.`,
     },
     {
       id: 2,
-      name: "Royal Dutch Clinics",
+      name: "Royal Dutch Medical Center",
       country: "UAE",
       category: "Healthcare",
       description: `A multi-specialty healthcare provider delivering patient-centric medical services.
@@ -65,7 +65,7 @@ Simplifies compliance, payments, and business financial workflows.`,
       description: `A financial technology company building scalable digital finance infrastructure.
 Supports secure, efficient, and data-driven financial services.`,
       logo: "/assets/portfolio-6.png",
-      link: "https://acumulus.in/",
+      link: "https://acumulus.net/",
     },
     {
       id: 7,
@@ -78,7 +78,7 @@ Supports secure, efficient, and data-driven financial services.`,
     },
     {
       id: 8,
-      name: "Swaram Trading",
+      name: "Swaram Global Trading",
       country: "UAE",
       category: "Global Trading & Logistics ",
       description: `An international trading platform integrating cross-border commerce with logistics and supply chain operations. Enhances transportation efficiency through structured sourcing, coordination, and customized delivery solutions.`,
