@@ -56,6 +56,15 @@ export default function Navbar() {
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-8 font-primary text-sm text-primary">
           {links.map((item) => {
+            // Helper to normalize path (remove trailing slash)
+            const isActive = (path, target) => {
+              const cleanPath = path.endsWith("/") ? path.slice(0, -1) : path;
+              const cleanTarget = target.endsWith("/")
+                ? target.slice(0, -1)
+                : target;
+              return cleanPath === cleanTarget;
+            };
+
             if (item.dropdown) {
               const serviceActive = pathname.startsWith("/services");
 
@@ -85,7 +94,7 @@ export default function Navbar() {
             "
                   >
                     {item.dropdown.map((sub) => {
-                      const subActive = pathname === sub.href;
+                      const subActive = isActive(pathname, sub.href);
 
                       return (
                         <Link
@@ -106,7 +115,7 @@ export default function Navbar() {
               );
             }
 
-            const active = pathname === item.href;
+            const active = isActive(pathname, item.href);
 
             return (
               <Link
@@ -170,6 +179,17 @@ export default function Navbar() {
             >
               <div className="flex flex-col gap-6 font-primary text-lg">
                 {links.map((item) => {
+                  // Helper to normalize path (remove trailing slash)
+                  const isActive = (path, target) => {
+                    const cleanPath = path.endsWith("/")
+                      ? path.slice(0, -1)
+                      : path;
+                    const cleanTarget = target.endsWith("/")
+                      ? target.slice(0, -1)
+                      : target;
+                    return cleanPath === cleanTarget;
+                  };
+
                   if (item.dropdown) {
                     return (
                       <div key={item.name}>
@@ -199,7 +219,11 @@ export default function Navbar() {
                                   key={sub.name}
                                   href={sub.href}
                                   onClick={() => setOpen(false)}
-                                  className="text-gray-600 hover:text-primary"
+                                  className={`block ${
+                                    isActive(pathname, sub.href)
+                                      ? "font-bold text-primary"
+                                      : "text-gray-600 hover:text-primary"
+                                  }`}
                                 >
                                   {sub.name}
                                 </Link>
@@ -211,7 +235,7 @@ export default function Navbar() {
                     );
                   }
 
-                  const active = pathname === item.href;
+                  const active = isActive(pathname, item.href);
 
                   return (
                     <Link
