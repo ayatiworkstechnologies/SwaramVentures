@@ -68,7 +68,7 @@ INKLE simplifies complex financial processes, giving founders the clarity and co
     description: `Investor, ACUMULUS is building a new movement in value-driven loyalty—reinventing the future of connected fintech and consumer services.
 
 With seamless APIs and intelligent AI agents, it creates a new era of value for consumers, brands, and platforms.`,
-    logo: "/assets/logos-6.png",
+    logo: "/assets/logos-7.png",
     link: "https://acumulus.net/",
   },
   {
