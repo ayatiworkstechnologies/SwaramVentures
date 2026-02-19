@@ -103,11 +103,11 @@ export default function ContactPage() {
                       Swaram General Trading
                     </p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
-                      Swaram General Trading LLC ,
+                      LLC ,1503, Sobha Sapphire,
                       <br />
-                      1503, Sobha Sapphire, Business Bay,
+                      Business Bay, Dubai,
                       <br />
-                      Dubai, United Arab Emirates
+                      United Arab Emirates
                     </p>
                   </div>
                 </div>
