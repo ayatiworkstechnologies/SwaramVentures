@@ -100,7 +100,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-primary font-semibold">
-                      Swaram Global Trading
+                      Swaram General Trading
                     </p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
                       Swaram General Trading LLC ,

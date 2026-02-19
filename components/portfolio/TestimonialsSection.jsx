@@ -95,7 +95,7 @@ It supports authentic self-representation across personal, professional, and soc
   },
   {
     id: 9,
-    name: "Swaram Global Trading",
+    name: "Swaram General Trading",
     country: "UAE",
     category: "Trading & Infrastructure",
     description: `A diversified trading and infrastructure platform delivering import-export services, sourcing, logistics coordination, and integrated solutions across healthcare, energy, and construction sectors.`,

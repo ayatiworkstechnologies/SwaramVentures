@@ -78,7 +78,7 @@ Supports secure, efficient, and data-driven financial services.`,
     },
     {
       id: 8,
-      name: "Swaram Global Trading",
+      name: "Swaram General Trading",
       country: "UAE",
       category: "Global Trading & Logistics ",
       description: `An international trading platform integrating cross-border commerce with logistics and supply chain operations. Enhances transportation efficiency through structured sourcing, coordination, and customized delivery solutions.`,
