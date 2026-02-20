@@ -101,6 +101,15 @@ It supports authentic self-representation across personal, professional, and soc
     description: `A diversified trading and infrastructure platform delivering import-export services, sourcing, logistics coordination, and integrated solutions across healthcare, energy, and construction sectors.`,
     logo: "/assets/logos-9.png",
   },
+  {
+    id: 10,
+    name: "DripDropUSA",
+    country: "USA",
+    category: "Environmental Technology",
+    description: `A clean technology platform focused on sustainable water and environmental solutions. Improves access, efficiency, and long-term resource resilience through innovation.`,
+    logo: "/assets/logos-11.webp",
+    link: "https://www.dripdropusa.com/",
+  },
 ];
 
 export default function PortfolioTestimonialsSection() {
