@@ -4,6 +4,7 @@ import OfferSection from "@/components/home/OfferSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
 import WhyExist from "@/components/home/WhyExist";
 import Hero from "@/components/layouts/Hero";
+import SwaramHealthcare from "@/components/home/SwaramHealthcare";
 
 export const metadata = {
   title: "Home - Swaram Ventures",
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <WhyExist />
       <IndustriesSlider />
+      <SwaramHealthcare />
       {/* <AISlider /> */}
       <OfferSection />
       <PortfolioSection />
