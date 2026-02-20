@@ -103,7 +103,7 @@ export default function SwaramHealthcare() {
                   patient-centric care supported by advanced clinical
                   infrastructure and digital health systems.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4">
+                {/* <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     "Dermatology & Aesthetics",
                     "Dentistry",
@@ -118,7 +118,7 @@ export default function SwaramHealthcare() {
                       {item}
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>

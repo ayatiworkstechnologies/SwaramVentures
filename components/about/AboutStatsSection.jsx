@@ -46,7 +46,7 @@ function CountUp({ value, suffix = "" }) {
 
 export default function AboutStatsSection() {
   const stats = [
-    { value: 70, suffix: "+", label: "Years of combined experience" },
+    { value: 100, suffix: "+", label: "Years of combined experience" },
     // {
     //   value: 25,
     //   suffix: "+",
