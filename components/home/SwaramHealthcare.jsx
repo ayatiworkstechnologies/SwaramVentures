@@ -41,9 +41,7 @@ export default function SwaramHealthcare() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-4"
           >
-            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase font-primary inline-block">
-              Core Initiative
-            </span>
+            <span className="tag inline-block">Core Initiative</span>
           </motion.div>
 
           <motion.h2
@@ -54,6 +52,12 @@ export default function SwaramHealthcare() {
             className="text-4xl md:text-5xl lg:text-5xl font-primary font-bold text-primary mb-6"
           >
             Swaram Healthcare
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 120 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mb-4 h-[2px] bg-secondary mx-auto mt-2"
+            />
           </motion.h2>
 
           <motion.p
