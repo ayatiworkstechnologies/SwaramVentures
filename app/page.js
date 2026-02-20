@@ -1,10 +1,16 @@
-import AISlider from "@/components/home/AISlider";
-import IndustriesSlider from "@/components/home/Industries";
-import OfferSection from "@/components/home/OfferSection";
-import PortfolioSection from "@/components/home/PortfolioSection";
-import WhyExist from "@/components/home/WhyExist";
+import dynamic from "next/dynamic";
 import Hero from "@/components/layouts/Hero";
-import SwaramHealthcare from "@/components/home/SwaramHealthcare";
+
+const AISlider = dynamic(() => import("@/components/home/AISlider"));
+const IndustriesSlider = dynamic(() => import("@/components/home/Industries"));
+const OfferSection = dynamic(() => import("@/components/home/OfferSection"));
+const PortfolioSection = dynamic(
+  () => import("@/components/home/PortfolioSection"),
+);
+const WhyExist = dynamic(() => import("@/components/home/WhyExist"));
+const SwaramHealthcare = dynamic(
+  () => import("@/components/home/SwaramHealthcare"),
+);
 
 export const metadata = {
   title: "Home - Swaram Ventures",

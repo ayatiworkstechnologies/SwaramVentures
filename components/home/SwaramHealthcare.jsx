@@ -136,7 +136,7 @@ export default function SwaramHealthcare() {
               </h3>
               <p className="text-white/80 text-base md:text-lg leading-relaxed mb-6">
                 We are also developing an Onco-Spa model offering walking
-                chemotherapy clinics — reimagining oncology delivery through
+                chemotherapy clinics, reimagining oncology delivery through
                 comfortable, outpatient-focused environments that combine
                 clinical excellence with patient dignity.
               </p>
@@ -158,7 +158,7 @@ export default function SwaramHealthcare() {
                 Global Collaboration
               </h3>
               <p className="text-body text-base md:text-lg leading-relaxed">
-                In parallel, we are collaborating with renowned research group
+                Parallelly we are collaborating with a renowned research group
                 in the USA and joining hands with them to bring to the GCC and
                 other Asian countries next-generation therapeutic platforms
                 aimed at supporting regenerative medicine and high-end treatment
@@ -191,7 +191,8 @@ export default function SwaramHealthcare() {
               <p className="text-white/80 text-base md:text-lg leading-relaxed mb-6">
                 Our growth strategy is built on scalable centre-of-excellence
                 models, strong clinical governance, technology-enabled
-                operations, and disciplined regional expansion across the GCC.
+                operations, and disciplined regional expansion across the GCC.{" "}
+                <br />
                 By combining sector expertise, structured investment, and
                 operational precision, Swaram is creating premium healthcare
                 ecosystems designed for long-term impact, measurable outcomes,
