@@ -91,6 +91,18 @@ function renderBullets(text) {
 export default function FoundersSection() {
   return (
     <section className="bg-white py-16 overflow-hidden">
+      <div className="container text-start">
+        <h2 className="section-title mb-6">
+          Executive Leadership
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 120 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-4 h-[2px] mb-5 bg-secondary"
+          />
+        </h2>
+      </div>
+
       <div className="container mx-auto px-6">
         <motion.div
           variants={container}
