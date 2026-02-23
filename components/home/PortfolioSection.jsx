@@ -34,7 +34,7 @@ Focused on quality treatment, modern facilities, and clinical excellence.`,
       category: "Robotics / Industry",
       description: `An industrial robotics company enabling automation across manufacturing sectors.
 Supports operational efficiency through advanced robotic solutions.`,
-      logo: "/assets/portfolio-3.png",
+      logo: "/assets/portfolio-10.jpg",
       link: "https://rento.pe/",
     },
     {
@@ -44,7 +44,7 @@ Supports operational efficiency through advanced robotic solutions.`,
       category: "Retail & Warehouse Robotics",
       description: `A robotics company developing automation for retail and warehouse operations.
 Improves efficiency, accuracy, and scalability in logistics environments.`,
-      logo: "/assets/portfolio-4.png",
+      logo: "/assets/portfolio-9.jpg",
       link: "https://grazen.ai/",
     },
     {
