@@ -68,7 +68,7 @@ export default function Footer() {
             flex
             flex-col md:flex-row
             items-center
-            justify-between
+            justify-center
             gap-6
             text-sm
             font-secondary
