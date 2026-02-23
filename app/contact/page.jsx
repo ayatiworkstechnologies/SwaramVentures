@@ -84,11 +84,11 @@ export default function ContactPage() {
                   <div>
                     <p className="text-primary font-semibold">Dubai Office</p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
-                      Medyan Grandstand, 6th floor,
+                      Meydan Grandstand, 6th floor,
                       <br />
                       Meydan Free Zone, Nad Al Sheba,
                       <br />
-                      Dubai, U.A.E
+                      Dubai, United Arab Emirates
                     </p>
                   </div>
                 </div>
@@ -100,10 +100,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-primary font-semibold">
-                      Swaram General Trading
+                      Swaram General Trading LLC
                     </p>
                     <p className="text-lg text-primary/80 leading-relaxed max-w-sm">
-                      LLC ,1503, Sobha Sapphire,
+                      1503, Sobha Sapphire,
                       <br />
                       Business Bay, Dubai,
                       <br />

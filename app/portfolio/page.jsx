@@ -17,9 +17,9 @@ export default function PortfolioPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]}
         slides={[
           {
-            image: "/banners/portfolio-banner.png",
-            mobileImage: "/banners/portfolio-banner-mob.png",
-            // title: "Our Investment Portfolio",
+            // image: "/banners/portfolio-banner.png",
+            // mobileImage: "/banners/portfolio-banner-mob.png",
+            title: `“We believe enduring value is created where disciplined capital meets visionary founders building meaningful, resilient enterprises ”`,
             // subtitle:
             //   "Explore the bold founders and companies we back. From early-stage disruptors to growth-stage market leaders.",
             // primaryBtn: { label: "Contact Us", href: "/contact" },

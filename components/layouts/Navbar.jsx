@@ -15,7 +15,7 @@ export default function Navbar() {
   const links = [
     { name: "Home", href: "/" },
     // { name: "Strategy", href: "/strategy" },
-    { name: "Industries", href: "/industries" },
+    // { name: "Industries", href: "/industries" },
     { name: "Our Approach", href: "/services/cross-border" },
     // {
     //   name: "Our Approach",
