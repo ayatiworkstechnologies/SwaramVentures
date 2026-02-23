@@ -75,11 +75,11 @@ export default function Footer() {
           "
         >
           {/* LEFT */}
-          <div className="opacity-90 text-center md:text-left">
+          {/* <div className="opacity-90 text-center md:text-left">
             <Link href="/privacy" className="hover:underline">
               Privacy & Terms and conditions
             </Link>
-          </div>
+          </div> */}
 
           {/* CENTER */}
           <div className="opacity-90 text-center">
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           {/* RIGHT */}
-          <div className="flex items-center gap-5">
+          {/* <div className="flex items-center gap-5">
             <a
               href="#"
               aria-label="Facebook"
@@ -109,7 +109,7 @@ export default function Footer() {
             >
               <Linkedin size={18} strokeWidth={1.5} />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

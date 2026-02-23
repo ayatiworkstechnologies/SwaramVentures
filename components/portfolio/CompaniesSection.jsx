@@ -6,9 +6,9 @@ import Image from "next/image";
 const companies = [
   { id: 1, logo: "/assets/logos-5.png", name: "Inkle" },
   { id: 2, logo: "/assets/logos-1.png", name: "Royal Dutch" },
-  { id: 3, logo: "/assets/logos-4.png", name: "Grazen AI" },
+  { id: 3, logo: "/assets/logos-7.png", name: "Grazen AI" },
   { id: 4, logo: "/assets/logos-3.png", name: "Rento" },
-  { id: 5, logo: "/assets/logos-7.png", name: "Plenome" },
+  { id: 5, logo: "/assets/logos-4.webp", name: "Plenome" },
   { id: 6, logo: "/assets/logos-2.png", name: "Acumulus" },
 ];
 

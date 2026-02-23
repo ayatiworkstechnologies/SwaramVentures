@@ -45,7 +45,7 @@ Supports operational efficiency through advanced robotic solutions.`,
       description: `A robotics company developing automation for retail and warehouse operations.
 Improves efficiency, accuracy, and scalability in logistics environments.`,
       logo: "/assets/portfolio-4.png",
-      link: "https://graze.ai/",
+      link: "https://grazen.ai/",
     },
     {
       id: 5,

@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: "Industries", href: "/industries" },
 
     {
-      name: "Services",
+      name: "Our Approach",
       dropdown: [
         { name: "Capital", href: "/services/capital" },
         { name: "Strategy", href: "/services/strategy" },

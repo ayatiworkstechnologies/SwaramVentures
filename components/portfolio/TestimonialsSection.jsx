@@ -46,8 +46,8 @@ Powered by an asset-light model, GenAI-driven sales, and over 2,700 happy busine
     description: `Investor, Grazen is redefining autonomous automation in retail and warehousing. It is an adaptive, fully agentic system built to navigate the dynamic chaos of real-world environments and deliver value from day one.
 
 Grazen’s autonomous platform leverages reinforcement learning to adapt dynamically, offering more versatile, affordable, and agentic robotics that power the next era of operational efficiency and growth.`,
-    logo: "/assets/logos-4.png",
-    link: "https://graze.ai/",
+    logo: "/assets/logos-4.webp",
+    link: "https://grazen.ai/",
   },
   {
     id: 5,
