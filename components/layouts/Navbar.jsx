@@ -16,19 +16,19 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     // { name: "Strategy", href: "/strategy" },
     { name: "Industries", href: "/industries" },
-
-    {
-      name: "Our Approach",
-      dropdown: [
-        { name: "Capital", href: "/services/capital" },
-        { name: "Strategy", href: "/services/strategy" },
-        { name: "Partnership", href: "/services/partnership" },
-        { name: "Cross Border", href: "/services/cross-border" },
-      ],
-    },
+    { name: "Our Approach", href: "/services/cross-border" },
+    // {
+    //   name: "Our Approach",
+    //   dropdown: [
+    //     { name: "Capital", href: "/services/capital" },
+    //     { name: "Strategy", href: "/services/strategy" },
+    //     { name: "Partnership", href: "/services/partnership" },
+    //     { name: "Cross Border", href: "/services/cross-border" },
+    //   ],
+    // },
 
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Founders", href: "/founders" },
+    // { name: "Founders", href: "/founders" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];

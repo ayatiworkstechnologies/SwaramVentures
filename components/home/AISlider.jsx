@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function AIBannerSlider() {
   const slides = [
@@ -23,14 +23,13 @@ export default function AIBannerSlider() {
 
   const [index, setIndex] = useState(0);
 
-  /* ================= AUTO SLIDE ================= */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  const prevSlide = () => {
+    setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
-    return () => clearInterval(timer);
-  }, []);
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % slides.length);
+  };
 
   return (
     <section className="relative w-full h-[360px] md:h-[450px] overflow-hidden">
@@ -107,15 +106,25 @@ export default function AIBannerSlider() {
       </div>
 
       {/* =================================================
-         PROGRESS BAR
+         NAVIGATION ARROWS
       ================================================= */}
-      <motion.div
-        key={index}
-        initial={{ width: 0 }}
-        animate={{ width: "100%" }}
-        transition={{ duration: 5, ease: "linear" }}
-        className="absolute bottom-0 left-0 h-[3px] bg-secondary"
-      />
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-8 flex flex-col gap-4 z-30">
+        <button
+          onClick={prevSlide}
+          className="p-3 rounded-full bg-white/10 hover:bg-white/30 text-white smooth backdrop-blur-sm transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={20} />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="p-3 rounded-full bg-white/10 hover:bg-white/30 text-white smooth backdrop-blur-sm transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
     </section>
   );
 }

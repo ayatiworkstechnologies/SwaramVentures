@@ -26,8 +26,8 @@ export default function Home() {
       <IndustriesSlider />
       <SwaramHealthcare />
       {/* <AISlider /> */}
-      <OfferSection />
-      <PortfolioSection />
+      {/* <OfferSection /> */}
+      {/* <PortfolioSection /> */}
     </>
   );
 }

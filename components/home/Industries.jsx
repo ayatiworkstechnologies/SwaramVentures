@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
@@ -53,23 +53,12 @@ const items = [
 
 export default function IndustriesSlider() {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   const next = () => setIndex((i) => (i + 1) % items.length);
   const prev = () => setIndex((i) => (i - 1 + items.length) % items.length);
 
-  useEffect(() => {
-    if (paused) return;
-    const t = setInterval(next, 4500);
-    return () => clearInterval(t);
-  }, [paused]);
-
   return (
-    <section
-      className="relative bg-white section-y overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
+    <section className="relative bg-white section-y overflow-hidden">
       <div className="container text-center">
         <h2 className="section-title mb-6">
           Industries

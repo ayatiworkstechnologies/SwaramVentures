@@ -109,9 +109,9 @@ Supports secure, efficient, and data-driven financial services.`,
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           {/* LEFT */}
           <div>
-            <p className="tag mb-3">Portfolio</p>
+            {/* <p className="tag mb-3">Portfolio</p> */}
 
-            <h2 className="section-title">What We Build</h2>
+            <h2 className="section-title">Focus Sectors</h2>
 
             <motion.div
               initial={{ width: 0 }}

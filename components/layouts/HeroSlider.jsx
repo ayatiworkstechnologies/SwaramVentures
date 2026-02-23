@@ -27,7 +27,7 @@ export default function HeroSlider({ slides = [], breadcrumbs = [] }) {
   const slide = slides[index];
 
   return (
-    <section className="relative w-full min-h-[100svh] overflow-hidden bg-primary">
+    <section className="relative w-full h-[400px] overflow-hidden bg-primary">
       {/* ================= BACKGROUND ================= */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -63,7 +63,7 @@ export default function HeroSlider({ slides = [], breadcrumbs = [] }) {
       </AnimatePresence>
 
       {/* ================= CONTENT ================= */}
-      <div className="container relative z-20 min-h-[100svh] flex flex-col justify-end pb-[clamp(90px,12vw,150px)]">
+      <div className="container relative z-20 h-full flex flex-col justify-end pb-12 md:pb-16 pt-24">
         <div className="max-w-[900px]">
           {/* ================= TITLE ================= */}
           {slide.title && (

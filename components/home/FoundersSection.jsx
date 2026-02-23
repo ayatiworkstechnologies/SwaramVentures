@@ -43,7 +43,6 @@ FKI plc, Technical Solutions, AADI International Trading FZE, and PRANSA Interna
 • Fortis Healthcare`,
     EducationAndRecognition: `• PG in Business Management – Loyola Institute of Business Administration (LIBA)
 • Honorary Doctorate – Chicago University
-• UAE Golden Visa – for contributions to national healthcare
 • CEO of the Year 2024 – Middle East Asia Leadership Federation`,
     HumanitarianAndCSRImpact: `• Health Secretary – Lions Club International
 • Collaborations with UNHCR & WHO

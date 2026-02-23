@@ -2,6 +2,7 @@ import AboutStatsSection from "@/components/about/AboutStatsSection";
 import CoreValuesSection from "@/components/about/CoreValuesSection";
 import FounderSection from "@/components/about/FounderSection";
 import VisionMissionSection from "@/components/about/VisionMissionSection";
+import FoundersSection from "@/components/home/FoundersSection";
 import HeroSlider from "@/components/layouts/HeroSlider";
 
 export const metadata = {
@@ -25,10 +26,11 @@ export default function AboutPage() {
           },
         ]}
       />
+      <FoundersSection />
       <AboutStatsSection />
       <VisionMissionSection />
       <CoreValuesSection />
-      <FounderSection />
+      {/* <FounderSection /> */}
     </>
   );
 }

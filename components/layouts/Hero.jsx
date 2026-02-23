@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Hero() {
   /* =================================================
@@ -22,18 +23,14 @@ export default function Hero() {
   ];
 
   const [index, setIndex] = useState(0);
-  const intervalRef = useRef(null);
 
-  /* =================================================
-     AUTOPLAY
-  ================================================= */
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setIndex((i) => (i + 1) % slides.length);
-    }, 4500);
+  const prevSlide = () => {
+    setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
-    return () => clearInterval(intervalRef.current);
-  }, []);
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % slides.length);
+  };
 
   /* =================================================
      TEXT ANIMATION
@@ -169,6 +166,25 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* =================================================
+         NAVIGATION ARROWS
+      ================================================= */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/50 text-white smooth backdrop-blur-sm transition-all"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/50 text-white smooth backdrop-blur-sm transition-all"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={24} />
+      </button>
 
       {/* =================================================
          DOTS
