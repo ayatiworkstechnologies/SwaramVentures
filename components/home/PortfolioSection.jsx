@@ -31,7 +31,7 @@ Focused on quality treatment, modern facilities, and clinical excellence.`,
       id: 3,
       name: "Rento",
       country: "Peru",
-      category: "Robotics / Industry",
+      category: "Mobility",
       description: `An industrial robotics company enabling automation across manufacturing sectors.
 Supports operational efficiency through advanced robotic solutions.`,
       logo: "/assets/portfolio-10.jpg",
@@ -84,6 +84,35 @@ Supports secure, efficient, and data-driven financial services.`,
       description: `An international trading platform integrating cross-border commerce with logistics and supply chain operations. Enhances transportation efficiency through structured sourcing, coordination, and customized delivery solutions.`,
       logo: "/assets/portfolio-8.jpg",
       // link: "https://swaramtrading.com/",
+    },
+    {
+      id: 9,
+      name: "MiTran Innovation Systems",
+      country: "India",
+      category: "EduTech ",
+      description: `Investor, MiTrans is engaged in the
+business of providing online and hybrid
+educational services using various
+technologies to evaluate the Emotional
+Intelligence, Self esteem and Happiness
+quotient of students. `,
+      logo: "/assets/portfolio-11.jpg",
+      link: "https://www.edutech.com/",
+    },
+    {
+      id: 10,
+      name: "EXO BANK Inc.",
+      country: "USA",
+      category: "Fintech ",
+      description: `Investor, Exobank is a next generation
+financial institution (neobank). By
+combining blockchain technology, fiat
+-crypto integration and Al-driven
+financial services, ExoBank bridges the
+gap between decentralized and
+traditional finance. `,
+      logo: "/assets/portfolio-12.jpg",
+      link: "https://fintech.com/",
     },
   ];
 
