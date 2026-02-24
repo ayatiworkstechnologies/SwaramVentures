@@ -113,10 +113,10 @@ It supports authentic self-representation across personal, professional, and soc
     id: 11,
     name: "ExoBank ",
     country: "USA",
-    category: "Environmental Technology",
-    description: `A clean technology platform focused on sustainable water and environmental solutions. Improves access, efficiency, and long-term resource resilience through innovation.`,
+    category: "Financial",
+    description: `ExoBank is a next-generation digital financial institution (neobank) designed to empower consumers, small businesses, and mission-driven organizations with an innovative suite of banking and financial tools. By combining blockchain technology, fiat–crypto integration, and AI-driven financial services, ExoBank bridges the gap between decentralized and traditional finance. ExoBank’s strategic roadmap culminates in the launch of ExoCoin, a tokenized stablecoin that will power faster, low-cost, and globally accessible transactions within its ecosystem.`,
     logo: "/assets/logos-12.jpeg",
-    link: "https://www.dripdropusa.com/",
+    // link: "https://www.dripdropusa.com/",
   },
 ];
 
