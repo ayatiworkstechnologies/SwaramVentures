@@ -10,7 +10,7 @@ const portfolioData = [
     name: "Plenome",
     country: "India",
     category: "Healthcare",
-    description: `Investor, Plenome is developing secure, scalable, and interoperable digital infrastructure for sensitive data applications. Its “Blockchain OrganEase” solution is already in trial with a state transplant authority, while its remote voting platform “BlockVote” has been successfully deployed at IIT Madras and is now being pitched for large-scale enterprise elections.
+    description: ` Plenome is developing secure, scalable, and interoperable digital infrastructure for sensitive data applications. Its “Blockchain OrganEase” solution is already in trial with a state transplant authority, while its remote voting platform “BlockVote” has been successfully deployed at IIT Madras and is now being pitched for large-scale enterprise elections.
 
 Plenome is also testing its AI-powered health-tech suite “Ashwin” for structured, multilingual data capture in dental clinics, with plans to expand into eye care, cosmetic, and fertility domains. With its DLT-powered backend and AI-driven front end, Plenome aims to unify data creation, management, and diagnostics while ensuring data privacy and user control.`,
     logo: "/assets/logos-1.png",
@@ -22,8 +22,7 @@ Plenome is also testing its AI-powered health-tech suite “Ashwin” for struct
     country: "UAE",
     category: "Healthcare",
     description: `A multi-specialty healthcare provider delivering patient-centric medical services. Focused on quality treatment, modern facilities, and clinical excellence.
-
-Co-founder, providing strategic guidance and capital investment to support growth across the UAE and MENA regions.`,
+  providing strategic guidance and capital investment to support growth across the UAE and MENA regions.`,
     logo: "/assets/logos-2.png",
     link: "https://royaldutchclinic.ae/",
   },
@@ -31,8 +30,8 @@ Co-founder, providing strategic guidance and capital investment to support growt
     id: 3,
     name: "Rento",
     country: "Peru",
-    category: "Robotics / Industry",
-    description: `Investor, RENTO is a P2P car-rental platform that turns idle cars into accessible, affordable, and sustainable mobility solutions.
+    category: "Mobility",
+    description: ` RENTO is a P2P car-rental platform that turns idle cars into accessible, affordable, and sustainable mobility solutions.
 
 Powered by an asset-light model, GenAI-driven sales, and over 2,700 happy business partners, Rento is transforming the future of shared mobility.`,
     logo: "/assets/logos-3.png",
@@ -43,7 +42,7 @@ Powered by an asset-light model, GenAI-driven sales, and over 2,700 happy busine
     name: "Grazen AI",
     country: "USA",
     category: "Retail & Warehouse Robotics",
-    description: `Investor, Grazen is redefining autonomous automation in retail and warehousing. It is an adaptive, fully agentic system built to navigate the dynamic chaos of real-world environments and deliver value from day one.
+    description: ` Grazen is redefining autonomous automation in retail and warehousing. It is an adaptive, fully agentic system built to navigate the dynamic chaos of real-world environments and deliver value from day one.
 
 Grazen’s autonomous platform leverages reinforcement learning to adapt dynamically, offering more versatile, affordable, and agentic robotics that power the next era of operational efficiency and growth.`,
     logo: "/assets/logos-4.webp",
@@ -54,7 +53,7 @@ Grazen’s autonomous platform leverages reinforcement learning to adapt dynamic
     name: "Inkle",
     country: "USA",
     category: "FinTech",
-    description: `Investor, INKLE helps early-stage startups maintain accounts, file taxes, and stay compliant through intuitive software.
+    description: ` INKLE helps early-stage startups maintain accounts, file taxes, and stay compliant through intuitive software.
 
 INKLE simplifies complex financial processes, giving founders the clarity and control needed to make informed decisions and accelerate growth.`,
     logo: "/assets/logos-5.png",
@@ -65,7 +64,7 @@ INKLE simplifies complex financial processes, giving founders the clarity and co
     name: "Acumulus",
     country: "USA",
     category: "FinTech",
-    description: `Investor, ACUMULUS is building a new movement in value-driven loyalty—reinventing the future of connected fintech and consumer services.
+    description: ` ACUMULUS is building a new movement in value-driven loyalty—reinventing the future of connected fintech and consumer services.
 
 With seamless APIs and intelligent AI agents, it creates a new era of value for consumers, brands, and platforms.`,
     logo: "/assets/logos-7.png",
@@ -76,11 +75,11 @@ With seamless APIs and intelligent AI agents, it creates a new era of value for 
     name: "MiTrans Innovation Systems",
     country: "USA",
     category: "Edutech",
-    description: `Investor, MiTrans provides online and hybrid educational services using advanced technologies to evaluate students’ emotional intelligence, self-esteem, and happiness quotient.
+    description: ` MiTrans provides online and hybrid educational services using advanced technologies to evaluate students’ emotional intelligence, self-esteem, and happiness quotient.
 
 Its LIVE Positive Mind Mastery Workshop has empowered thousands of parents and students to achieve greater confidence, well-being, and improved academic performance.`,
-    logo: "/assets/logos-10.png",
-    link: "https://www.edutech.com/",
+    logo: "/assets/logos-13.png",
+    link: "https://mitranglobal.com/",
   },
   {
     id: 8,
@@ -104,6 +103,15 @@ It supports authentic self-representation across personal, professional, and soc
   {
     id: 10,
     name: "DripDropUSA",
+    country: "USA",
+    category: "Environmental Technology",
+    description: `A clean technology platform focused on sustainable water and environmental solutions. Improves access, efficiency, and long-term resource resilience through innovation.`,
+    logo: "/assets/logos-11.webp",
+    link: "https://www.dripdropusa.com/",
+  },
+  {
+    id: 11,
+    name: "ExoBank ",
     country: "USA",
     category: "Environmental Technology",
     description: `A clean technology platform focused on sustainable water and environmental solutions. Improves access, efficiency, and long-term resource resilience through innovation.`,

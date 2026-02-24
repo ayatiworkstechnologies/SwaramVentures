@@ -16,7 +16,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     // { name: "Strategy", href: "/strategy" },
     // { name: "Industries", href: "/industries" },
-    { name: "Our Approach", href: "/services/cross-border" },
+    { name: "Our Approach", href: "/cross-border" },
     // {
     //   name: "Our Approach",
     //   dropdown: [

@@ -70,9 +70,9 @@ export default function WhyExist() {
         />
 
         <p className="text-body max-w-2xl">
-          Swaram Ventures is a Dubai‑based investment firm partnering with early
-          and growth‑stage companies transforming how the world builds, moves,
-          and cares.
+          Swaram Ventures is a Dubai-based strategic investment platform
+          partnering with ambitious early and growth-stage companies
+          transforming how the world builds, moves, and cares.
         </p>
       </div>
 

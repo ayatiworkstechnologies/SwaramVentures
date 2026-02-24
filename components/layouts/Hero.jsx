@@ -121,7 +121,7 @@ export default function Hero() {
     text-white
     leading-[1.1]
     tracking-tight
-    text-4xl
+    text-xl sm:text-2xl md:text-3xl lg:text-4xl
   "
           >
             {slides[index].title.split(" ").map((word, i) => (
@@ -172,7 +172,7 @@ export default function Hero() {
       ================================================= */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/50 text-white smooth backdrop-blur-sm transition-all"
+        className="absolute left-4 md:left-8 bottom-8 md:bottom-auto top-auto md:top-1/2 translate-y-0 md:-translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/50 text-white smooth backdrop-blur-sm transition-all"
         aria-label="Previous slide"
       >
         <ChevronLeft size={24} />
@@ -180,7 +180,7 @@ export default function Hero() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/50 text-white smooth backdrop-blur-sm transition-all"
+        className="absolute right-4 md:right-8 bottom-8 md:bottom-auto top-auto md:top-1/2 translate-y-0 md:-translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/50 text-white smooth backdrop-blur-sm transition-all"
         aria-label="Next slide"
       >
         <ChevronRight size={24} />
@@ -189,7 +189,7 @@ export default function Hero() {
       {/* =================================================
          DOTS
       ================================================= */}
-      <div className="absolute bottom-8 right-8 flex gap-2 z-30">
+      <div className="absolute bottom-12 md:bottom-8 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 flex gap-2 z-30">
         {slides.map((_, i) => (
           <button
             key={i}
