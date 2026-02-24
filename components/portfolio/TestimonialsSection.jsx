@@ -78,7 +78,7 @@ With seamless APIs and intelligent AI agents, it creates a new era of value for 
     description: ` MiTrans provides online and hybrid educational services using advanced technologies to evaluate students’ emotional intelligence, self-esteem, and happiness quotient.
 
 Its LIVE Positive Mind Mastery Workshop has empowered thousands of parents and students to achieve greater confidence, well-being, and improved academic performance.`,
-    logo: "/assets/logos-13.png",
+    logo: "/assets/logos-13.jpeg",
     link: "https://mitranglobal.com/",
   },
   {
@@ -115,7 +115,7 @@ It supports authentic self-representation across personal, professional, and soc
     country: "USA",
     category: "Environmental Technology",
     description: `A clean technology platform focused on sustainable water and environmental solutions. Improves access, efficiency, and long-term resource resilience through innovation.`,
-    logo: "/assets/logos-11.webp",
+    logo: "/assets/logos-12.jpeg",
     link: "https://www.dripdropusa.com/",
   },
 ];
