@@ -29,7 +29,7 @@ export default function ContactPage() {
           headers: {
             "Content-Type": "application/json",
             "X-API-Key":
-              "e28d00e9de783e67396f9deaea21c64ad06d151ec9e0c5893dc7d9528dcaabb3",
+              "ac3890f456cc30ca130f975581100afe9ccffbb6377acec9457de52507a3148d",
           },
           body: JSON.stringify({ data: data }),
         },
@@ -131,11 +131,10 @@ export default function ContactPage() {
                     <input
                       type="text"
                       placeholder="Enter Your Name"
-                      className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${
-                        errorsContact.name
-                          ? "border-red-500"
-                          : "border-gray-200 focus:border-primary focus:ring-primary"
-                      }`}
+                      className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${errorsContact.name
+                        ? "border-red-500"
+                        : "border-gray-200 focus:border-primary focus:ring-primary"
+                        }`}
                       {...registerContact("name", {
                         required: "Name is required",
                       })}
@@ -155,11 +154,10 @@ export default function ContactPage() {
                     <input
                       type="email"
                       placeholder="Enter Your Email Address"
-                      className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${
-                        errorsContact.email
-                          ? "border-red-500"
-                          : "border-gray-200 focus:border-primary focus:ring-primary"
-                      }`}
+                      className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${errorsContact.email
+                        ? "border-red-500"
+                        : "border-gray-200 focus:border-primary focus:ring-primary"
+                        }`}
                       {...registerContact("email", {
                         required: "Email is required",
                         pattern: {
@@ -184,11 +182,10 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     placeholder="Enter Your Phone Number"
-                    className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${
-                      errorsContact.phone
-                        ? "border-red-500"
-                        : "border-gray-200 focus:border-primary focus:ring-primary"
-                    }`}
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all placeholder:text-gray-400 text-primary ${errorsContact.phone
+                      ? "border-red-500"
+                      : "border-gray-200 focus:border-primary focus:ring-primary"
+                      }`}
                     {...registerContact("phone", {
                       required: "Phone number is required",
                     })}
