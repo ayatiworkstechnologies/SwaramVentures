@@ -29,7 +29,7 @@ export default function ContactPage() {
           headers: {
             "Content-Type": "application/json",
             "X-API-Key":
-              "ac3890f456cc30ca130f975581100afe9ccffbb6377acec9457de52507a3148d",
+              "f5a4ee7d75445be656bd8529c143b2567a3eeedfdcdfa6cbac5652f0a3f92289",
           },
           body: JSON.stringify({ data: data }),
         },
