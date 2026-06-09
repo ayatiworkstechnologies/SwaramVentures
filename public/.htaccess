@@ -1,40 +1,23 @@
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
 <IfModule mod_rewrite.c>
-  Options +FollowSymLinks -MultiViews -Indexes
   RewriteEngine On
   RewriteBase /
 
-  # 1. Enforce HTTPS
   RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-  # 2. Remove .html extension from external URL
-  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
-  RewriteRule ^ %1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L,NE]
 
-  # 3. Prioritize serving .html files over directories
-  # Appends .html to any path that is a directory BUT has a corresponding .html file
-  # Uses non-greedy modifier (.*?) to ensure trailing slash is NOT captured in $1
-  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^(.*?)/?$ $1.html [L]
+  RewriteRule ^(.+?)/?$ $1.html [L]
 
-  # 4. Standard extensionless rewrite
-  # Serve file.html when /file is requested, if it's not a directory
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
-  # 5. Handle Custom 404 Page
-  ErrorDocument 404 /404.html
-</IfModule>
-
-<IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
-    Header set Cache-Control "max-age=31536000, public"
-  </FilesMatch>
-  <FilesMatch "\.(html)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires 0
-  </FilesMatch>
+  RewriteRule ^ 404.html [L]
 </IfModule>

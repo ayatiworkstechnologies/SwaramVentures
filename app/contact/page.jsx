@@ -22,18 +22,13 @@ export default function ContactPage() {
   // CONTACT FORM SUBMIT (API POST)
   const onContactSubmit = async (data) => {
     try {
-      const res = await fetch(
-        "https://api.ayatiworks.com/api/v1/public/swaram/contact_us/records",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-API-Key":
-              "f5a4ee7d75445be656bd8529c143b2567a3eeedfdcdfa6cbac5652f0a3f92289",
-          },
-          body: JSON.stringify({ data: data }),
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({ data }),
+      });
 
       if (!res.ok) {
         throw new Error("Failed to submit form");
