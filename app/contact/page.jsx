@@ -4,6 +4,9 @@ import { Mail, MapPin, Play } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
+const CONTACT_API_URL =
+  "/api/contact.php";
+
 export default function ContactPage() {
   const {
     register: registerContact,
@@ -22,7 +25,7 @@ export default function ContactPage() {
   // CONTACT FORM SUBMIT (API POST)
   const onContactSubmit = async (data) => {
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(CONTACT_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
